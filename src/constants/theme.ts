@@ -10,13 +10,14 @@ interface ITheme {
     desktop: number;
     mobile: number;
   };
+  fontFamily: Record<'rubik' | 'cormorantGaramond', string>;
   transitionDurationAndFunc: string;
   spacing: (value?: number) => number;
 }
 
 const theme: ITheme = {
   // colors: {  },
-  // fontFamily: {  },
+  fontFamily: { rubik: 'Rubik', cormorantGaramond: 'Cormorant Garamond' },
   // fontWeight: {  },
   // fontSize: {  },
   padding: {

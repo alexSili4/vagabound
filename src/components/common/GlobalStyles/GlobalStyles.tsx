@@ -1,10 +1,33 @@
 import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
+import { theme } from '@/constants';
+import { cormorantGaramondLight, rubikBold, rubikRegular } from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
     styles={css`
+      @font-face {
+        font-family: ${theme.fontFamily.rubik};
+        src: local(${theme.fontFamily.rubik}),
+          url(${rubikRegular}) format('truetype');
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.rubik};
+        src: local(${theme.fontFamily.rubik}),
+          url(${rubikBold}) format('truetype');
+        font-weight: 700;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.cormorantGaramond};
+        src: local(${theme.fontFamily.cormorantGaramond}),
+          url(${cormorantGaramondLight}) format('truetype');
+        font-weight: 300;
+      }
+
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
           'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
