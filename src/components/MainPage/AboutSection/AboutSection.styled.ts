@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Section = styled.section`
   padding-top: ${({ theme }) => theme.spacing(30)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(50)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(75)}px;
   background-color: #500800;
 `;
 

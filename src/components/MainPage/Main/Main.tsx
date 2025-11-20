@@ -2,6 +2,7 @@ import { FC } from 'react';
 import HeroSection from '@MainPageComponents/HeroSection';
 import AboutSection from '@MainPageComponents/AboutSection';
 import BarrelsSection from '@MainPageComponents/BarrelsSection';
+import TravelSection from '@MainPageComponents/TravelSection';
 
 const Main: FC = () => {
   return (
@@ -11,6 +12,7 @@ const Main: FC = () => {
         <BarrelsSection />
       </div>
       <AboutSection />
+      <TravelSection />
     </>
   );
 };
