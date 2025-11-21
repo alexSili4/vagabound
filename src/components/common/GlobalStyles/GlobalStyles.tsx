@@ -2,11 +2,31 @@ import { FC } from 'react';
 import { Global, css } from '@emotion/react';
 import 'modern-normalize';
 import { theme } from '@/constants';
-import { cormorantGaramondLight, rubikBold, rubikRegular } from '@/fonts';
+import {
+  cormorantGaramondLight,
+  picaRegular,
+  rubikBold,
+  rubikRegular,
+  soulRegular,
+} from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
     styles={css`
+      @font-face {
+        font-family: ${theme.fontFamily.soul};
+        src: local(${theme.fontFamily.soul}),
+          url(${soulRegular}) format('truetype');
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.pica};
+        src: local(${theme.fontFamily.pica}),
+          url(${picaRegular}) format('truetype');
+        font-weight: 400;
+      }
+
       @font-face {
         font-family: ${theme.fontFamily.rubik};
         src: local(${theme.fontFamily.rubik}),

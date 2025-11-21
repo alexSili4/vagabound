@@ -36,7 +36,11 @@ export default defineConfig({
             return 'video/[name][extname]';
           }
 
-          if (fileName.endsWith('.jpg') || fileName.endsWith('.png')) {
+          if (
+            fileName.endsWith('.jpg') ||
+            fileName.endsWith('.png') ||
+            fileName.endsWith('.webp')
+          ) {
             return 'images/[name][extname]';
           }
 

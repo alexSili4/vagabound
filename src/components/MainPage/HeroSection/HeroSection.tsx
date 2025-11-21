@@ -10,8 +10,8 @@ import {
   Title,
   Logo,
 } from './HeroSection.styled';
-import imgDefault from '@/images/hero/switcher-default.png';
-import imgHover from '@/images/hero/switcher-hover.png';
+import imgDefault from '@/images/hero/switcher-default.webp';
+import imgHover from '@/images/hero/switcher-hover.webp';
 
 const HeroSection: FC = () => {
   return (

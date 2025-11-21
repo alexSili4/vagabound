@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import LogoIcon from '@/icons/hero/logo.svg?react';
-import bgImg from '@/images/hero/video.jpg';
+import bgImg from '@/images/hero/video.webp';
 
 export const Section = styled.section``;
 

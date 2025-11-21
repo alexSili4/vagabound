@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import barrelLeft from '@/images/barrels/barrel-left.png';
-import barrelRight from '@/images/barrels/barrel-right.png';
-import barrelBottom from '@/images/barrels/barrel-bottom.png';
-import barrelTop from '@/images/barrels/barrel-top.png';
-import lightLeft from '@/images/barrels/light-left.png';
-import lightRight from '@/images/barrels/light-right.png';
+import barrelLeft from '@/images/barrels/barrel-left.webp';
+import barrelRight from '@/images/barrels/barrel-right.webp';
+import barrelBottom from '@/images/barrels/barrel-bottom.webp';
+import barrelTop from '@/images/barrels/barrel-top.webp';
+import lightLeft from '@/images/barrels/light-left.webp';
+import lightRight from '@/images/barrels/light-right.webp';
 import {
   Section,
   BarrelCardLeft,
@@ -35,7 +35,7 @@ import {
   BarrelTopName,
   BarrelRightName,
 } from './BarrelsSection.styled';
-import cut from '@/images/barrels/cut.png';
+import cut from '@/images/barrels/cut.webp';
 
 const BarrelsSection: FC = () => {
   return (

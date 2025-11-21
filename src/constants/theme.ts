@@ -10,14 +10,19 @@ interface ITheme {
     desktop: number;
     mobile: number;
   };
-  fontFamily: Record<'rubik' | 'cormorantGaramond', string>;
+  fontFamily: Record<'rubik' | 'cormorantGaramond' | 'pica' | 'soul', string>;
   transitionDurationAndFunc: string;
   spacing: (value?: number) => number;
 }
 
 const theme: ITheme = {
   // colors: {  },
-  fontFamily: { rubik: 'Rubik', cormorantGaramond: 'Cormorant Garamond' },
+  fontFamily: {
+    rubik: 'Rubik',
+    cormorantGaramond: 'Cormorant Garamond',
+    pica: 'IM FELL DW Pica',
+    soul: 'Soul Adventures Cyr',
+  },
   // fontWeight: {  },
   // fontSize: {  },
   padding: {

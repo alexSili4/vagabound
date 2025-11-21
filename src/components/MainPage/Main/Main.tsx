@@ -3,6 +3,7 @@ import HeroSection from '@MainPageComponents/HeroSection';
 import AboutSection from '@MainPageComponents/AboutSection';
 import BarrelsSection from '@MainPageComponents/BarrelsSection';
 import TravelSection from '@MainPageComponents/TravelSection';
+import StorySection from '@MainPageComponents/StorySection';
 
 const Main: FC = () => {
   return (
@@ -13,6 +14,7 @@ const Main: FC = () => {
       </div>
       <AboutSection />
       <TravelSection />
+      <StorySection />
     </>
   );
 };
