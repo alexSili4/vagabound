@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 
 export const Section = styled.section`
   position: relative;
@@ -30,7 +31,7 @@ export const Screen = styled.div`
   height: 100dvh;
 `;
 
-export const Card1 = styled.img`
+export const Card1 = styled(motion.img)`
   position: absolute;
   top: -10%;
   left: 39%;
@@ -39,7 +40,7 @@ export const Card1 = styled.img`
   pointer-events: none;
 `;
 
-export const Card2 = styled.img`
+export const Card2 = styled(motion.img)`
   position: absolute;
   top: -11%;
   left: 30%;
@@ -48,7 +49,7 @@ export const Card2 = styled.img`
   pointer-events: none;
 `;
 
-export const Card3 = styled.img`
+export const Card3 = styled(motion.img)`
   position: absolute;
   top: -12%;
   left: 30%;
@@ -57,7 +58,7 @@ export const Card3 = styled.img`
   pointer-events: none;
 `;
 
-export const Card4 = styled.img`
+export const Card4 = styled(motion.img)`
   position: absolute;
   top: -12%;
   left: 45%;
@@ -66,7 +67,7 @@ export const Card4 = styled.img`
   pointer-events: none;
 `;
 
-export const Card5 = styled.img`
+export const Card5 = styled(motion.img)`
   position: absolute;
   top: -12%;
   left: 42%;
@@ -75,7 +76,7 @@ export const Card5 = styled.img`
   pointer-events: none;
 `;
 
-export const Card6 = styled.img`
+export const Card6 = styled(motion.img)`
   position: absolute;
   top: -12%;
   left: 53%;
@@ -84,7 +85,7 @@ export const Card6 = styled.img`
   pointer-events: none;
 `;
 
-export const Card7 = styled.img`
+export const Card7 = styled(motion.img)`
   position: absolute;
   top: -13%;
   left: 60%;
@@ -93,7 +94,7 @@ export const Card7 = styled.img`
   pointer-events: none;
 `;
 
-export const ButtonWrap = styled.div`
+export const ButtonWrap = styled(motion.div)`
   position: absolute;
   top: 33%;
   left: 56%;
