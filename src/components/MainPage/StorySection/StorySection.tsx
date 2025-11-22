@@ -1,8 +1,8 @@
 import { FC, MouseEvent, useState } from 'react';
 import background from '@/images/story/bg.webp';
 import napkin from '@/images/story/napkin.webp';
-import napkin2 from '@/images/story/napkin-2.png';
-import napkin3 from '@/images/story/napkin-3.png';
+import napkin2 from '@/images/story/napkin-2.webp';
+import napkin3 from '@/images/story/napkin-3.webp';
 import {
   Section,
   Title,
@@ -37,13 +37,13 @@ import {
   Card5Text,
   Signature,
 } from './StorySection.styled';
-import book from '@/images/story/book.png';
-import card1 from '@/images/story/card-1.png';
-import card2 from '@/images/story/card-2.png';
-import card3 from '@/images/story/card-3.png';
-import card4 from '@/images/story/card-4.png';
-import card5 from '@/images/story/card-5.png';
-import card6 from '@/images/story/card-6.png';
+import book from '@/images/story/book.webp';
+import card1 from '@/images/story/card-1.webp';
+import card2 from '@/images/story/card-2.webp';
+import card3 from '@/images/story/card-3.webp';
+import card4 from '@/images/story/card-4.webp';
+import card5 from '@/images/story/card-5.webp';
+import card6 from '@/images/story/card-6.webp';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 
 const StorySection: FC = () => {

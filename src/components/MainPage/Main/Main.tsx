@@ -4,6 +4,7 @@ import AboutSection from '@MainPageComponents/AboutSection';
 import BarrelsSection from '@MainPageComponents/BarrelsSection';
 import TravelSection from '@MainPageComponents/TravelSection';
 import StorySection from '@MainPageComponents/StorySection';
+import MediaSection from '@MainPageComponents/MediaSection';
 
 const Main: FC = () => {
   return (
@@ -15,6 +16,7 @@ const Main: FC = () => {
       <AboutSection />
       <TravelSection />
       <StorySection />
+      <MediaSection />
     </>
   );
 };
