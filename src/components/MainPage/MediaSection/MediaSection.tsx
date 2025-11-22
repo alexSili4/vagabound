@@ -17,17 +17,17 @@ import {
   ButtonWrap,
   Lines,
 } from './MediaSection.styled';
-import paper from '@/images/media/bg.png';
-import card1 from '@/images/media/card-1.png';
-import card2 from '@/images/media/card-2.png';
-import card3 from '@/images/media/card-3.png';
-import card4 from '@/images/media/card-4.png';
-import card5 from '@/images/media/card-5.png';
-import card6 from '@/images/media/card-6.png';
-import card7 from '@/images/media/card-7.png';
-import card8 from '@/images/media/card-8.png';
-import stamp from '@/images/media/stamp.png';
-import lines from '@/images/media/lines.png';
+import paper from '@/images/media/bg.webp';
+import card1 from '@/images/media/card-1.webp';
+import card2 from '@/images/media/card-2.webp';
+import card3 from '@/images/media/card-3.webp';
+import card4 from '@/images/media/card-4.webp';
+import card5 from '@/images/media/card-5.webp';
+import card6 from '@/images/media/card-6.webp';
+import card7 from '@/images/media/card-7.webp';
+import card8 from '@/images/media/card-8.webp';
+import stamp from '@/images/media/stamp.webp';
+import lines from '@/images/media/lines.webp';
 import { useScroll, useTransform } from 'framer-motion';
 
 const MediaSection: FC = () => {
