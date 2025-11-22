@@ -75,13 +75,13 @@ const TravelSection: FC = () => {
 
       <FirstScreen></FirstScreen>
 
-      <Screen>
+      <Screen data-header-theme='light'>
         <Image src={screen2} alt='Банер' />
       </Screen>
-      <Screen>
+      <Screen data-header-theme='dark'>
         <Image src={screen3} alt='Банер' />
       </Screen>
-      <Screen>
+      <Screen data-header-theme='light'>
         <Image src={screen4} alt='Банер' />
       </Screen>
     </Section>

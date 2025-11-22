@@ -91,7 +91,10 @@ const StorySection: FC = () => {
 
             <Book src={book} alt='Книга' />
 
-            <Card1Container isActive={activeIndex === 0}>
+            <Card1Container
+              isActive={activeIndex === 0}
+              data-header-theme='light'
+            >
               <Card1 src={card1} alt='Фото' />
               <Card2 src={card2} alt='Фото' />
 
@@ -127,7 +130,10 @@ const StorySection: FC = () => {
               </Card1TextContainer>
             </Card1Container>
 
-            <Card2Container isActive={activeIndex === 1}>
+            <Card2Container
+              isActive={activeIndex === 1}
+              data-header-theme='light'
+            >
               <Card3 src={card3} alt='Фото' />
               <Card4 src={card4} alt='Фото' />
               <Card2Text>
@@ -152,7 +158,10 @@ const StorySection: FC = () => {
               </Card2Desc>
             </Card2Container>
 
-            <Card3Container isActive={activeIndex === 2}>
+            <Card3Container
+              isActive={activeIndex === 2}
+              data-header-theme='light'
+            >
               <Card5 src={card5} alt='Фото' />
               <Card6 src={card6} alt='Фото' />
               <Card3Text>

@@ -1,13 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React + TS</title>
+
+    <style>
+      body.loading {
+        overflow: hidden;
+      }
+
+      .loader-wrap {
+        position: fixed;
+        z-index: 10000;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #500800;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      }
+
+      .loader-wrap.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .logo-wrap {
+        position: relative;
+        width: 240px;
+        aspect-ratio: 1/1;
+      }
+
+      .logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+
+      .logo.active {
+        opacity: 1;
+      }
+
+      .progress-wrap {
+        position: relative;
+        width: 100%;
+        height: 8px;
+        border-radius: 100px;
+        background-color: rgba(235, 172, 61, 0.08);
+        overflow: hidden;
+      }
+
+      .progress {
+        height: inherit;
+        background-color: #ebac3d;
+        border-radius: 100px;
+        transform: translateX(-100%);
+        transition: transform 0.2s ease-out;
+      }
+    </style>
   </head>
-  <body>
+  <body class="loading">
     <div id="root"></div>
     <div id="modal-root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <div class="loader-wrap js-loader-wrap">
+      <div class="content">
+        <div class="logo-wrap">
+          <img class="logo" src="/logo-1.png" alt="" />
+          <img class="logo" src="/logo-2.png" alt="" />
+          <img class="logo" src="/logo-3.png" alt="" />
+          <img class="logo" src="/logo-4.png" alt="" />
+          <img class="logo" src="/logo-5.png" alt="" />
+          <img class="logo" src="/logo-6.png" alt="" />
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function () {
+        const logos = document.querySelectorAll('.logo');
+        const progress = document.querySelector('.progress');
+        const loader = document.querySelector('.js-loader-wrap');
+        let currentLogo = 0;
+        let progressValue = -100;
+
+        // Logo animation
+        if (logos.length > 0) {
+          logos[0].classList.add('active');
+          setInterval(() => {
+            logos[currentLogo].classList.remove('active');
+            currentLogo = (currentLogo + 1) % logos.length;
+            logos[currentLogo].classList.add('active');
+          }, 50);
+        }
+
+        // Progress simulation
+        const progressInterval = setInterval(() => {
+          if (progressValue < -10) {
+            progressValue += Math.random() * 5;
+            if (progressValue > -10) progressValue = -10;
+            progress.style.transform = `translateX(${progressValue}%)`;
+          }
+        }, 100);
+
+        window.addEventListener('load', () => {
+          clearInterval(progressInterval);
+          progress.style.transform = 'translateX(0%)';
+
+          setTimeout(() => {
+            document.body.classList.remove('loading');
+            loader.classList.add('is-hidden');
+          }, 500);
+        });
+      })();
+    </script>
   </body>
 </html>
