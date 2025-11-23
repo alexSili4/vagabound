@@ -5,9 +5,9 @@ import {
   MouseEvent,
   useState,
 } from 'react';
-import postbox from '@/images/order/postbox.png';
-import letter from '@/images/order/letter.png';
-import letterPart from '@/images/order/letter-part.png';
+import postbox from '@/images/order/postbox.webp';
+import letter from '@/images/order/letter.webp';
+import letterPart from '@/images/order/letter-part.webp';
 import {
   Section,
   Container,

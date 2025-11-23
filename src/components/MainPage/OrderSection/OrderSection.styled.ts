@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import formBg from '@/images/order/form-bg.png';
+import formBg from '@/images/order/form-bg.webp';
 
 export const Section = styled.section`
   background-color: #500800;
