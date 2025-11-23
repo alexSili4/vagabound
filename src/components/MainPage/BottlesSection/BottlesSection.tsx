@@ -15,6 +15,7 @@ import {
   ListItem,
   Delimiter,
   CardLink,
+  Name,
 } from './BottlesSection.styled';
 import bottle1 from '@/images/bottles/bottle-1.webp';
 import bottle2 from '@/images/bottles/bottle-2.webp';
@@ -27,6 +28,7 @@ const BottlesSection: FC = () => {
       <List>
         <ListItem>
           <Card1>
+            <Name>Рорі</Name>
             <CardContent>
               <Image src={bottle1} alt='' />
               <CardInfo>
@@ -70,6 +72,7 @@ const BottlesSection: FC = () => {
         </ListItem>
         <ListItem>
           <Card2>
+            <Name>Лохан</Name>
             <CardContent>
               <Image src={bottle2} alt='' />
               <CardInfo>
@@ -113,6 +116,7 @@ const BottlesSection: FC = () => {
         </ListItem>
         <ListItem>
           <Card3>
+            <Name>Кемпбел</Name>
             <CardContent>
               <Image src={bottle3} alt='' />
               <CardInfo>
@@ -156,6 +160,7 @@ const BottlesSection: FC = () => {
         </ListItem>
         <ListItem>
           <Card4>
+            <Name>Мейзі</Name>
             <CardContent>
               <Image src={bottle4} alt='' />
               <CardInfo>
