@@ -6,6 +6,7 @@ import TravelSection from '@MainPageComponents/TravelSection';
 import StorySection from '@MainPageComponents/StorySection';
 import MediaSection from '@MainPageComponents/MediaSection';
 import BottlesSection from '@MainPageComponents/BottlesSection';
+import OrderSection from '@MainPageComponents/OrderSection';
 
 const Main: FC = () => {
   return (
@@ -19,6 +20,7 @@ const Main: FC = () => {
       <StorySection />
       <MediaSection />
       <BottlesSection />
+      <OrderSection />
     </>
   );
 };

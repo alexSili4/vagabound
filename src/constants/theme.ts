@@ -6,6 +6,7 @@ interface ITheme {
   padding: {
     container: number;
   };
+  colors: Record<'white', string>;
   containerWidth: {
     desktop: number;
     mobile: number;
@@ -16,7 +17,9 @@ interface ITheme {
 }
 
 const theme: ITheme = {
-  // colors: {  },
+  colors: {
+    white: '#ffffff',
+  },
   fontFamily: {
     rubik: 'Rubik',
     cormorantGaramond: 'Cormorant Garamond',
