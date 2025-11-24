@@ -67,7 +67,7 @@ const BottlesSection: FC = () => {
                 </CardInfoItem>
               </CardInfo>
             </CardContent>
-            <CardLink>ЗАМОВИТИ</CardLink>
+            <CardLink href='/'>ЗАМОВИТИ</CardLink>
           </Card1>
         </ListItem>
         <ListItem>
@@ -111,7 +111,7 @@ const BottlesSection: FC = () => {
                 </CardInfoItem>
               </CardInfo>
             </CardContent>
-            <CardLink>ЗАМОВИТИ</CardLink>
+            <CardLink href='/'>ЗАМОВИТИ</CardLink>
           </Card2>
         </ListItem>
         <ListItem>
@@ -155,7 +155,7 @@ const BottlesSection: FC = () => {
                 </CardInfoItem>
               </CardInfo>
             </CardContent>
-            <CardLink>ЗАМОВИТИ</CardLink>
+            <CardLink href='/'>ЗАМОВИТИ</CardLink>
           </Card3>
         </ListItem>
         <ListItem>
@@ -199,7 +199,7 @@ const BottlesSection: FC = () => {
                 </CardInfoItem>
               </CardInfo>
             </CardContent>
-            <CardLink>ЗАМОВИТИ</CardLink>
+            <CardLink href='/'>ЗАМОВИТИ</CardLink>
           </Card4>
         </ListItem>
       </List>

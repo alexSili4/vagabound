@@ -37,7 +37,7 @@ export const Napkin = styled.img<StyledCardContainerProps>`
   width: 420px;
   height: 416px;
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: opacity ${({ theme }) => theme.transitionStory};
 `;
 
 export const Content = styled.div`
@@ -90,7 +90,7 @@ export const Card1Container = styled.div<StyledCardContainerProps>`
   width: 100%;
   height: 100%;
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: opacity ${({ theme }) => theme.transitionStory};
 `;
 
 export const Card1 = styled.img`
@@ -170,7 +170,7 @@ export const Card2Container = styled.div<StyledCardContainerProps>`
   width: 100%;
   height: 100%;
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: opacity ${({ theme }) => theme.transitionStory};
 `;
 
 export const Card3 = styled.img`
@@ -234,7 +234,7 @@ export const Card3Container = styled.div<StyledCardContainerProps>`
   width: 100%;
   height: 100%;
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: opacity ${({ theme }) => theme.transitionStory};
 `;
 
 export const Card5 = styled.img`
