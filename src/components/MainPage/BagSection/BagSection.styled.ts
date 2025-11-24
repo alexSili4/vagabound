@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { IStyledProps } from './BagSection.types';
-import letterBg from '@/images/bag/letter-bg.png';
+import letterBg from '@/images/bag/letter-bg.webp';
 
 export const Section = styled.section`
   background-color: #500800;

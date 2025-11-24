@@ -14,12 +14,12 @@ import {
   Photo,
   Ticket,
 } from './BagSection.styled';
-import label from '@/images/bag/label.png';
-import arrow from '@/images/bag/arrow.png';
-import closedBag from '@/images/bag/closed-bag.png';
-import openBag from '@/images/bag/open-bag.png';
-import ticket from '@/images/bag/ticket.png';
-import photo from '@/images/bag/photo.png';
+import label from '@/images/bag/label.webp';
+import arrow from '@/images/bag/arrow.webp';
+import closedBag from '@/images/bag/closed-bag.webp';
+import openBag from '@/images/bag/open-bag.webp';
+import ticket from '@/images/bag/ticket.webp';
+import photo from '@/images/bag/photo.webp';
 
 const BagSection: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
