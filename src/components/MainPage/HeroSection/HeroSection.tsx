@@ -19,6 +19,7 @@ const HeroSection: FC = () => {
       <Container data-header-theme='light'>
         <Title>the spirit worth chasing / filling</Title>
         <SwitcherBtnWrap>
+          <Logo />
           <SwitcherBtn type='button'>
             <SwitcherBtnImgDefault src={imgDefault} alt='' />
             <SwitcherBtnImgHover src={imgHover} alt='' />
@@ -27,7 +28,6 @@ const HeroSection: FC = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
             vulputate libero et velit interdum, ac aliquet odio mattis.
           </Text>
-          <Logo />
         </SwitcherBtnWrap>
       </Container>
     </Section>
