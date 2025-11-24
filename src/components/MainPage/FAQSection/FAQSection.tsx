@@ -22,8 +22,8 @@ import {
   Paper,
 } from './FAQSection.styled';
 import { IoIosArrowRoundDown } from 'react-icons/io';
-import accent from '@/images/faq/accent.png';
-import paper from '@/images/faq/paper.png';
+import accent from '@/images/faq/accent.webp';
+import paper from '@/images/faq/paper.webp';
 
 const Question1: FC = () => {
   const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =

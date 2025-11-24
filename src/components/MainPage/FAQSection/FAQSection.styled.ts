@@ -102,7 +102,7 @@ export const IconWrap = styled.span<IStyledIconWrapProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(${({ isShowElement }) => (isShowElement ? 180 : 0)}deg);
+  transform: rotateX(${({ isShowElement }) => (isShowElement ? 180 : 0)}deg);
   transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
