@@ -6,10 +6,6 @@
     <title>React + TS</title>
 
     <style>
-      body.loading {
-        overflow: hidden;
-      }
-
       .loader-wrap {
         position: fixed;
         z-index: 10000;
@@ -75,7 +71,6 @@
   <body class="loading">
     <div id="root"></div>
     <div id="modal-root"></div>
-    <script type="module" src="/src/main.tsx"></script>
 
     <div class="loader-wrap js-loader-wrap">
       <div class="content">
@@ -93,6 +88,9 @@
         </div>
       </div>
     </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+
     <script>
       (function () {
         const logos = document.querySelectorAll('.logo');
