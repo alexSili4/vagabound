@@ -1,8 +1,7 @@
 import MainPage from '@/pages/MainPage';
 import { FC } from 'react';
 import Header from '@CommonComponents/Header';
-import Footer from '@CommonComponents/Footer';
-// import PreviewVideo from './common/PreviewVideo';
+// import PreviewVideo from '@CommonComponents/PreviewVideo';
 
 const App: FC = () => {
   return (
@@ -10,7 +9,6 @@ const App: FC = () => {
       {/* <PreviewVideo /> */}
       <Header />
       <MainPage />
-      <Footer />
     </>
   );
 };

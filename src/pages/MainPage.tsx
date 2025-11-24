@@ -1,8 +1,16 @@
+import Footer from '@MainPageComponents/Footer';
 import Main from '@MainPageComponents/Main';
 import { FC } from 'react';
 
 const MainPage: FC = () => {
-  return <Main />;
+  return (
+    <>
+      <main>
+        <Main />
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default MainPage;

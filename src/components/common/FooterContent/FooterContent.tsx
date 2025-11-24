@@ -1,29 +1,28 @@
 import { FC } from 'react';
 import {
-  StyledFooter,
-  Copy,
-  Desc,
-  ListItem,
-  LogoList,
-  Text,
-  TextWrap,
   Vagabound,
-  Warning,
   Anchor,
-  NavLinks,
+  Copy,
   DSLogo,
+  Delimiter,
+  Desc,
   FBLogo,
   InstagramLogo,
+  ListItem,
+  LogoList,
+  NavLinks,
   SilpoLogo,
-  Delimiter,
-} from './Footer.styled';
+  Text,
+  TextWrap,
+  Warning,
+  Container,
+} from './FooterContent.styled';
 import vagabound from '@/images/footer/vagabound.webp';
 
-const Footer: FC = () => {
+const FooterContent: FC = () => {
   return (
-    <StyledFooter>
+    <Container>
       <Vagabound src={vagabound} alt='' />
-
       <NavLinks>
         <ListItem>
           <Anchor href='/'>Про проєкт</Anchor>
@@ -44,7 +43,6 @@ const Footer: FC = () => {
           <Anchor href='/'>Відгуки експертів</Anchor>
         </ListItem>
       </NavLinks>
-
       <LogoList>
         <ListItem>
           <DSLogo />
@@ -59,24 +57,20 @@ const Footer: FC = () => {
           <FBLogo />
         </ListItem>
       </LogoList>
-
       <Desc>
         Сайт може містити контент, не призначений для осіб молодше 18 років.
       </Desc>
-
       <TextWrap>
         <Text>Designed by Julia Dudarenko</Text>
         <Delimiter />
         <Text>Powered by Sun Agency</Text>
       </TextWrap>
-
       <Copy>Copy @ 2025</Copy>
-
       <Warning>
         надмірне споживання алкоголю шкідливе для вашого здоров'я
       </Warning>
-    </StyledFooter>
+    </Container>
   );
 };
 
-export default Footer;
+export default FooterContent;

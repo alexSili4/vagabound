@@ -1,15 +1,14 @@
-import styled from '@emotion/styled';
 import FBLogoIcon from '@/icons/footer/fb.svg?react';
 import InstagramLogoIcon from '@/icons/footer/instagram.svg?react';
 import SilpoLogoIcon from '@/icons/footer/silpo.svg?react';
 import DSLogoIcon from '@/icons/footer/ds.svg?react';
 import DelimiterIcon from '@/icons/footer/delimiter.svg?react';
+import styled from '@emotion/styled';
 
-export const StyledFooter = styled.footer`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #500800;
   padding-top: ${({ theme }) => theme.spacing(30)}px;
   padding-bottom: ${({ theme }) => theme.spacing(16)}px;
 `;
