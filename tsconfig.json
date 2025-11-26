@@ -6,6 +6,7 @@
       "@ErrorPageComponents/*": ["./src/components/ErrorPage/*"],
       "@CommonComponents/*": ["./src/components/common/*"],
       "@MainPageComponents/*": ["./src/components/MainPage/*"],
+      "@MaisiePageComponents/*": ["./src/components/MaisiePage/*"],
       // animations
       "@AnimatedGeneralComponents/*": ["./src/components/Animated/General/*"],
       "@AnimatedMainPageComponents/*": ["./src/components/Animated/MainPage/*"]

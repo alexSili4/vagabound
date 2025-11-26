@@ -34,8 +34,10 @@ import {
   BarrelBottomName,
   BarrelTopName,
   BarrelRightName,
+  BarrelLinkLeft,
 } from './BarrelsSection.styled';
 import cut from '@/images/barrels/cut.webp';
+import { PagePaths } from '@/constants';
 
 const BarrelsSection: FC = () => {
   return (
@@ -43,16 +45,18 @@ const BarrelsSection: FC = () => {
       <CutImg src={cut} alt='Декоративний обрив' />
       <Title>Бочки</Title>
       <Container>
-        <BarrelCardLeft>
-          <BarrelImgLeftWrap>
-            <BarrelLeftImg src={barrelLeft} alt='МЕЙЗІ' />
-            <BarrelLeftName>мейзі</BarrelLeftName>
-          </BarrelImgLeftWrap>
-          <BarrelTextWrap>
-            <BarrelTitle>МЕЙЗІ</BarrelTitle>
-            <BarrelText>subtitle</BarrelText>
-          </BarrelTextWrap>
-        </BarrelCardLeft>
+        <BarrelLinkLeft to={PagePaths.maisie}>
+          <BarrelCardLeft>
+            <BarrelImgLeftWrap>
+              <BarrelLeftImg src={barrelLeft} alt='МЕЙЗІ' />
+              <BarrelLeftName>мейзі</BarrelLeftName>
+            </BarrelImgLeftWrap>
+            <BarrelTextWrap>
+              <BarrelTitle>МЕЙЗІ</BarrelTitle>
+              <BarrelText>subtitle</BarrelText>
+            </BarrelTextWrap>
+          </BarrelCardLeft>
+        </BarrelLinkLeft>
 
         <BarrelCardBottom>
           <BarrelImgBottomWrap>

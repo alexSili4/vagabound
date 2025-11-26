@@ -1,15 +1,23 @@
-import MainPage from '@/pages/MainPage';
-import { FC } from 'react';
-import Header from '@CommonComponents/Header';
-// import PreviewVideo from '@CommonComponents/PreviewVideo';
+import { FC, lazy } from 'react';
+import { PagePaths } from '@/constants';
+import { Route, Routes } from 'react-router-dom';
+import SharedLayout from '@CommonComponents/SharedLayout';
+
+const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
+const MainPage = lazy(() => import('@/pages/MainPage'));
+const MaisiePage = lazy(() => import('@/pages/MaisiePage'));
 
 const App: FC = () => {
   return (
-    <>
-      {/* <PreviewVideo /> */}
-      <Header />
-      <MainPage />
-    </>
+    // <MainPage />
+    <Routes>
+      <Route path={PagePaths.root} element={<SharedLayout />}>
+        <Route index element={<MainPage />} />
+        <Route path={PagePaths.root} element={<MainPage />} />
+        <Route path={PagePaths.maisie} element={<MaisiePage />} />
+        <Route path='*' element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 };
 

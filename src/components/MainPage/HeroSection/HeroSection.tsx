@@ -15,8 +15,8 @@ import imgHover from '@/images/hero/switcher-hover.webp';
 
 const HeroSection: FC = () => {
   return (
-    <Section>
-      <Container data-header-theme='light'>
+    <Section data-header-theme='light'>
+      <Container>
         <Title>the spirit worth chasing / filling</Title>
         <SwitcherBtnWrap>
           <Logo />

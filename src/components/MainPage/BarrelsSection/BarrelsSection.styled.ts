@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const Section = styled.section`
   position: relative;
@@ -29,6 +30,7 @@ export const LightLeftWrap = styled.div`
   position: absolute;
   top: -235px;
   left: -315px;
+  pointer-events: none;
 `;
 
 export const LightLeft = styled.img`
@@ -40,6 +42,7 @@ export const LightRightWrap = styled.div`
   position: absolute;
   top: -175px;
   right: -225px;
+  pointer-events: none;
 `;
 
 export const LightRight = styled.img`
@@ -47,10 +50,13 @@ export const LightRight = styled.img`
   height: 660px;
 `;
 
-export const BarrelCardLeft = styled.div`
+export const BarrelLinkLeft = styled(Link)`
   position: absolute;
   top: -15px;
   left: 11px;
+`;
+
+export const BarrelCardLeft = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)}px;

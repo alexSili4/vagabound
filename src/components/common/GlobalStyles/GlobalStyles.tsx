@@ -4,6 +4,9 @@ import 'modern-normalize';
 import { theme } from '@/constants';
 import {
   cormorantGaramondLight,
+  cormorantGaramondMedium,
+  cormorantGaramondRegular,
+  cormorantGaramondSemiBold,
   picaRegular,
   rubikBold,
   rubikRegular,
@@ -46,6 +49,27 @@ const GlobalStyles: FC = () => (
         src: local(${theme.fontFamily.cormorantGaramond}),
           url(${cormorantGaramondLight}) format('truetype');
         font-weight: 300;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.cormorantGaramond};
+        src: local(${theme.fontFamily.cormorantGaramond}),
+          url(${cormorantGaramondRegular}) format('truetype');
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.cormorantGaramond};
+        src: local(${theme.fontFamily.cormorantGaramond}),
+          url(${cormorantGaramondMedium}) format('truetype');
+        font-weight: 500;
+      }
+
+      @font-face {
+        font-family: ${theme.fontFamily.cormorantGaramond};
+        src: local(${theme.fontFamily.cormorantGaramond}),
+          url(${cormorantGaramondSemiBold}) format('truetype');
+        font-weight: 600;
       }
 
       body {

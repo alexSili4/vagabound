@@ -5,10 +5,12 @@ import { ThemeProvider } from '@emotion/react';
 import GlobalStyles from '@CommonComponents/GlobalStyles';
 import { BrowserRouter } from 'react-router-dom';
 import App from '@/components/App';
+import ScrollToTop from '@/components/common/ScrollToTop/ScrollToTop';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <ThemeProvider theme={theme}>
         <App />
         <GlobalStyles />

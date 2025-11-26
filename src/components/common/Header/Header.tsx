@@ -12,6 +12,8 @@ import {
   OrderLinkTitle,
   OrderLinkActiveBg,
 } from './Header.styled';
+import { Link, useLocation } from 'react-router-dom';
+import { PagePaths } from '@/constants';
 
 interface INavigationProps {
   isDark: boolean;
@@ -28,7 +30,9 @@ const Navigation: FC<INavigationProps> = ({ isDark }) => {
           СОЦМЕРЕЖІ
         </Anchor>
       </NavWrap>
-      <VagaboungLogo isDark={isDark} />
+      <Link to={PagePaths.root}>
+        <VagaboungLogo isDark={isDark} />
+      </Link>
       <NavWrap>
         <Anchor href='/' $isDark={isDark}>
           КОНТАКТИ
@@ -40,9 +44,15 @@ const Navigation: FC<INavigationProps> = ({ isDark }) => {
     </Nav>
   );
 };
+
 const Header: FC = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState<boolean>(false);
   const headerRef = useRef<HTMLElement>(null);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    setIsDark(false);
+  }, [pathname]);
 
   useEffect(() => {
     const checkBackgroundColor = () => {
@@ -128,8 +138,6 @@ const Header: FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Initial check
-    checkBackgroundColor();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);

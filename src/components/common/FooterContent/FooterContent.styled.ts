@@ -63,7 +63,6 @@ export const TextWrap = styled.div`
 `;
 
 export const Text = styled.p`
-  margin-top: ${({ theme }) => theme.spacing(12)}px;
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.cormorantGaramond};
   font-weight: 400;

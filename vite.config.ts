@@ -10,6 +10,7 @@ export default defineConfig({
       '@CommonComponents': '/src/components/common',
       '@ErrorPageComponents': '/src/components/ErrorPage',
       '@MainPageComponents': '/src/components/MainPage',
+      '@MaisiePageComponents': '/src/components/MaisiePage',
       // animations
       '@AnimatedMainPageComponents': '/src/components/Animated/MainPage',
       '@AnimatedGeneralComponents': '/src/components/Animated/General',

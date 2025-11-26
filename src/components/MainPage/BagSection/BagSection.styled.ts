@@ -77,30 +77,74 @@ export const OpenBag = styled.img`
   transform: translateX(-50%);
 `;
 
-export const Photo = styled.img`
+export const Photo = styled.img<IStyledProps>`
   position: absolute;
   bottom: 25px;
   left: -53px;
   width: 452px;
   height: 596px;
+  transform: scale(${({ isOpen }) => (isOpen ? 1 : 0.6)})
+    rotate(${({ isOpen }) => (isOpen ? 0 : '6deg')})
+    translateX(${({ isOpen }) => (isOpen ? 0 : '80px')})
+    translateY(${({ isOpen }) => (isOpen ? 0 : '80px')});
+  transition: transform ${({ theme }) => theme.transition800};
 `;
 
-export const Ticket = styled.img`
+export const Ticket = styled.img<IStyledProps>`
   position: absolute;
   right: 233px;
   bottom: 124px;
   width: 205px;
   height: 171px;
+  transform: scale(${({ isOpen }) => (isOpen ? 1 : 0.8)});
+  transition: transform ${({ theme }) => theme.transition800};
 `;
 
-export const Letter = styled.div`
+export const Letter = styled.div<IStyledProps>`
   position: absolute;
   right: 77px;
   bottom: 178px;
   width: 332px;
   height: 292px;
+  padding: ${({ theme }) => theme.spacing(8)}px;
+  padding-top: ${({ theme }) => theme.spacing(3)}px;
   background-image: url(${letterBg});
   background-position: 0 0;
   background-size: 100% 100%;
-  rotate: 6.12deg;
+  transform: scale(${({ isOpen }) => (isOpen ? 1 : 0.6)})
+    rotate(${({ isOpen }) => (isOpen ? '6.12deg' : '6deg')});
+  transition: transform ${({ theme }) => theme.transition800};
+`;
+
+export const LetterTitle = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 56px;
+  line-height: 0.7;
+  letter-spacing: 0%;
+  text-align: left;
+`;
+
+export const LetterText = styled.p`
+  margin-top: ${({ theme }) => theme.spacing(1.5)}px;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: left;
+`;
+
+export const LetterDesc = styled.p`
+  margin-top: ${({ theme }) => theme.spacing(3)}px;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 48px;
+  line-height: 0.7;
+  letter-spacing: 0%;
+  text-align: right;
 `;

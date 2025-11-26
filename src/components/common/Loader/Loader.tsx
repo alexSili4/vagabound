@@ -1,24 +1,28 @@
 import { FC } from 'react';
-import { ThreeDots } from 'react-loader-spinner';
+import { Container, Logo, LogoWrap, Content, Progress } from './Loader.styled';
 
-const Loader: FC = () => (
-  <ThreeDots
-    height='120'
-    width='120'
-    radius='9'
-    color='#808080'
-    ariaLabel='three-dots-loading'
-    wrapperStyle={{
-      position: 'fixed',
-      top: '50%',
-      left: '50%',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      transform: 'translateX(-50%) translateY(-50%)',
-    }}
-    visible
-  />
-);
+const images = [
+  '/logo-1.webp',
+  '/logo-2.webp',
+  '/logo-3.webp',
+  '/logo-4.webp',
+  '/logo-5.webp',
+  '/logo-6.webp',
+];
+
+const Loader: FC = () => {
+  return (
+    <Container>
+      <Content>
+        <LogoWrap>
+          {images.map((src, index) => (
+            <Logo key={src} src={src} alt='' $index={index} />
+          ))}
+        </LogoWrap>
+        <Progress></Progress>
+      </Content>
+    </Container>
+  );
+};
 
 export default Loader;

@@ -13,6 +13,9 @@ import {
   OpenBag,
   Photo,
   Ticket,
+  LetterDesc,
+  LetterText,
+  LetterTitle,
 } from './BagSection.styled';
 import label from '@/images/bag/label.webp';
 import arrow from '@/images/bag/arrow.webp';
@@ -43,9 +46,16 @@ const BagSection: FC = () => {
 
           <Open isOpen={isOpen}>
             <OpenBag src={openBag} alt='' />
-            <Photo src={photo} alt='' />
-            <Ticket src={ticket} alt='' />
-            <Letter></Letter>
+            <Photo src={photo} alt='' isOpen={isOpen} />
+            <Ticket src={ticket} alt='' isOpen={isOpen} />
+            <Letter isOpen={isOpen}>
+              <LetterTitle>Lorem ipsum dolor sit amet,</LetterTitle>
+              <LetterText>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+                vulputate libero et velit interdum, ac aliquet odio mattis.
+              </LetterText>
+              <LetterDesc>з любовю,Тимурчик</LetterDesc>
+            </Letter>
           </Open>
         </BagBtn>
       </Container>
