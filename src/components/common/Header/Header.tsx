@@ -25,6 +25,7 @@ import { AnimatePresence, Transition, Variants } from 'framer-motion';
 
 interface INavigationProps {
   isDark: boolean;
+  isMobMenu?: boolean;
 }
 
 interface IMobileMenuProps {
@@ -35,7 +36,7 @@ interface IOrderLinkComponentProps {
   isMobMenu?: boolean;
 }
 
-const Navigation: FC<INavigationProps> = ({ isDark }) => {
+const Navigation: FC<INavigationProps> = ({ isDark, isMobMenu }) => {
   return (
     <Nav>
       <NavWrap>
@@ -47,7 +48,7 @@ const Navigation: FC<INavigationProps> = ({ isDark }) => {
         </Anchor>
       </NavWrap>
       <Link to={PagePaths.root}>
-        <VagaboungLogo isDark={isDark} />
+        <VagaboungLogo isDark={isDark} isMobMenu={isMobMenu} />
       </Link>
       <NavWrap>
         <Anchor href='/' $isDark={isDark}>
@@ -116,19 +117,19 @@ const MobileMenu: FC<IMobileMenuProps> = ({ isOpen }) => {
         >
           <MobMenuLinks>
             <ListItem>
-              <MobAnchor></MobAnchor>
+              <MobAnchor href='/'>Про проєкт</MobAnchor>
             </ListItem>
             <ListItem>
-              <MobAnchor></MobAnchor>
+              <MobAnchor href='/'>БОЧКИ</MobAnchor>
             </ListItem>
             <ListItem>
-              <MobAnchor></MobAnchor>
+              <MobAnchor href='/'>КОНТАКТИ</MobAnchor>
             </ListItem>
             <ListItem>
-              <MobAnchor></MobAnchor>
+              <MobAnchor href='/'>Часті питання</MobAnchor>
             </ListItem>
             <ListItem>
-              <MobAnchor></MobAnchor>
+              <MobAnchor href='/'>СОЦМЕРЕЖІ</MobAnchor>
             </ListItem>
           </MobMenuLinks>
           <OrderLinkComponent isMobMenu />
@@ -138,13 +139,15 @@ const MobileMenu: FC<IMobileMenuProps> = ({ isOpen }) => {
   );
 };
 
-const MobileMenuContainer: FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+interface IMobileMenuContainerProps {
+  isOpen: boolean;
+  toggleIsOpen: () => void;
+}
 
-  const toggleIsOpen = () => {
-    setIsOpen((prevState) => !prevState);
-  };
-
+const MobileMenuContainer: FC<IMobileMenuContainerProps> = ({
+  isOpen,
+  toggleIsOpen,
+}) => {
   return (
     <>
       <MobileMenu isOpen={isOpen} />
@@ -158,8 +161,13 @@ const MobileMenuContainer: FC = () => {
 
 const Header: FC = () => {
   const [isDark, setIsDark] = useState<boolean>(false);
+  const [isMobMenuOpen, setIsMobMenuOpen] = useState<boolean>(false);
   const headerRef = useRef<HTMLElement>(null);
   const { pathname } = useLocation();
+
+  const toggleMobMenu = () => {
+    setIsMobMenuOpen((prevState) => !prevState);
+  };
 
   useEffect(() => {
     setIsDark(false);
@@ -259,10 +267,13 @@ const Header: FC = () => {
     <StyledHeader ref={headerRef}>
       <Container>
         <DSLogo isDark={isDark} />
-        <Navigation isDark={isDark} />
+        <Navigation isDark={isDark} isMobMenu={isMobMenuOpen} />
         <Controls>
           <OrderLinkComponent />
-          <MobileMenuContainer />
+          <MobileMenuContainer
+            isOpen={isMobMenuOpen}
+            toggleIsOpen={toggleMobMenu}
+          />
         </Controls>
       </Container>
     </StyledHeader>

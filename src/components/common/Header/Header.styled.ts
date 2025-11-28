@@ -135,11 +135,15 @@ export const Anchor = styled.a<{ $isDark?: boolean }>`
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
-export const VagaboungLogo = styled(VagaboungLogoIcon)<{ isDark?: boolean }>`
+export const VagaboungLogo = styled(VagaboungLogoIcon)<{
+  isDark?: boolean;
+  isMobMenu?: boolean;
+}>`
   position: relative;
   z-index: 100;
   width: 131px;
-  fill: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
+  fill: ${({ isDark, isMobMenu }) =>
+    isMobMenu ? '#E8E8E8' : isDark ? '#FFFFFF' : '#252525'};
   transition: fill ${({ theme }) => theme.transitionDurationAndFunc};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
@@ -190,6 +194,8 @@ export const MobMenuLinks = styled.ul`
 export const ListItem = styled.li``;
 
 export const MobAnchor = styled.a`
+  display: block;
+  width: 100%;
   color: #f6c6e4;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 700;
