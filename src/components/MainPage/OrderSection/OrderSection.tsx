@@ -7,6 +7,8 @@ import {
 } from 'react';
 import postbox from '@/images/order/postbox.webp';
 import letter from '@/images/order/letter.webp';
+import letterPartTop from '@/images/order/letter-part-top.webp';
+import letterPartTopGreen from '@/images/order/letter-part-top-green.webp';
 import letterPart from '@/images/order/letter-part.webp';
 import {
   Section,
@@ -29,6 +31,12 @@ import {
   FormHeader,
   FormText,
   FormTitle,
+  LetterPartTop,
+  LetterPartTopGreen,
+  LetterPartTopWrap,
+  PostboxAlt,
+  PostboxWrap,
+  BlackBox,
 } from './OrderSection.styled';
 import { IContactsForm } from '@/types/order';
 import { useForm } from 'react-hook-form';
@@ -41,6 +49,11 @@ interface IInputProps {
   onOptionChange?: (option: string) => void;
   type?: HTMLInputTypeAttribute;
   settings: object;
+}
+
+interface IOrderFormProps {
+  updateIsSuccess: (data: boolean) => void;
+  isSuccess: boolean;
 }
 
 const Input: FC<IInputProps> = ({
@@ -103,7 +116,7 @@ const Input: FC<IInputProps> = ({
   );
 };
 
-const OrderForm: FC = () => {
+const OrderForm: FC<IOrderFormProps> = ({ updateIsSuccess, isSuccess }) => {
   const { register, handleSubmit, reset, setValue } = useForm<IContactsForm>();
 
   const onOptionChange = (option: string) => {
@@ -112,6 +125,7 @@ const OrderForm: FC = () => {
 
   const onSubmit = (data: IContactsForm) => {
     console.log(data);
+    updateIsSuccess(true);
     reset();
   };
 
@@ -130,7 +144,7 @@ const OrderForm: FC = () => {
   };
 
   return (
-    <FormContainer>
+    <FormContainer isSuccess={isSuccess}>
       <FormHeader>
         <FormTitle>Надішліть свої контактні дані для передзамовлення</FormTitle>
         <FormText>
@@ -174,15 +188,25 @@ const OrderForm: FC = () => {
 };
 
 const OrderSection: FC = () => {
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
+
   return (
     <Section>
       <Container>
-        <Postbox src={postbox} alt='' />
+        <PostboxWrap>
+          <BlackBox></BlackBox>
+          <Postbox src={postbox} alt='' />
+          <PostboxAlt src={postbox} alt='' isSuccess={isSuccess} />
+        </PostboxWrap>
 
-        <FormWrap>
+        <FormWrap isSuccess={isSuccess}>
           <Letter src={letter} alt='' />
-          <OrderForm />
+          <OrderForm updateIsSuccess={setIsSuccess} isSuccess={isSuccess} />
           <LetterPart src={letterPart} alt='' />
+          <LetterPartTopWrap isSuccess={isSuccess}>
+            <LetterPartTopGreen src={letterPartTopGreen} alt='' />
+            <LetterPartTop src={letterPartTop} alt='' isSuccess={isSuccess} />
+          </LetterPartTopWrap>
         </FormWrap>
       </Container>
     </Section>

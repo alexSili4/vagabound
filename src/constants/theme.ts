@@ -13,6 +13,7 @@ interface ITheme {
   };
   fontFamily: Record<'rubik' | 'cormorantGaramond' | 'pica' | 'soul', string>;
   transitionDurationAndFunc: string;
+  transitionWithDelay: string;
   transition800: string;
   spacing: (value?: number) => number;
 }
@@ -39,6 +40,7 @@ const theme: ITheme = {
   },
   // shadows: {  },
   transitionDurationAndFunc: '400ms cubic-bezier(0.4, 0, 0.2, 1)',
+  transitionWithDelay: '400ms cubic-bezier(0.4, 0, 0.2, 1) 400ms',
   transition800: '800ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => value * 4,
 };

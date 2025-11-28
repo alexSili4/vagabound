@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import formBg from '@/images/order/form-bg.webp';
+import { animations } from '@/constants';
 
 export const Section = styled.section`
   background-color: #500800;
@@ -14,17 +16,49 @@ export const Container = styled.div`
   margin-right: auto;
 `;
 
+export const PostboxWrap = styled.div`
+  position: relative;
+  width: auto;
+`;
+
 export const Postbox = styled.img`
+  position: relative;
   width: 402px;
 `;
 
-export const FormWrap = styled.div`
+export const BlackBox = styled.div`
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  width: 380px;
+  height: 350px;
+  background-color: #000000;
+`;
+
+export const PostboxAlt = styled(Postbox)<{ isSuccess: boolean }>`
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: ${({ isSuccess }) => (isSuccess ? 1 : 0)};
+  transition: opacity ${({ theme }) => theme.transitionWithDelay};
+  transition-delay: 300ms;
+`;
+
+export const FormWrap = styled.div<{ isSuccess: boolean }>`
   position: absolute;
   bottom: 37px;
   left: 263px;
   display: flex;
   height: 150dvh;
   overflow: hidden;
+  ${({ isSuccess }) =>
+    isSuccess &&
+    css`
+      animation: ${animations.letter} 1s linear both;
+      animation-delay: 400ms;
+    `}
 `;
 
 export const Letter = styled.img`
@@ -32,16 +66,43 @@ export const Letter = styled.img`
   width: 656px;
 `;
 
+export const LetterPartTopWrap = styled.div<{ isSuccess: boolean }>`
+  position: absolute;
+  z-index: ${({ isSuccess }) => (isSuccess ? 12 : 9)};
+  bottom: 369px;
+  left: 14px;
+  transform: rotateX(${({ isSuccess }) => (isSuccess ? '180deg' : '0deg')});
+  transform-origin: bottom;
+  transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+  transition-delay: 400ms;
+`;
+
+export const LetterPartTop = styled.img<{ isSuccess: boolean }>`
+  position: relative;
+  width: 605px;
+  opacity: ${({ isSuccess }) => (isSuccess ? 0 : 1)};
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+`;
+
+export const LetterPartTopGreen = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+`;
+
 export const LetterPart = styled.img`
   position: absolute;
+  z-index: 11;
   bottom: 0px;
-  left: 46px;
-  width: 548px;
+  left: 12px;
+  width: 612px;
   pointer-events: none;
 `;
 
-export const FormContainer = styled.div`
+export const FormContainer = styled.div<{ isSuccess: boolean }>`
   position: absolute;
+  z-index: 10;
   bottom: 58px;
   left: 50%;
   display: flex;
@@ -55,10 +116,13 @@ export const FormContainer = styled.div`
   background-position: 0 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  translate: -50% 0;
-  rotate: -2deg;
+  translate: ${({ isSuccess }) =>
+    isSuccess ? '-50% 55% !important' : '-50% 0'};
+  rotate: ${({ isSuccess }) => (isSuccess ? '0deg !important' : '-2deg')};
+  opacity: ${({ isSuccess }) => (isSuccess ? 0 : 1)};
   transition: translate ${({ theme }) => theme.transitionDurationAndFunc},
-    rotate ${({ theme }) => theme.transitionDurationAndFunc};
+    rotate ${({ theme }) => theme.transitionDurationAndFunc},
+    opacity ${({ theme }) => theme.transitionWithDelay};
 
   &:not(:hover, :has(input:focus)) {
     translate: -50% 208px;
