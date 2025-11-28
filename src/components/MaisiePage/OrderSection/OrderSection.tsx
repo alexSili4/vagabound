@@ -9,8 +9,8 @@ import {
   Title,
   TitleWrap,
 } from './OrderSection.styled';
-import logo from '@/images/barrel-page/maisie/logo.png';
-import photo from '@/images/barrel-page/maisie/photo.png';
+import logo from '@/images/barrel-page/maisie/logo.webp';
+import photo from '@/images/barrel-page/maisie/photo.webp';
 
 const OrderSection: FC = () => {
   return (

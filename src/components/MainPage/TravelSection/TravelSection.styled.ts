@@ -44,7 +44,7 @@ export const BarrelCenterWrap = styled(BarrelWrap)`
 
 export const Barrel = styled.img`
   position: absolute;
-  bottom: 20dvh;
+  bottom: 16.5dvh;
   left: 50%;
   height: 50dvh;
   aspect-ratio: 343 / 433;
