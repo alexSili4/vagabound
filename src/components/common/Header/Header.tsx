@@ -11,12 +11,28 @@ import {
   OrderLinkBg,
   OrderLinkTitle,
   OrderLinkActiveBg,
+  Controls,
+  MenuBtn,
+  Backdrop,
+  MobMenuLinks,
+  ListItem,
+  MobAnchor,
 } from './Header.styled';
 import { Link, useLocation } from 'react-router-dom';
 import { PagePaths } from '@/constants';
+import { BsThreeDots } from 'react-icons/bs';
+import { AnimatePresence, Transition, Variants } from 'framer-motion';
 
 interface INavigationProps {
   isDark: boolean;
+}
+
+interface IMobileMenuProps {
+  isOpen: boolean;
+}
+
+interface IOrderLinkComponentProps {
+  isMobMenu?: boolean;
 }
 
 const Navigation: FC<INavigationProps> = ({ isDark }) => {
@@ -42,6 +58,101 @@ const Navigation: FC<INavigationProps> = ({ isDark }) => {
         </Anchor>
       </NavWrap>
     </Nav>
+  );
+};
+
+export const OrderLinkComponent: FC<IOrderLinkComponentProps> = ({
+  isMobMenu = false,
+}) => {
+  return (
+    <OrderLink href='/' isMobMenu={isMobMenu}>
+      <OrderLinkBg></OrderLinkBg>
+      <OrderLinkActiveBg></OrderLinkActiveBg>
+      <OrderLinkTitle>ЗАМОВИТИ</OrderLinkTitle>
+    </OrderLink>
+  );
+};
+
+const MobileMenu: FC<IMobileMenuProps> = ({ isOpen }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isOpen]);
+
+  const transition: Transition = {
+    duration: 0.6,
+    ease: [0.25, 0.1, 0.25, 1],
+  };
+
+  const containerVariants: Variants = {
+    initial: {
+      y: 300,
+      opacity: 0,
+      transition,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+      transition,
+    },
+    exit: {
+      y: 300,
+      opacity: 0,
+      transition,
+    },
+  };
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <Backdrop
+          variants={containerVariants}
+          initial='initial'
+          animate='animate'
+          exit='exit'
+        >
+          <MobMenuLinks>
+            <ListItem>
+              <MobAnchor></MobAnchor>
+            </ListItem>
+            <ListItem>
+              <MobAnchor></MobAnchor>
+            </ListItem>
+            <ListItem>
+              <MobAnchor></MobAnchor>
+            </ListItem>
+            <ListItem>
+              <MobAnchor></MobAnchor>
+            </ListItem>
+            <ListItem>
+              <MobAnchor></MobAnchor>
+            </ListItem>
+          </MobMenuLinks>
+          <OrderLinkComponent isMobMenu />
+        </Backdrop>
+      )}
+    </AnimatePresence>
+  );
+};
+
+const MobileMenuContainer: FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleIsOpen = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
+  return (
+    <>
+      <MobileMenu isOpen={isOpen} />
+
+      <MenuBtn type='button' onClick={toggleIsOpen}>
+        <BsThreeDots size={40} />
+      </MenuBtn>
+    </>
   );
 };
 
@@ -149,11 +260,10 @@ const Header: FC = () => {
       <Container>
         <DSLogo isDark={isDark} />
         <Navigation isDark={isDark} />
-        <OrderLink href='/'>
-          <OrderLinkBg></OrderLinkBg>
-          <OrderLinkActiveBg></OrderLinkActiveBg>
-          <OrderLinkTitle>ЗАМОВИТИ</OrderLinkTitle>
-        </OrderLink>
+        <Controls>
+          <OrderLinkComponent />
+          <MobileMenuContainer />
+        </Controls>
       </Container>
     </StyledHeader>
   );

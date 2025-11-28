@@ -2,7 +2,7 @@ import { FC, lazy } from 'react';
 import { PagePaths } from '@/constants';
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from '@CommonComponents/SharedLayout';
-// import PreviewVideo from '@CommonComponents/PreviewVideo';
+import PreviewVideo from '@CommonComponents/PreviewVideo';
 
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 const MainPage = lazy(() => import('@/pages/MainPage'));

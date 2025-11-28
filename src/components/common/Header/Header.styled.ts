@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import DSLogoIcon from '@/icons/ds-logo.svg?react';
 import VagaboungLogoIcon from '@/icons/vagabound.svg?react';
+import { motion } from 'framer-motion';
 
 export const StyledHeader = styled.header`
   position: fixed;
@@ -18,24 +19,39 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1200px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 1200px;
+  }
 `;
 
 export const DSLogo = styled(DSLogoIcon)<{ isDark: boolean }>`
   width: 125px;
   fill: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
   transition: fill ${({ theme }) => theme.transitionDurationAndFunc};
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
+  }
 `;
 
-export const OrderLink = styled.a`
+export const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(2)}px;
+`;
+
+export const OrderLink = styled.a<{ isMobMenu: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 122px;
-  height: 44px;
+  width: ${({ isMobMenu }) => (isMobMenu ? '100%' : '122px')};
+  height: ${({ isMobMenu }) => (isMobMenu ? '48px' : '44px')};
   background-color: #f6c6e4;
   border-radius: 8px;
   color: #252525;
@@ -99,6 +115,12 @@ export const NavWrap = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(3)}px;
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: адуч;
+  }
 `;
 
 export const Anchor = styled.a<{ $isDark?: boolean }>`
@@ -114,7 +136,67 @@ export const Anchor = styled.a<{ $isDark?: boolean }>`
 `;
 
 export const VagaboungLogo = styled(VagaboungLogoIcon)<{ isDark?: boolean }>`
-  width: 154px;
+  position: relative;
+  z-index: 100;
+  width: 131px;
   fill: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
   transition: fill ${({ theme }) => theme.transitionDurationAndFunc};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 154px;
+  }
+`;
+
+// mobile menu
+export const MenuBtn = styled.button`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.36);
+  color: #252525;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: none;
+  }
+`;
+
+export const Backdrop = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+  background-color: #1a3e2f;
+  padding-top: ${({ theme }) => theme.spacing(8)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(8)}px;
+  padding-left: ${({ theme }) => theme.spacing(4)}px;
+  padding-right: ${({ theme }) => theme.spacing(4)}px;
+`;
+
+export const MobMenuLinks = styled.ul`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing(8)}px;
+`;
+
+export const ListItem = styled.li``;
+
+export const MobAnchor = styled.a`
+  color: #f6c6e4;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 2%;
+  text-align: center;
+  text-transform: uppercase;
 `;

@@ -3,14 +3,8 @@ declare module '@emotion/react' {
 }
 
 interface ITheme {
-  padding: {
-    container: number;
-  };
   colors: Record<'white', string>;
-  containerWidth: {
-    desktop: number;
-    mobile: number;
-  };
+  breakpoints: Record<'desk', number>;
   fontFamily: Record<'rubik' | 'cormorantGaramond' | 'pica' | 'soul', string>;
   transitionDurationAndFunc: string;
   transitionWithDelay: string;
@@ -28,17 +22,7 @@ const theme: ITheme = {
     pica: 'IM FELL DW Pica',
     soul: 'Soul Adventures Cyr',
   },
-  // fontWeight: {  },
-  // fontSize: {  },
-  padding: {
-    container: 16,
-  },
-  // borderRadius: {  },
-  containerWidth: {
-    desktop: 1376,
-    mobile: 375,
-  },
-  // shadows: {  },
+  breakpoints: { desk: 1440 },
   transitionDurationAndFunc: '400ms cubic-bezier(0.4, 0, 0.2, 1)',
   transitionWithDelay: '400ms cubic-bezier(0.4, 0, 0.2, 1) 400ms',
   transition800: '800ms cubic-bezier(0.4, 0, 0.2, 1)',
