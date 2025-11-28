@@ -5,7 +5,7 @@ const letter = keyframes`
     transform: translateX(0) translateY(0)
   }
 
-  95% {
+  60% {
 	  transform: translateX(-60%) translateY(-10%) scale(0.4);
 
   }

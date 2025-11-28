@@ -48,6 +48,7 @@ export const PostboxAlt = styled(Postbox)<{ isSuccess: boolean }>`
 
 export const FormWrap = styled.div<{ isSuccess: boolean }>`
   position: absolute;
+  z-index: 15;
   bottom: 37px;
   left: 263px;
   display: flex;
@@ -56,7 +57,7 @@ export const FormWrap = styled.div<{ isSuccess: boolean }>`
   ${({ isSuccess }) =>
     isSuccess &&
     css`
-      animation: ${animations.letter} 1s linear both;
+      animation: ${animations.letter} 1200ms linear both;
       animation-delay: 400ms;
     `}
 `;
@@ -73,7 +74,8 @@ export const LetterPartTopWrap = styled.div<{ isSuccess: boolean }>`
   left: 14px;
   transform: rotateX(${({ isSuccess }) => (isSuccess ? '180deg' : '0deg')});
   transform-origin: bottom;
-  transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+  transition: transform ${({ theme }) => theme.transitionDurationAndFunc},
+    z-index 0s;
   transition-delay: 400ms;
 `;
 
