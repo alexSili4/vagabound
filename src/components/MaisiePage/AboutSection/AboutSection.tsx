@@ -8,7 +8,7 @@ import {
   TitleWrap,
   Frame,
 } from './AboutSection.styled';
-import frame from '@/images/barrel-page/maisie/frame.png';
+import frame from '@/images/barrel-page/maisie/frame.webp';
 
 const AboutSection: FC = () => {
   return (

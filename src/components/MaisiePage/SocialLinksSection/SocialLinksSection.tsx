@@ -10,7 +10,7 @@ import {
   Title,
   Cut,
 } from './SocialLinksSection.styled';
-import cut from '@/images/barrel-page/maisie/cut.png';
+import cut from '@/images/barrel-page/maisie/cut.webp';
 
 const SocialLinksSection: FC = () => {
   return (
