@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import DSLogoIcon from '@/icons/ds-logo.svg?react';
-import VagaboungLogoIcon from '@/icons/vagabound.svg?react';
+import DSLogoIcon from '@/icons/header/ds-logo.svg?react';
+import VagaboungLogoIcon from '@/icons/header/vagabound.svg?react';
+import CartIcon from '@/icons/header/cart.svg?react';
 import { motion } from 'framer-motion';
 
 export const StyledHeader = styled.header`
@@ -39,15 +40,15 @@ export const DSLogo = styled(DSLogoIcon)<{ isDark: boolean }>`
   }
 `;
 
-export const Controls = styled.div`
+export const MobControls = styled.div`
   display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing(2)}px;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(10)}px;
 `;
 
-export const OrderLink = styled.a<{ isMobMenu: boolean }>`
+export const OrderLink = styled.a<{ isMobMenu: boolean; isDesk: boolean }>`
   position: relative;
-  display: flex;
+  display: ${({ isDesk }) => (isDesk ? 'none' : 'flex')};
   align-items: center;
   justify-content: center;
   width: ${({ isMobMenu }) => (isMobMenu ? '100%' : '122px')};
@@ -67,6 +68,10 @@ export const OrderLink = styled.a<{ isMobMenu: boolean }>`
     outline: none;
     box-shadow: 0px 0px 0px 4px rgba(246, 198, 228, 0.48),
       0px 0px 0px 2px rgba(26, 62, 47, 1);
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: flex;
   }
 `;
 
@@ -152,7 +157,7 @@ export const VagaboungLogo = styled(VagaboungLogoIcon)<{
 `;
 
 // mobile menu
-export const MenuBtn = styled.button`
+export const MenuBtn = styled.button<{ isDark: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
@@ -160,8 +165,7 @@ export const MenuBtn = styled.button`
   width: 44px;
   height: 44px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.36);
-  color: #252525;
+  color: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
     display: none;
@@ -205,4 +209,49 @@ export const MobAnchor = styled.a`
   letter-spacing: 2%;
   text-align: center;
   text-transform: uppercase;
+`;
+
+export const MobSocialLinks = styled.ul`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(5)}px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const DSSocialLogo = styled.img`
+  width: 24px;
+  height: 28px;
+`;
+
+export const SilpoSocialLogo = styled.img`
+  width: 44px;
+  height: 28px;
+`;
+
+export const MobOrderLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #f6c6e4;
+  border-radius: 8px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: none;
+  }
+`;
+
+export const Cart = styled(CartIcon)`
+  width: 20px;
+  height: 20px;
+`;
+
+export const ExternalLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #e8e8e8;
 `;

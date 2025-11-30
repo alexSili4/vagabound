@@ -1,5 +1,5 @@
 import { FC } from 'react';
-// import HeroSection from '@MainPageComponents/HeroSection';
+import HeroSection from '@MainPageComponents/HeroSection';
 // import AboutSection from '@MainPageComponents/AboutSection';
 // import BarrelsSection from '@MainPageComponents/BarrelsSection';
 // import TravelSection from '@MainPageComponents/TravelSection';
@@ -7,14 +7,14 @@ import { FC } from 'react';
 // import MediaSection from '@MainPageComponents/MediaSection';
 // import BottlesSection from '@MainPageComponents/BottlesSection';
 // import OrderSection from '@MainPageComponents/OrderSection';
-// import FAQSection from '@MainPageComponents/FAQSection';
+import FAQSection from '@MainPageComponents/FAQSection';
 // import BagSection from '@MainPageComponents/BagSection';
 
 const Main: FC = () => {
   return (
     <>
       <div style={{ overflow: 'hidden' }}>
-        {/* <HeroSection /> */}
+        <HeroSection />
         {/* <BarrelsSection /> */}
       </div>
       {/* <AboutSection /> */}
@@ -23,7 +23,7 @@ const Main: FC = () => {
       {/* <MediaSection /> */}
       {/* <BottlesSection /> */}
       {/* <OrderSection /> */}
-      {/* <FAQSection /> */}
+      <FAQSection />
       {/* <BagSection /> */}
     </>
   );

@@ -11,17 +11,28 @@ import {
   OrderLinkBg,
   OrderLinkTitle,
   OrderLinkActiveBg,
-  Controls,
+  MobControls,
   MenuBtn,
   Backdrop,
   MobMenuLinks,
   ListItem,
   MobAnchor,
+  MobSocialLinks,
+  DSSocialLogo,
+  SilpoSocialLogo,
+  MobOrderLink,
+  Cart,
+  ExternalLink,
 } from './Header.styled';
 import { Link, useLocation } from 'react-router-dom';
 import { PagePaths } from '@/constants';
-import { BsThreeDots } from 'react-icons/bs';
 import { AnimatePresence, Transition, Variants } from 'framer-motion';
+import { FaInstagram } from 'react-icons/fa';
+import { FiFacebook } from 'react-icons/fi';
+import dSSocialLogo from '@/images/header/ds.png';
+import silpoSocialLogo from '@/images/header/silpo.png';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { IoClose } from 'react-icons/io5';
 
 interface INavigationProps {
   isDark: boolean;
@@ -34,6 +45,13 @@ interface IMobileMenuProps {
 
 interface IOrderLinkComponentProps {
   isMobMenu?: boolean;
+  isDesk?: boolean;
+}
+
+interface IMobileMenuContainerProps {
+  isOpen: boolean;
+  toggleIsOpen: () => void;
+  isDark: boolean;
 }
 
 const Navigation: FC<INavigationProps> = ({ isDark, isMobMenu }) => {
@@ -64,9 +82,10 @@ const Navigation: FC<INavigationProps> = ({ isDark, isMobMenu }) => {
 
 export const OrderLinkComponent: FC<IOrderLinkComponentProps> = ({
   isMobMenu = false,
+  isDesk = false,
 }) => {
   return (
-    <OrderLink href='/' isMobMenu={isMobMenu}>
+    <OrderLink href='/' isMobMenu={isMobMenu} isDesk={isDesk}>
       <OrderLinkBg></OrderLinkBg>
       <OrderLinkActiveBg></OrderLinkActiveBg>
       <OrderLinkTitle>ЗАМОВИТИ</OrderLinkTitle>
@@ -132,28 +151,64 @@ const MobileMenu: FC<IMobileMenuProps> = ({ isOpen }) => {
               <MobAnchor href='/'>СОЦМЕРЕЖІ</MobAnchor>
             </ListItem>
           </MobMenuLinks>
-          <OrderLinkComponent isMobMenu />
+          <MobControls>
+            <MobSocialLinks>
+              <ListItem>
+                <ExternalLink
+                  href='http://'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <DSSocialLogo src={dSSocialLogo} alt='' />
+                </ExternalLink>
+              </ListItem>
+              <ListItem>
+                <ExternalLink
+                  href='http://'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <SilpoSocialLogo src={silpoSocialLogo} alt='' />
+                </ExternalLink>
+              </ListItem>
+              <ListItem>
+                <ExternalLink
+                  href='http://'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FaInstagram size={28} />
+                </ExternalLink>
+              </ListItem>
+              <ListItem>
+                <ExternalLink
+                  href='http://'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FiFacebook size={28} />
+                </ExternalLink>
+              </ListItem>
+            </MobSocialLinks>
+            <OrderLinkComponent isMobMenu />
+          </MobControls>
         </Backdrop>
       )}
     </AnimatePresence>
   );
 };
 
-interface IMobileMenuContainerProps {
-  isOpen: boolean;
-  toggleIsOpen: () => void;
-}
-
 const MobileMenuContainer: FC<IMobileMenuContainerProps> = ({
   isOpen,
   toggleIsOpen,
+  isDark,
 }) => {
   return (
     <>
       <MobileMenu isOpen={isOpen} />
 
-      <MenuBtn type='button' onClick={toggleIsOpen}>
-        <BsThreeDots size={40} />
+      <MenuBtn type='button' onClick={toggleIsOpen} isDark={isDark}>
+        {isOpen ? <IoClose size={20} /> : <RxHamburgerMenu size={20} />}
       </MenuBtn>
     </>
   );
@@ -266,15 +321,17 @@ const Header: FC = () => {
   return (
     <StyledHeader ref={headerRef}>
       <Container>
+        <MobileMenuContainer
+          isOpen={isMobMenuOpen}
+          isDark={isDark}
+          toggleIsOpen={toggleMobMenu}
+        />
         <DSLogo isDark={isDark} />
         <Navigation isDark={isDark} isMobMenu={isMobMenuOpen} />
-        <Controls>
-          <OrderLinkComponent />
-          <MobileMenuContainer
-            isOpen={isMobMenuOpen}
-            toggleIsOpen={toggleMobMenu}
-          />
-        </Controls>
+        <OrderLinkComponent isDesk />
+        <MobOrderLink href='/'>
+          <Cart />
+        </MobOrderLink>
       </Container>
     </StyledHeader>
   );

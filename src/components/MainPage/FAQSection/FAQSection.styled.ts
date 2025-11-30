@@ -8,16 +8,28 @@ import LineIcon from '@/icons/faq/line.svg?react';
 
 export const Section = styled.section`
   background-color: #500800;
-  padding-top: ${({ theme }) => theme.spacing(30)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(30)}px;
+  padding-top: ${({ theme }) => theme.spacing(10)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(3)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    padding-top: ${({ theme }) => theme.spacing(30)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(30)}px;
+  }
 `;
 
 export const Container = styled.div`
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   gap: ${({ theme }) => theme.spacing(15)}px;
-  padding-left: ${({ theme }) => theme.spacing(30)}px;
-  padding-right: ${({ theme }) => theme.spacing(30)}px;
+  padding-left: ${({ theme }) => theme.spacing(4)}px;
+  padding-right: ${({ theme }) => theme.spacing(4)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    align-items: flex-start;
+    flex-direction: row;
+    padding-left: ${({ theme }) => theme.spacing(30)}px;
+    padding-right: ${({ theme }) => theme.spacing(30)}px;
+  }
 `;
 
 export const TitleWrap = styled.div`
@@ -26,33 +38,51 @@ export const TitleWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)}px;
-  width: 400px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 400px;
+  }
 `;
 
 export const Line = styled(LineIcon)`
   position: absolute;
-  top: 57px;
-  left: -26px;
-  width: 121px;
-  height: 68px;
+  top: 4px;
+  left: 115px;
+  width: 60px;
+  height: 34px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    top: 57px;
+    left: -26px;
+    width: 121px;
+    height: 68px;
+  }
 `;
 
 export const Title = styled.h2`
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.cormorantGaramond};
   font-weight: 500;
-  font-size: 56px;
+  font-size: 40px;
   line-height: 1;
   letter-spacing: 2%;
   text-transform: uppercase;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    font-size: 56px;
+  }
 `;
 
 export const Desc = styled.p`
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    font-size: 18px;
+  }
 `;
 
 export const List = styled.ul`
@@ -78,10 +108,14 @@ export const QuestionBtn = styled.button`
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.cormorantGaramond};
   font-weight: 600;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 1.4;
   letter-spacing: -4%;
   text-align: left;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    font-size: 32px;
+  }
 `;
 
 export const Position = styled.p`
@@ -91,7 +125,10 @@ export const Position = styled.p`
   font-size: 24px;
   line-height: 1.4;
   letter-spacing: -4%;
-  transform: translateY(5.5px);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    transform: translateY(5.5px);
+  }
 `;
 
 export const QuestionBtnLabel = styled.span`
@@ -127,6 +164,10 @@ export const Accent = styled.img<IStyledImageProps>`
   pointer-events: none;
   opacity: ${({ isShowElement }) => (isShowElement ? 1 : 0)};
   transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    display: none;
+  }
 `;
 
 export const Paper = styled.img<IStyledImageProps>`
