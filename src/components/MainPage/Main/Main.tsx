@@ -3,9 +3,10 @@ import HeroSection from '@MainPageComponents/HeroSection';
 // import AboutSection from '@MainPageComponents/AboutSection';
 // import BarrelsSection from '@MainPageComponents/BarrelsSection';
 // import TravelSection from '@MainPageComponents/TravelSection';
-// import StorySection from '@MainPageComponents/StorySection';
+import StorySectionMob from '@/components/MainPage/StorySectionMob';
+import StorySectionDesk from '@/components/MainPage/StorySectionDesk';
 // import MediaSection from '@MainPageComponents/MediaSection';
-// import BottlesSection from '@MainPageComponents/BottlesSection';
+import BottlesSection from '@MainPageComponents/BottlesSection';
 // import OrderSection from '@MainPageComponents/OrderSection';
 import FAQSection from '@MainPageComponents/FAQSection';
 // import BagSection from '@MainPageComponents/BagSection';
@@ -19,9 +20,10 @@ const Main: FC = () => {
       </div>
       {/* <AboutSection /> */}
       {/* <TravelSection /> */}
-      {/* <StorySection /> */}
+      <StorySectionMob />
+      <StorySectionDesk />
       {/* <MediaSection /> */}
-      {/* <BottlesSection /> */}
+      <BottlesSection />
       {/* <OrderSection /> */}
       <FAQSection />
       {/* <BagSection /> */}

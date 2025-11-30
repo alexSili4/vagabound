@@ -26,12 +26,16 @@ import accent from '@/images/faq/accent.webp';
 import paper from '@/images/faq/paper.webp';
 
 const Question1: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>01</Position>
         <QuestionBtnLabel>Чому так довго?</QuestionBtnLabel>
         <IconWrap isShowElement={isShowElement}>
@@ -54,12 +58,16 @@ const Question1: FC = () => {
 };
 
 const Question2: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>02</Position>
         <QuestionBtnLabel>Чи можна купити саму бочку?</QuestionBtnLabel>
         <IconWrap isShowElement={isShowElement}>
@@ -82,12 +90,16 @@ const Question2: FC = () => {
 };
 
 const Question3: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>03</Position>
         <QuestionBtnLabel>
           Звідки мені знати, чи це дійсно вплинуло на смак?
@@ -111,12 +123,16 @@ const Question3: FC = () => {
 };
 
 const Question4: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>04</Position>
         <QuestionBtnLabel>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit?

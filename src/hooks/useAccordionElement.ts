@@ -11,7 +11,7 @@ interface IUseAccordionElement {
   isShowElement: boolean;
   elementRef: RefObject<HTMLDivElement>;
   elementScrollHeight: number | null;
-  onQuestionBtnClick: MouseEventHandler;
+  onAccordionBtnClick: MouseEventHandler;
 }
 
 const useAccordionElement = (): IUseAccordionElement => {
@@ -33,7 +33,7 @@ const useAccordionElement = (): IUseAccordionElement => {
     setIsShowElement((prevState) => !prevState);
   };
 
-  const onQuestionBtnClick = (e: MouseEvent<HTMLButtonElement>) => {
+  const onAccordionBtnClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
 
     toggleIsShowElement();
@@ -43,7 +43,7 @@ const useAccordionElement = (): IUseAccordionElement => {
     isShowElement,
     elementRef,
     elementScrollHeight,
-    onQuestionBtnClick,
+    onAccordionBtnClick,
   };
 };
 

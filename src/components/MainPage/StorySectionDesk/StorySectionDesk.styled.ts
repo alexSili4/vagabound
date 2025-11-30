@@ -1,10 +1,14 @@
 import styled from '@emotion/styled';
 import Vagabound from '@/icons/story/vagabound.svg?react';
-import { StyledCardContainerProps } from './StorySection.types';
+import { StyledCardContainerProps } from './StorySectionDesk.types';
 
 export const Section = styled.section`
   position: relative;
   background-color: #500800;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.h2`

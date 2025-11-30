@@ -36,7 +36,7 @@ import {
   Card4Text,
   Card5Text,
   Signature,
-} from './StorySection.styled';
+} from './StorySectionDesk.styled';
 import book from '@/images/story/book.webp';
 import card1 from '@/images/story/card-1.webp';
 import card2 from '@/images/story/card-2.webp';
@@ -46,7 +46,7 @@ import card5 from '@/images/story/card-5.webp';
 import card6 from '@/images/story/card-6.webp';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
 
-const StorySection: FC = () => {
+const StorySectionDesk: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const incrementActiveIndex = () => {
@@ -198,4 +198,4 @@ const StorySection: FC = () => {
   );
 };
 
-export default StorySection;
+export default StorySectionDesk;
