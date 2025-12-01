@@ -29,8 +29,8 @@ import { PagePaths } from '@/constants';
 import { AnimatePresence, Transition, Variants } from 'framer-motion';
 import { FaInstagram } from 'react-icons/fa';
 import { FiFacebook } from 'react-icons/fi';
-import dSSocialLogo from '@/images/header/ds.png';
-import silpoSocialLogo from '@/images/header/silpo.png';
+import dSSocialLogo from '@/images/header/ds.webp';
+import silpoSocialLogo from '@/images/header/silpo.webp';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoClose } from 'react-icons/io5';
 

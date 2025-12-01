@@ -1,20 +1,5 @@
 import styled from '@emotion/styled';
 import Vagabound from '@/icons/story/vagabound.svg?react';
-import { StyledCardContainerProps } from './StorySectionDesk.types';
-
-export const Section = styled.section`
-  position: relative;
-  background-color: #500800;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
-    display: none;
-  }
-`;
-
-export const Title = styled.h2`
-  position: absolute;
-  scale: 0;
-`;
 
 export const Container = styled.div`
   position: relative;
@@ -22,6 +7,10 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 140dvh;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    display: none;
+  }
 `;
 
 export const Background = styled.img`
@@ -33,7 +22,9 @@ export const Background = styled.img`
   object-fit: cover;
 `;
 
-export const Napkin = styled.img<StyledCardContainerProps>`
+export const Napkin = styled.img<{
+  isActive: boolean;
+}>`
   position: absolute;
   z-index: -10;
   top: -30%;
@@ -87,7 +78,9 @@ export const SliderBtn = styled.button`
   pointer-events: all;
 `;
 
-export const Card1Container = styled.div<StyledCardContainerProps>`
+export const Card1Container = styled.div<{
+  isActive: boolean;
+}>`
   position: absolute;
   top: 0;
   left: 0;
@@ -167,7 +160,9 @@ export const Card1Text = styled.p`
   -webkit-box-orient: vertical;
 `;
 
-export const Card2Container = styled.div<StyledCardContainerProps>`
+export const Card2Container = styled.div<{
+  isActive: boolean;
+}>`
   position: absolute;
   top: 0;
   left: 0;
@@ -231,7 +226,9 @@ export const Card2Desc = styled.p`
   line-height: 1.4;
 `;
 
-export const Card3Container = styled.div<StyledCardContainerProps>`
+export const Card3Container = styled.div<{
+  isActive: boolean;
+}>`
   position: absolute;
   top: 0;
   left: 0;

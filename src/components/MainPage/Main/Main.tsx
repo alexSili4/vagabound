@@ -3,8 +3,7 @@ import HeroSection from '@MainPageComponents/HeroSection';
 // import AboutSection from '@MainPageComponents/AboutSection';
 // import BarrelsSection from '@MainPageComponents/BarrelsSection';
 // import TravelSection from '@MainPageComponents/TravelSection';
-import StorySectionMob from '@/components/MainPage/StorySectionMob';
-import StorySectionDesk from '@/components/MainPage/StorySectionDesk';
+import StorySection from '@/components/MainPage/StorySection';
 // import MediaSection from '@MainPageComponents/MediaSection';
 import BottlesSection from '@MainPageComponents/BottlesSection';
 // import OrderSection from '@MainPageComponents/OrderSection';
@@ -20,8 +19,7 @@ const Main: FC = () => {
       </div>
       {/* <AboutSection /> */}
       {/* <TravelSection /> */}
-      <StorySectionMob />
-      <StorySectionDesk />
+      <StorySection />
       {/* <MediaSection /> */}
       <BottlesSection />
       {/* <OrderSection /> */}
