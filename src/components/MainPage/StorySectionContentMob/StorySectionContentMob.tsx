@@ -28,15 +28,32 @@ import {
   Slide4Title,
   Slide5Container,
   Slide5Text,
+  Napkin1,
+  Napkin2,
+  Napkin3,
 } from './StorySectionContentMob.styled';
 import book from '@/images/story/book-mob.webp';
-import useEmblaCarousel from 'embla-carousel-react';
+import useEmblaCarousel, { EmblaViewportRefType } from 'embla-carousel-react';
 import { GoArrowRight, GoArrowLeft } from 'react-icons/go';
 import Fade from 'embla-carousel-fade';
 import slide2Img from '@/images/story/card-3.webp';
 import slide3Img from '@/images/story/card-4.webp';
 import slide4Img from '@/images/story/card-5.webp';
 import slide5Img from '@/images/story/card-6.webp';
+import napkin from '@/images/story/napkin-mob.webp';
+import napkin2 from '@/images/story/napkin-2-mob.webp';
+import napkin3 from '@/images/story/napkin-3-mob.webp';
+
+interface IStorySliderProps {
+  emblaRef: EmblaViewportRefType;
+  scrollPrev: () => void;
+  scrollNext: () => void;
+  canScrollPrev: boolean;
+  canScrollNext: boolean;
+  scrollSnaps: number[];
+  selectedIndex: number;
+  scrollTo: (index: number) => void;
+}
 
 const Slide1: FC = () => {
   return (
@@ -131,56 +148,16 @@ const Slide5: FC = () => {
   );
 };
 
-const StorySlider: FC = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(undefined, [Fade()]);
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (emblaApi) emblaApi.scrollTo(index);
-    },
-    [emblaApi]
-  );
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
-  const onInit = useCallback(() => {
-    if (!emblaApi) return;
-    setScrollSnaps(emblaApi.scrollSnapList());
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    onInit();
-    onSelect();
-    emblaApi.on('init', onInit);
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-
-    return () => {
-      emblaApi.off('init', onInit);
-      emblaApi.off('select', onSelect);
-      emblaApi.off('reInit', onSelect);
-    };
-  }, [emblaApi, onInit, onSelect]);
-
+const StorySlider: FC<IStorySliderProps> = ({
+  emblaRef,
+  canScrollNext,
+  canScrollPrev,
+  scrollNext,
+  scrollPrev,
+  scrollSnaps,
+  selectedIndex,
+  scrollTo,
+}) => {
   return (
     <>
       <Slider ref={emblaRef}>
@@ -239,12 +216,84 @@ const StorySlider: FC = () => {
 };
 
 const StorySectionContentMob: FC = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel(undefined, [Fade()]);
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
+  const [canScrollPrev, setCanScrollPrev] = useState(false);
+  const [canScrollNext, setCanScrollNext] = useState(false);
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index);
+    },
+    [emblaApi]
+  );
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setCanScrollPrev(emblaApi.canScrollPrev());
+    setCanScrollNext(emblaApi.canScrollNext());
+  }, [emblaApi]);
+
+  const onInit = useCallback(() => {
+    if (!emblaApi) return;
+    setScrollSnaps(emblaApi.scrollSnapList());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    onInit();
+    onSelect();
+    emblaApi.on('init', onInit);
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+
+    return () => {
+      emblaApi.off('init', onInit);
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi, onInit, onSelect]);
+
   return (
     <Container>
       <Content>
+        <Napkin1 src={napkin} alt='' isActive={selectedIndex === 0} />
+        <Napkin2
+          src={napkin2}
+          alt=''
+          isActive={selectedIndex === 1 || selectedIndex === 2}
+        />
+        <Napkin3
+          src={napkin3}
+          alt=''
+          isActive={selectedIndex === 3 || selectedIndex === 4}
+        />
+
         <Book src={book} alt='' />
 
-        <StorySlider />
+        <StorySlider
+          emblaRef={emblaRef}
+          canScrollNext={canScrollNext}
+          canScrollPrev={canScrollPrev}
+          scrollNext={scrollNext}
+          scrollPrev={scrollPrev}
+          scrollSnaps={scrollSnaps}
+          scrollTo={scrollTo}
+          selectedIndex={selectedIndex}
+        />
       </Content>
     </Container>
   );

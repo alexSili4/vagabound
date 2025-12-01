@@ -21,6 +21,7 @@ export const Content = styled.div`
 `;
 
 export const Book = styled.img`
+  position: relative;
   max-width: none;
   width: 100%;
   user-select: none;
@@ -251,3 +252,19 @@ export const Slide5Text = styled.p`
   line-height: 1.4;
   letter-spacing: 0%;
 `;
+
+export const Napkin = styled.img<{ isActive: boolean }>`
+  position: absolute;
+  top: -22%;
+  left: 50%;
+  width: 90%;
+  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+  transform: translateX(-50%);
+`;
+
+export const Napkin1 = styled(Napkin)``;
+
+export const Napkin2 = styled(Napkin)``;
+
+export const Napkin3 = styled(Napkin)``;
