@@ -25,7 +25,7 @@ import ticket from '@/images/bag/ticket.webp';
 import photo from '@/images/bag/photo.webp';
 
 const BagSection: FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
 
   const onBtnClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();

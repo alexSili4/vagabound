@@ -8,7 +8,7 @@ import StorySection from '@/components/MainPage/StorySection';
 import BottlesSection from '@MainPageComponents/BottlesSection';
 // import OrderSection from '@MainPageComponents/OrderSection';
 import FAQSection from '@MainPageComponents/FAQSection';
-// import BagSection from '@MainPageComponents/BagSection';
+import BagSection from '@MainPageComponents/BagSection';
 
 const Main: FC = () => {
   return (
@@ -24,7 +24,7 @@ const Main: FC = () => {
       <BottlesSection />
       {/* <OrderSection /> */}
       <FAQSection />
-      {/* <BagSection /> */}
+      <BagSection />
     </>
   );
 };
