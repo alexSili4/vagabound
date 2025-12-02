@@ -15,7 +15,7 @@ import cut from '@/images/barrel-page/maisie/cut.webp';
 const SocialLinksSection: FC = () => {
   return (
     <Section>
-      <Cut src={cut} alt='' />
+      <Cut src={cut} alt='Декоративний елемент' />
       <SectionTitle>Ми у соціальних мережах</SectionTitle>
       <Container>
         <Content>

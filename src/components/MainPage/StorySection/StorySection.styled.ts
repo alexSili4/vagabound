@@ -109,7 +109,7 @@ export const Card2 = styled.img`
 
 export const Card1TextContainer = styled.div`
   position: absolute;
-  top: 7.4%;
+  top: 4%;
   right: 13%;
   display: flex;
   flex-direction: column;
@@ -129,8 +129,7 @@ export const Card1TitleWrap = styled.div`
 
 export const Card1Logo = styled(Vagabound)`
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: 90%;
   aspect-ratio: 208/80;
 `;
 
@@ -150,17 +149,11 @@ export const Card1TextWrap = styled.div`
 
 export const Card1Text = styled.p`
   width: 47%;
-  height: 310px;
   color: #252525;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
   font-size: 16px;
   line-height: 1.4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 14;
-  -webkit-box-orient: vertical;
 `;
 
 export const Card2Container = styled.div<StyledCardContainerProps>`
@@ -182,44 +175,38 @@ export const Card3 = styled.img`
 
 export const Card4 = styled.img`
   position: absolute;
-  top: 20.3%;
-  right: 14%;
-  width: 34.1%;
+  top: 14%;
+  right: 16%;
+  width: 32%;
 `;
 
 export const Card2Text = styled.p`
   position: absolute;
   top: 7%;
   left: 15%;
-  width: 157px;
-  height: 312px;
+  width: 35%;
   color: #252525;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
   font-size: 16px;
   line-height: 1.4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 14;
-  -webkit-box-orient: vertical;
 `;
 
 export const Card2Title = styled.p`
   position: absolute;
   top: 8%;
-  right: 28%;
+  right: 14%;
   color: #252525;
   font-family: ${({ theme }) => theme.fontFamily.pica};
   font-weight: 400;
-  font-size: 72px;
+  font-size: 56px;
   line-height: 0.6;
 `;
 
 export const Card2Desc = styled.p`
   position: absolute;
   right: 15%;
-  bottom: 23%;
+  bottom: 20%;
   width: 32%;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
@@ -239,7 +226,7 @@ export const Card3Container = styled.div<StyledCardContainerProps>`
 
 export const Card5 = styled.img`
   position: absolute;
-  top: 20.3%;
+  top: 23%;
   left: 14%;
   width: 34.1%;
 `;
@@ -255,7 +242,7 @@ export const Card3Text = styled.p`
   position: absolute;
   top: 8%;
   left: 16%;
-  width: 25%;
+  width: 30%;
   color: #000000;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
@@ -267,7 +254,7 @@ export const Card4Text = styled.p`
   position: absolute;
   bottom: 23%;
   left: 16%;
-  width: 19%;
+  width: 25%;
   color: #000000;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
@@ -277,9 +264,9 @@ export const Card4Text = styled.p`
 
 export const Card5Text = styled.p`
   position: absolute;
-  bottom: 37%;
+  bottom: 27%;
   right: 13%;
-  width: 34%;
+  width: 33%;
   color: #000000;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;

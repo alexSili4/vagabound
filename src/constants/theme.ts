@@ -11,7 +11,10 @@ interface ITheme {
     desktop: number;
     mobile: number;
   };
-  fontFamily: Record<'rubik' | 'cormorantGaramond' | 'pica' | 'soul', string>;
+  fontFamily: Record<
+    'rubik' | 'cormorantGaramond' | 'pica' | 'soul' | 'viaoda',
+    string
+  >;
   transitionDurationAndFunc: string;
   transitionWithDelay: string;
   transition800: string;
@@ -27,6 +30,7 @@ const theme: ITheme = {
     cormorantGaramond: 'Cormorant Garamond',
     pica: 'IM FELL DW Pica',
     soul: 'Soul Adventures Cyr',
+    viaoda: 'Viaoda Libre',
   },
   // fontWeight: {  },
   // fontSize: {  },
@@ -40,7 +44,7 @@ const theme: ITheme = {
   },
   // shadows: {  },
   transitionDurationAndFunc: '400ms cubic-bezier(0.4, 0, 0.2, 1)',
-  transitionWithDelay: '400ms cubic-bezier(0.4, 0, 0.2, 1) 400ms',
+  transitionWithDelay: '400ms cubic-bezier(0.4, 0, 0.2, 1) 500ms',
   transition800: '800ms cubic-bezier(0.4, 0, 0.2, 1)',
   spacing: (value = 1) => value * 4,
 };

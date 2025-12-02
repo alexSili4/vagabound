@@ -18,8 +18,8 @@ const OrderSection: FC = () => {
       <SectionTitle>Замовлення</SectionTitle>
       <Container>
         <TitleWrap>
-          <Logo src={logo} alt='' />
-          <Photo src={photo} alt='' />
+          <Logo src={logo} alt='Логотип' />
+          <Photo src={photo} alt='Світлина' />
           <Title>Заголовок</Title>
           <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu

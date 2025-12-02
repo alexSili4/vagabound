@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import {
   Section,
   FirstScreen,
@@ -20,6 +20,7 @@ import {
   Space6,
   BarrelLeftBottom,
   BarrelCenterWrap,
+  Vagabound,
 } from './TravelSection.styled';
 import screen2 from '@/images/travel/screen-2.webp';
 import screen3 from '@/images/travel/screen-3.webp';
@@ -27,14 +28,57 @@ import screen4 from '@/images/travel/screen-4.webp';
 import barrel from '@/images/travel/barrel.webp';
 import barrelRight from '@/images/travel/barrel-right.webp';
 import barrelLeft from '@/images/travel/barrel-left.webp';
+import vagabound from '@/images/travel/vagabound.webp';
 
 const TravelSection: FC = () => {
+  const barrelWrapRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const [logoOpacity, setLogoOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!barrelWrapRef.current || !sectionRef.current) return;
+
+      // Once logo is visible, keep it visible forever
+      // if (logoOpacity === 1) return;
+
+      const container = barrelWrapRef.current;
+      const section = sectionRef.current;
+      const containerRect = container.getBoundingClientRect();
+      const sectionRect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Check if the container is sticky and positioned at 95% from top
+      const isStickyPositioned =
+        Math.abs(containerRect.top - viewportHeight * 0.95) < 1;
+
+      // Check if we've scrolled past the FirstScreen (150dvh) and other content
+      const sectionBottom = sectionRect.bottom;
+      const hasReachedEnd = sectionBottom <= viewportHeight;
+
+      // Show logo when barrel reaches the end - it will stay visible forever
+      if (isStickyPositioned && hasReachedEnd) {
+        setLogoOpacity(1);
+      } else if (!hasReachedEnd) {
+        setLogoOpacity(0);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [logoOpacity]);
+
   return (
-    <Section>
+    <Section ref={sectionRef}>
       <Title>Мандрівка бочки</Title>
 
-      <BarrelCenterWrap>
+      <BarrelCenterWrap ref={barrelWrapRef}>
         <Barrel src={barrel} alt='Бочка' />
+        <Vagabound src={vagabound} alt='' style={{ opacity: logoOpacity }} />
       </BarrelCenterWrap>
 
       <Space1></Space1>

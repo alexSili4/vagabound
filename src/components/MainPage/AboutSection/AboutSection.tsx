@@ -7,12 +7,12 @@ const AboutSection: FC = () => {
       <Container>
         <Title>ПРО ПРОЄКТ</Title>
         <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
-          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos.
+          Усі великі відкриття і найбільші дурниці стартують однаково: з питання
+          “А що, якщо?”. Що, якщо бочці з віскі зіграти на волинці, почитати
+          казки або змусити її дивитися артхаус? Чи здатна вона стати актором
+          театру? Ми перевіряємо це просто зараз. Ніякої магії — тільки фізика з
+          дрібкою драматургії. Запрошуємо до вистави. І нехай вас не бентежить,
+          що наші актори — дерев’яні. Запускаємо маховик бешкету.
         </Text>
       </Container>
     </Section>

@@ -16,7 +16,7 @@ const Loader: FC = () => {
       <Content>
         <LogoWrap>
           {images.map((src, index) => (
-            <Logo key={src} src={src} alt='' $index={index} />
+            <Logo key={src} src={src} alt='Логотип' $index={index} />
           ))}
         </LogoWrap>
         <Progress></Progress>

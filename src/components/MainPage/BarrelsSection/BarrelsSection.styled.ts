@@ -76,47 +76,15 @@ export const BarrelLeftImg = styled.img`
   max-width: none;
 `;
 
-export const BarrelName = styled.p`
-  color: #e8e8e8;
-  font-family: ${({ theme }) => theme.fontFamily.rubik};
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: 2%;
-  text-transform: uppercase;
-`;
-
-export const BarrelLeftName = styled(BarrelName)`
-  position: absolute;
-  top: 225px;
-  left: 80px;
-`;
-
-export const BarrelBottomName = styled(BarrelName)`
-  position: absolute;
-  top: 150px;
-  left: 118px;
-`;
-
-export const BarrelTopName = styled(BarrelName)`
-  position: absolute;
-  top: 266px;
-  left: 70px;
-`;
-
-export const BarrelRightName = styled(BarrelName)`
-  position: absolute;
-  top: 152px;
-  left: 80px;
-`;
-
 export const BarrelTextWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(1)}px;
+  width: 260px;
 `;
 
 export const BarrelTopTextWrap = styled(BarrelTextWrap)`
+  width: 160px;
   margin-left: ${({ theme }) => theme.spacing(36)}px;
 `;
 
@@ -205,4 +173,83 @@ export const BarrelRightImg = styled.img`
   left: -10px;
   width: 320px;
   max-width: none;
+`;
+
+// Label
+export const LabelContainer = styled.div`
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  rotate: 6deg;
+`;
+
+export const LabelBg = styled.img`
+  width: 170px;
+  height: 80px;
+`;
+
+export const LabelTextWrap = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(0.5)}px;
+  transform: translateX(-50%) translateY(-50%);
+`;
+
+export const LabelTitle = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 9.2px;
+  line-height: 1.2;
+  letter-spacing: 2%;
+  text-align: center;
+  text-transform: lowercase;
+`;
+
+export const LabelNumber = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 700;
+  font-size: 26.69px;
+  line-height: 0.9;
+  letter-spacing: 2%;
+  text-align: center;
+  text-transform: uppercase;
+`;
+
+export const TotalNumber = styled.span`
+  color: rgba(37, 37, 37, 0.24);
+`;
+
+export const LabelDesc = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 9.2px;
+  line-height: 1.2;
+  letter-spacing: 2%;
+  text-align: center;
+  text-transform: lowercase;
+`;
+
+export const DelimiterWrap = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 127px;
+  transform: translateX(-50%) translateY(-50%);
+`;
+
+export const Delimiter = styled.div`
+  width: 17px;
+  height: 1px;
+  background-color: #252525;
 `;

@@ -6,3 +6,4 @@ export { default as cormorantGaramondLight } from './cormorantGaramond/Cormorant
 export { default as cormorantGaramondMedium } from './cormorantGaramond/CormorantGaramond-Medium.ttf';
 export { default as cormorantGaramondRegular } from './cormorantGaramond/CormorantGaramond-Regular.ttf';
 export { default as cormorantGaramondSemiBold } from './cormorantGaramond/CormorantGaramond-SemiBold.ttf';
+export { default as viaodaRegular } from './viaoda/ViaodaLibre-Regular.ttf';

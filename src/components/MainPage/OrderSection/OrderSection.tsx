@@ -37,10 +37,16 @@ import {
   PostboxAlt,
   PostboxWrap,
   BlackBox,
+  SuccessMsgWrap,
+  SuccessMsgBg,
+  SuccessMsgText,
+  SuccessMsgTextWrap,
+  SuccessMsgTitle,
 } from './OrderSection.styled';
 import { IContactsForm } from '@/types/order';
 import { useForm } from 'react-hook-form';
 import { contacts } from '@/constants';
+import successMsgBg from '@/images/order/success-msg.webp';
 
 interface IInputProps {
   placeholder: string;
@@ -168,10 +174,7 @@ const OrderForm: FC<IOrderFormProps> = ({ updateIsSuccess, isSuccess }) => {
           <Input
             placeholder='E-mail'
             type='email'
-            settings={register('email', {
-              required: true,
-              onChange: onPhoneChange,
-            })}
+            settings={register('email', { required: true })}
           />
           <Input
             placeholder='Оберіть бочку'
@@ -195,19 +198,37 @@ const OrderSection: FC = () => {
       <Container>
         <PostboxWrap>
           <BlackBox></BlackBox>
-          <Postbox src={postbox} alt='' />
-          <PostboxAlt src={postbox} alt='' isSuccess={isSuccess} />
+          <Postbox src={postbox} alt='Поштова скринька' />
+          <PostboxAlt
+            src={postbox}
+            alt='Поштова скринька'
+            isSuccess={isSuccess}
+          />
         </PostboxWrap>
 
         <FormWrap isSuccess={isSuccess}>
-          <Letter src={letter} alt='' />
+          <Letter src={letter} alt='Конверт' />
           <OrderForm updateIsSuccess={setIsSuccess} isSuccess={isSuccess} />
-          <LetterPart src={letterPart} alt='' />
+          <LetterPart src={letterPart} alt='Конверт' />
           <LetterPartTopWrap isSuccess={isSuccess}>
-            <LetterPartTopGreen src={letterPartTopGreen} alt='' />
-            <LetterPartTop src={letterPartTop} alt='' isSuccess={isSuccess} />
+            <LetterPartTopGreen src={letterPartTopGreen} alt='Конверт' />
+            <LetterPartTop
+              src={letterPartTop}
+              alt='Конверт'
+              isSuccess={isSuccess}
+            />
           </LetterPartTopWrap>
         </FormWrap>
+
+        <SuccessMsgWrap isSuccess={isSuccess}>
+          <SuccessMsgBg src={successMsgBg} alt='' />
+          <SuccessMsgTextWrap>
+            <SuccessMsgTitle>дякуємо за замовлення!</SuccessMsgTitle>
+            <SuccessMsgText>
+              Очікуйте на нашу відповідь незабаром
+            </SuccessMsgText>
+          </SuccessMsgTextWrap>
+        </SuccessMsgWrap>
       </Container>
     </Section>
   );

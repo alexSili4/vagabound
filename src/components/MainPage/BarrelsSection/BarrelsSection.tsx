@@ -30,14 +30,42 @@ import {
   BarrelCardRight,
   BarrelTopTextWrap,
   CutImg,
-  BarrelLeftName,
-  BarrelBottomName,
-  BarrelTopName,
-  BarrelRightName,
   BarrelLinkLeft,
+  LabelBg,
+  LabelContainer,
+  LabelDesc,
+  LabelNumber,
+  LabelTextWrap,
+  LabelTitle,
+  TotalNumber,
+  Delimiter,
+  DelimiterWrap,
 } from './BarrelsSection.styled';
 import cut from '@/images/barrels/cut.webp';
 import { PagePaths } from '@/constants';
+import labelBg from '@/images/barrels/label-bg.webp';
+
+const Label: FC = () => {
+  return (
+    <LabelContainer>
+      <LabelBg src={labelBg} alt='' />
+
+      <LabelTextWrap>
+        <LabelTitle>залишок партії</LabelTitle>
+        <LabelNumber>
+          <span>34</span>
+          <TotalNumber>/76</TotalNumber>
+        </LabelNumber>
+        <LabelDesc>пляшок</LabelDesc>
+      </LabelTextWrap>
+
+      <DelimiterWrap>
+        <Delimiter></Delimiter>
+        <Delimiter></Delimiter>
+      </DelimiterWrap>
+    </LabelContainer>
+  );
+};
 
 const BarrelsSection: FC = () => {
   return (
@@ -49,11 +77,14 @@ const BarrelsSection: FC = () => {
           <BarrelCardLeft>
             <BarrelImgLeftWrap>
               <BarrelLeftImg src={barrelLeft} alt='МЕЙЗІ' />
-              <BarrelLeftName>мейзі</BarrelLeftName>
+              <Label />
             </BarrelImgLeftWrap>
             <BarrelTextWrap>
-              <BarrelTitle>МЕЙЗІ</BarrelTitle>
-              <BarrelText>subtitle</BarrelText>
+              <BarrelTitle>Мейзі Еддертон</BarrelTitle>
+              <BarrelText>
+                Поціновувачка вишуканого вінтажу, якщо хильнути зайвого в неї в
+                гостях, — в інтер’єрі Мейзі дуже легко забути, який зараз рік.
+              </BarrelText>
             </BarrelTextWrap>
           </BarrelCardLeft>
         </BarrelLinkLeft>
@@ -61,33 +92,43 @@ const BarrelsSection: FC = () => {
         <BarrelCardBottom>
           <BarrelImgBottomWrap>
             <BarrelBottomImg src={barrelBottom} alt='МЕЙЗІ' />
-            <BarrelBottomName>мейзі</BarrelBottomName>
+            <Label />
           </BarrelImgBottomWrap>
           <BarrelTextWrap>
-            <BarrelTitle>МЕЙЗІ</BarrelTitle>
-            <BarrelText>subtitle</BarrelText>
+            <BarrelTitle>Рорі Нок</BarrelTitle>
+            <BarrelText>
+              Провідник Шотландської залізниці. Для нього життя — це рух. Якби
+              його воля, він би навіть спав на біговій доріжці.
+            </BarrelText>
           </BarrelTextWrap>
         </BarrelCardBottom>
 
         <BarrelCardTop>
           <BarrelImgTopWrap>
             <BarrelTopImg src={barrelTop} alt='МЕЙЗІ' />
-            <BarrelTopName>мейзі</BarrelTopName>
+            <Label />
           </BarrelImgTopWrap>
           <BarrelTopTextWrap>
-            <BarrelTitle>МЕЙЗІ</BarrelTitle>
-            <BarrelText>subtitle</BarrelText>
+            <BarrelTitle>Лохан Чепелтон</BarrelTitle>
+            <BarrelText>
+              Мріє стати великим актором. Проте колеги делікатно мовчать про те,
+              що на сцені він трішки… дерев’яний.
+            </BarrelText>
           </BarrelTopTextWrap>
         </BarrelCardTop>
 
         <BarrelCardRight>
           <BarrelImgRightWrap>
             <BarrelRightImg src={barrelRight} alt='МЕЙЗІ' />
-            <BarrelRightName>мейзі</BarrelRightName>
+            <Label />
           </BarrelImgRightWrap>
           <BarrelTextWrap>
-            <BarrelTitle>МЕЙЗІ</BarrelTitle>
-            <BarrelText>subtitle</BarrelText>
+            <BarrelTitle>Містер Кемпбел</BarrelTitle>
+            <BarrelText>
+              Священик за покликанням, він може витримати все: міцне віскі,
+              токсичних родичів, відсутність Wi-Fi, — але тільки не зневіру
+              ближнього.
+            </BarrelText>
           </BarrelTextWrap>
         </BarrelCardRight>
 

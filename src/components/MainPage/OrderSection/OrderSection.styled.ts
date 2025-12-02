@@ -23,11 +23,13 @@ export const PostboxWrap = styled.div`
 
 export const Postbox = styled.img`
   position: relative;
+  z-index: 1;
   width: 402px;
 `;
 
 export const BlackBox = styled.div`
   position: absolute;
+  z-index: 0;
   top: 100px;
   left: 10px;
   width: 380px;
@@ -43,12 +45,11 @@ export const PostboxAlt = styled(Postbox)<{ isSuccess: boolean }>`
   pointer-events: none;
   opacity: ${({ isSuccess }) => (isSuccess ? 1 : 0)};
   transition: opacity ${({ theme }) => theme.transitionWithDelay};
-  transition-delay: 300ms;
 `;
 
 export const FormWrap = styled.div<{ isSuccess: boolean }>`
   position: absolute;
-  z-index: 15;
+  z-index: 5;
   bottom: 37px;
   left: 263px;
   display: flex;
@@ -246,4 +247,61 @@ export const SubmitBtn = styled.button`
   font-size: 12.75px;
   line-height: 1;
   text-transform: uppercase;
+`;
+
+export const SuccessMsgWrap = styled.div<{ isSuccess: boolean }>`
+  position: absolute;
+  z-index: ${({ isSuccess }) => (isSuccess ? 20 : 0)};
+  bottom: 37px;
+  left: 263px;
+  transform: translateX(-60%) translateY(10%) scale(0.4);
+  transition: z-index ${({ theme }) => theme.transitionDurationAndFunc};
+  transition-delay: 2000ms;
+  ${({ isSuccess }) =>
+    isSuccess &&
+    css`
+      animation: ${animations.successMsg} 1200ms linear both;
+      animation-delay: 1600ms;
+    `}
+`;
+
+export const SuccessMsgBg = styled.img`
+  width: 637px;
+  aspect-ratio: 300/210;
+`;
+
+export const SuccessMsgTextWrap = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing(6)}px;
+  width: 100%;
+  height: 100%;
+`;
+
+export const SuccessMsgTitle = styled.p`
+  color: #1a3e2f;
+  font-family: ${({ theme }) => theme.fontFamily.viaoda};
+  font-weight: 400;
+  /* font-size: 32px; */
+  font-size: 48px;
+  line-height: 1.2;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+`;
+
+export const SuccessMsgText = styled.p`
+  color: #1a3e2f;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 300;
+  /* font-size: 14px; */
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0%;
+  text-align: center;
 `;

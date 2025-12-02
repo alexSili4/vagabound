@@ -30,7 +30,7 @@ const BottlesSection: FC = () => {
           <Card1>
             <Name>Рорі</Name>
             <CardContent>
-              <Image src={bottle1} alt='' />
+              <Image src={bottle1} alt='Пляшка' />
               <CardInfo>
                 <CardInfoItem>
                   <CardTitle>вік</CardTitle>
@@ -74,7 +74,7 @@ const BottlesSection: FC = () => {
           <Card2>
             <Name>Лохан</Name>
             <CardContent>
-              <Image src={bottle2} alt='' />
+              <Image src={bottle2} alt='Пляшка' />
               <CardInfo>
                 <CardInfoItem>
                   <CardTitle>вік</CardTitle>
@@ -118,7 +118,7 @@ const BottlesSection: FC = () => {
           <Card3>
             <Name>Кемпбел</Name>
             <CardContent>
-              <Image src={bottle3} alt='' />
+              <Image src={bottle3} alt='Пляшка' />
               <CardInfo>
                 <CardInfoItem>
                   <CardTitle>вік</CardTitle>
@@ -162,7 +162,7 @@ const BottlesSection: FC = () => {
           <Card4>
             <Name>Мейзі</Name>
             <CardContent>
-              <Image src={bottle4} alt='' />
+              <Image src={bottle4} alt='Пляшка' />
               <CardInfo>
                 <CardInfoItem>
                   <CardTitle>вік</CardTitle>

@@ -22,7 +22,7 @@ import vagabound from '@/images/footer/vagabound.webp';
 const FooterContent: FC = () => {
   return (
     <Container>
-      <Vagabound src={vagabound} alt='' />
+      <Vagabound src={vagabound} alt='Логотип' />
       <NavLinks>
         <ListItem>
           <Anchor href='/'>Про проєкт</Anchor>

@@ -109,3 +109,13 @@ export const Space5 = styled.div`
 export const Space6 = styled.div`
   padding-top: ${({ theme }) => theme.spacing(6)}px;
 `;
+
+export const Vagabound = styled.img`
+  position: absolute;
+  left: 50%;
+  bottom: 22dvh;
+  width: 236px;
+  height: 236px;
+  transform: translateX(-50%);
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+`;

@@ -48,24 +48,24 @@ const MediaSection: FC = () => {
 
   return (
     <Section>
-      <Paper src={paper} alt='' />
+      <Paper src={paper} alt='Світлина' />
 
       <ScreenWrap ref={containerRef}>
         <Screen>
           <ButtonWrap style={{ y: card8Y }}>
             <Button>
-              <Card8 src={card8} alt='' />
-              <Stamp src={stamp} alt='' />
-              <Lines src={lines} alt='' />
+              <Card8 src={card8} alt='Світлина' />
+              <Stamp src={stamp} alt='Світлина' />
+              <Lines src={lines} alt='Світлина' />
             </Button>
           </ButtonWrap>
-          <Card1 src={card1} alt='' style={{ y: card1Y }} />
-          <Card2 src={card2} alt='' style={{ y: card2Y }} />
-          <Card4 src={card4} alt='' style={{ y: card4Y }} />
-          <Card3 src={card3} alt='' style={{ y: card3Y }} />
-          <Card5 src={card5} alt='' style={{ y: card5Y }} />
-          <Card6 src={card6} alt='' style={{ y: card6Y }} />
-          <Card7 src={card7} alt='' style={{ y: card7Y }} />
+          <Card1 src={card1} alt='Світлина' style={{ y: card1Y }} />
+          <Card2 src={card2} alt='Світлина' style={{ y: card2Y }} />
+          <Card4 src={card4} alt='Світлина' style={{ y: card4Y }} />
+          <Card3 src={card3} alt='Світлина' style={{ y: card3Y }} />
+          <Card5 src={card5} alt='Світлина' style={{ y: card5Y }} />
+          <Card6 src={card6} alt='Світлина' style={{ y: card6Y }} />
+          <Card7 src={card7} alt='Світлина' style={{ y: card7Y }} />
         </Screen>
       </ScreenWrap>
     </Section>

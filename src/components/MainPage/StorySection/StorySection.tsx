@@ -85,9 +85,9 @@ const StorySection: FC = () => {
 
         <Content>
           <BookWrap>
-            <Napkin src={napkin} alt='' isActive={activeIndex === 0} />
-            <Napkin src={napkin2} alt='' isActive={activeIndex === 1} />
-            <Napkin src={napkin3} alt='' isActive={activeIndex === 2} />
+            <Napkin src={napkin} alt='Папірець' isActive={activeIndex === 0} />
+            <Napkin src={napkin2} alt='Папірець' isActive={activeIndex === 1} />
+            <Napkin src={napkin3} alt='Папірець' isActive={activeIndex === 2} />
 
             <Book src={book} alt='Книга' />
 
@@ -106,25 +106,23 @@ const StorySection: FC = () => {
 
                 <Card1TextWrap>
                   <Card1Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Etiam eu turpis molestie, dictum est a, mattis tellus. Sed
-                    dignissim, metus nec fringilla accumsan, risus sem
-                    sollicitudin lacus, ut interdum tellus elit sed risus.
-                    Maecenas eget condimentum velit, sit amet feugiat lectus.
-                    Class aptent taciti sociosqu ad litora torquent per conubia
-                    nostra, per inceptos himenaeos. Praesent auctor purus luctus
-                    enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus
-                    ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur
-                    vel bibendum lorem. Morbi convallis convallis diam sit amet
-                    lacinia. Aliquam in elementum tellus.
+                    Vagabound — це клуб ексцентричних дослідників, які шукають
+                    відповіді там, де наука боїться навіть поставити питання. У
+                    доробку Vagabound — експерименти, про які мовчать
+                    підручники: Чи можливо одомашнити блискавку? Як смакуватиме
+                    вечеря, якій кухар шепотів компліменти? Скільки треба
+                    кричати в мушлю, щоб записати крик? Що, якщо об’єднати
+                    скелелазіння і шибарі?
                   </Card1Text>
                   <Card1Text>
-                    Class aptent taciti sociosqu ad litora torquent per conubia
-                    nostra, per inceptos himenaeos. Praesent auctor purus luctus
-                    enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus
-                    ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur
-                    vel bibendum lorem. Morbi convallis convallis diam sit amet
-                    lacinia. Aliquam in elementum tellus.
+                    Що буде, якщо говорити перед дзеркалом задом наперед? Усі
+                    дослідження Vagabound були під грифом «Цілком таємно». Аж до
+                    сьогодні. Бо для наступного експерименту необхідні свідки,
+                    які впливають на результат. Ми переконані: віскі настоюється
+                    не лише в деревині, а й у звуках, світлі та часі — у
+                    вібраціях і ритмах. Ця пригода — доказ того, що світ трохи
+                    дивніший, ніж здається, і набагато цікавіший, ніж ми звикли
+                    думати.
                   </Card1Text>
                 </Card1TextWrap>
               </Card1TextContainer>
@@ -137,24 +135,42 @@ const StorySection: FC = () => {
               <Card3 src={card3} alt='Фото' />
               <Card4 src={card4} alt='Фото' />
               <Card2Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
-                metus nec fringilla accumsan, risus sem sollicitudin lacus, ut
-                interdum tellus elit sed risus. Maecenas eget condimentum velit,
-                sit amet feugiat lectus. Class aptent taciti sociosqu ad litora
-                torquent per conubia nostra, per inceptos himenaeos. Praesent
-                auctor purus luctus enim egestas, ac scelerisque ante pulvinar.
-                Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor
-                urna. Curabitur vel bibendum lorem. Morbi convallis convallis
-                diam sit amet lacinia. Aliquam in elementum tellus.
+                Все починається тут. Ми віримо: ми всі — резонатори. Усе, що ми
+                відчуваємо, не зникає безслідно. Воно відкладається в нас,
+                змінюючи нашу внутрішню структуру. Ритм танців, музична терапія,
+                дубова гімнастика, читання вголос — ніщо не проходить повз.
+                Кожна вібрація занотовується в дубовій пам’яті. Не з кожним
+                віскі поводяться так шанобливо, дозволяючи розкрити відмінності
+                та риси особистості. Ми спостерігаємо, як народжується смак. Це
+                не уява, а фізичний досвід: світло, звук, запахи, вібрації,
+                дотик, простір. Це ланцюгова реакція: Від відчуттів — до дерева.
+                Від дерева — до віскі.
+                <br />
+                Від віскі — до вас. Згодом цей
+                <br />
+                досвід опиниться у пляшках.
+                <br />І коли ви зробите ковток,
+                <br />
+                пам’ятайте: Усе, до чого ми
+                <br />
+                торкаємось, торкається
+                <br />
+                нас у відповідь.
               </Card2Text>
 
-              <Card2Title>the spirit</Card2Title>
+              <Card2Title>Бортовий Журнал</Card2Title>
 
               <Card2Desc>
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos. Praesent auctor purus luctus
-                enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
+                Суб’єкт: Лохан
+                <br />
+                Експеримент: участь у зйомках авангардного римейку «Гуллівера».
+                Деталі: Лохана помістили в макет міста ліліпутів. Оскільки інші
+                актори були надто малі, Лохан нарешті відчув себе Великою
+                Зіркою. Він грав Гуллівера, який мовчки споглядає метушню
+                дрібних людей. Спостереження: деревина роздулася від гордості;
+                тиск усередині бочки зріс на 15%. Вплив на смак: у віскі
+                з’явилися нотки величі та ледь помітний присмак зіркової
+                хвороби.
               </Card2Desc>
             </Card2Container>
 
@@ -165,19 +181,27 @@ const StorySection: FC = () => {
               <Card5 src={card5} alt='Фото' />
               <Card6 src={card6} alt='Фото' />
               <Card3Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
+                Експеримент: сеанс вінілової терапії.
+                <br />
+                Деталі: з програвача 24 години лунав джаз 30-х років із
+                характерним потріскуванням голки. Спостереження: Мейзі
+                занурилася в стан глибокої ностальгії.
               </Card3Text>
 
               <Card4Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Вплив на смак: напій набув «теплого лампового» характеру;
+                дегустатори відзначають, що після ковтка хочеться вдягнути
+                твідовий піджак.
               </Card4Text>
 
               <Card5Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
+                Суб’єкт: Рорі Експеримент: аудіосимуляція трансконтинентального
+                експресу. Деталі: для Рорі увімкнули зациклений запис: «чух-чух…
+                чух-чух…» та звук перонного дзвона. Спостереження: уперше за
+                весь час експерименту Рорі заспокоївся. Він увійшов у
+                медитативний транс, ритмічно погойдуючись (або це нам здалося).
+                Вплив на смак: смак став стрімким і прямим, мов рельси; з’явився
+                довгий фініш, що нагадує нескінченну дорогу додому.
               </Card5Text>
 
               <Signature>підпис</Signature>

@@ -11,7 +11,7 @@ const MaisiePage = lazy(() => import('@/pages/MaisiePage'));
 const App: FC = () => {
   return (
     <>
-      <PreviewVideo />
+      {/* <PreviewVideo /> */}
       <Routes>
         <Route path={PagePaths.root} element={<SharedLayout />}>
           <Route index element={<MainPage />} />

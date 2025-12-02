@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 import LogoIcon from '@/icons/hero/logo.svg?react';
-import bgImg from '@/images/hero/video.webp';
 
-export const Section = styled.section``;
+export const Section = styled.section`
+  position: relative;
+`;
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,15 +15,10 @@ export const Container = styled.div`
   height: 900px;
   /* padding-top: ${({ theme }) => theme.spacing(36)}px; */
   /* padding-bottom: ${({ theme }) => theme.spacing(36)}px; */
-  background-image: url(${bgImg});
-  background-size: cover;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
 `;
 
 export const Title = styled.h1`
-  color: #ebac3d;
+  color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 700;
   font-style: Bold;
@@ -69,7 +66,7 @@ export const SwitcherBtnImgHover = styled(SwitcherBtnImg)`
 export const Text = styled.p`
   width: 100%;
   max-width: 400px;
-  color: #ebac3d;
+  color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
   font-size: 18px;
@@ -82,4 +79,19 @@ export const Logo = styled(LogoIcon)`
   top: -258px;
   left: 50%;
   transform: translateX(-50%);
+`;
+
+export const Video = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+export const StyledVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 80%;
 `;

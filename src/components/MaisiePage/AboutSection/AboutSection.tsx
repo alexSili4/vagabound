@@ -15,7 +15,7 @@ const AboutSection: FC = () => {
     <Section>
       <SectionTitle>Про нас</SectionTitle>
       <Container>
-        <Frame src={frame} alt='' />
+        <Frame src={frame} alt='Рамка' />
         <TitleWrap>
           <Title>Title</Title>
           <Text>

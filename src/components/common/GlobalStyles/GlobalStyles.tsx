@@ -11,11 +11,19 @@ import {
   rubikBold,
   rubikRegular,
   soulRegular,
+  viaodaRegular,
 } from '@/fonts';
 
 const GlobalStyles: FC = () => (
   <Global
     styles={css`
+      @font-face {
+        font-family: ${theme.fontFamily.viaoda};
+        src: local(${theme.fontFamily.viaoda}),
+          url(${viaodaRegular}) format('truetype');
+        font-weight: 400;
+      }
+
       @font-face {
         font-family: ${theme.fontFamily.soul};
         src: local(${theme.fontFamily.soul}),
