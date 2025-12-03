@@ -7,6 +7,8 @@
       "@CommonComponents/*": ["./src/components/common/*"],
       "@MainPageComponents/*": ["./src/components/MainPage/*"],
       "@MaisiePageComponents/*": ["./src/components/MaisiePage/*"],
+      "@RoryPageComponents/*": ["./src/components/RoryPage/*"],
+      "@LochanPageComponents/*": ["./src/components/LochanPage/*"],
       // animations
       "@AnimatedGeneralComponents/*": ["./src/components/Animated/General/*"],
       "@AnimatedMainPageComponents/*": ["./src/components/Animated/MainPage/*"]

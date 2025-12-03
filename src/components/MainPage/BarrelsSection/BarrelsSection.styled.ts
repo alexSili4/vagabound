@@ -106,7 +106,7 @@ export const BarrelText = styled.p`
   line-height: 1.4;
 `;
 
-export const BarrelCardBottom = styled.div`
+export const BarrelLinkBottom = styled(Link)`
   position: absolute;
   bottom: 0;
   left: 316px;
@@ -115,7 +115,7 @@ export const BarrelCardBottom = styled.div`
   gap: ${({ theme }) => theme.spacing(3)}px;
 `;
 
-export const BarrelCardTop = styled.div`
+export const BarrelLinkTop = styled(Link)`
   position: absolute;
   top: -90px;
   right: 207px;
@@ -124,7 +124,7 @@ export const BarrelCardTop = styled.div`
   gap: ${({ theme }) => theme.spacing(3)}px;
 `;
 
-export const BarrelCardRight = styled.div`
+export const BarrelLinkRight = styled(Link)`
   position: absolute;
   bottom: 25px;
   right: 12px;

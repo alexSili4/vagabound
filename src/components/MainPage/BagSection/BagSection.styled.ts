@@ -77,17 +77,35 @@ export const OpenBag = styled.img`
   transform: translateX(-50%);
 `;
 
-export const Photo = styled.img<IStyledProps>`
+export const VideoWrap = styled.div<IStyledProps>`
   position: absolute;
   bottom: 25px;
   left: -53px;
   width: 452px;
   height: 596px;
   transform: scale(${({ isOpen }) => (isOpen ? 1 : 0.6)})
-    rotate(${({ isOpen }) => (isOpen ? 0 : '6deg')})
+    rotate(${({ isOpen }) => (isOpen ? '-6deg' : 0)})
     translateX(${({ isOpen }) => (isOpen ? 0 : '80px')})
     translateY(${({ isOpen }) => (isOpen ? 0 : '80px')});
   transition: transform ${({ theme }) => theme.transition800};
+`;
+
+export const StyledVideo = styled.video`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 80%;
+`;
+
+export const VideoBg = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 115%;
+  height: 111%;
+  max-width: none;
+  transform: translateX(-50%) translateY(-50%) rotate(-2deg);
 `;
 
 export const Ticket = styled.img<IStyledProps>`

@@ -11,6 +11,8 @@ export default defineConfig({
       '@ErrorPageComponents': '/src/components/ErrorPage',
       '@MainPageComponents': '/src/components/MainPage',
       '@MaisiePageComponents': '/src/components/MaisiePage',
+      '@RoryPageComponents': '/src/components/RoryPage',
+      '@LochanPageComponents': '/src/components/LochanPage',
       // animations
       '@AnimatedMainPageComponents': '/src/components/Animated/MainPage',
       '@AnimatedGeneralComponents': '/src/components/Animated/General',

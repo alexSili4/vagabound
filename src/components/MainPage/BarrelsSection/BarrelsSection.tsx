@@ -25,9 +25,8 @@ import {
   BarrelImgBottomWrap,
   Title,
   BarrelImgTopWrap,
-  BarrelCardBottom,
-  BarrelCardTop,
-  BarrelCardRight,
+  BarrelLinkTop,
+  BarrelLinkRight,
   BarrelTopTextWrap,
   CutImg,
   BarrelLinkLeft,
@@ -40,6 +39,7 @@ import {
   TotalNumber,
   Delimiter,
   DelimiterWrap,
+  BarrelLinkBottom,
 } from './BarrelsSection.styled';
 import cut from '@/images/barrels/cut.webp';
 import { PagePaths } from '@/constants';
@@ -89,7 +89,7 @@ const BarrelsSection: FC = () => {
           </BarrelCardLeft>
         </BarrelLinkLeft>
 
-        <BarrelCardBottom>
+        <BarrelLinkBottom to={PagePaths.rory}>
           <BarrelImgBottomWrap>
             <BarrelBottomImg src={barrelBottom} alt='МЕЙЗІ' />
             <Label />
@@ -101,9 +101,9 @@ const BarrelsSection: FC = () => {
               його воля, він би навіть спав на біговій доріжці.
             </BarrelText>
           </BarrelTextWrap>
-        </BarrelCardBottom>
+        </BarrelLinkBottom>
 
-        <BarrelCardTop>
+        <BarrelLinkTop to={PagePaths.lochan}>
           <BarrelImgTopWrap>
             <BarrelTopImg src={barrelTop} alt='МЕЙЗІ' />
             <Label />
@@ -115,9 +115,9 @@ const BarrelsSection: FC = () => {
               що на сцені він трішки… дерев’яний.
             </BarrelText>
           </BarrelTopTextWrap>
-        </BarrelCardTop>
+        </BarrelLinkTop>
 
-        <BarrelCardRight>
+        <BarrelLinkRight to={PagePaths.campbell}>
           <BarrelImgRightWrap>
             <BarrelRightImg src={barrelRight} alt='МЕЙЗІ' />
             <Label />
@@ -130,7 +130,7 @@ const BarrelsSection: FC = () => {
               ближнього.
             </BarrelText>
           </BarrelTextWrap>
-        </BarrelCardRight>
+        </BarrelLinkRight>
 
         <LightLeftWrap>
           <LightLeft src={lightLeft} alt='Прожектор' />

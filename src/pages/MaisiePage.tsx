@@ -5,6 +5,7 @@ import OrderSection from '@MaisiePageComponents/OrderSection';
 import Footer from '@MaisiePageComponents/Footer';
 import { FC } from 'react';
 import BarrelPageControls from '@CommonComponents/BarrelPageControls';
+import { PagePaths } from '@/constants';
 
 const MaisiePage: FC = () => {
   return (
@@ -15,7 +16,7 @@ const MaisiePage: FC = () => {
         <AboutSection />
         <OrderSection />
         <div style={{ backgroundColor: '#983400' }}>
-          <BarrelPageControls />
+          <BarrelPageControls href={PagePaths.campbell} />
         </div>
       </main>
       <Footer />
