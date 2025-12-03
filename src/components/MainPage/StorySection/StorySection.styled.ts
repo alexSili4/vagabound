@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Vagabound from '@/icons/story/vagabound.svg?react';
 import { StyledCardContainerProps } from './StorySection.types';
 
 export const Section = styled.section`
@@ -95,65 +94,82 @@ export const Card1Container = styled.div<StyledCardContainerProps>`
 
 export const Card1 = styled.img`
   position: absolute;
-  top: 7.2%;
-  left: 13%;
-  width: 32%;
+  top: 40%;
+  left: 10%;
+  width: 38%;
 `;
 
 export const Card2 = styled.img`
   position: absolute;
-  left: 10%;
-  bottom: 17%;
-  width: 37%;
-`;
-
-export const Card1TextContainer = styled.div`
-  position: absolute;
-  top: 4%;
-  right: 13%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: ${({ theme }) => theme.spacing(10)}px;
-  width: 34.4%;
-  height: 68.7%;
-`;
-
-export const Card1TitleWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing(3)}px;
-  height: 100%;
-`;
-
-export const Card1Logo = styled(Vagabound)`
-  display: flex;
-  width: 90%;
-  aspect-ratio: 208/80;
+  right: 14%;
+  top: 5%;
+  width: 35%;
 `;
 
 export const Card1Title = styled.p`
-  color: #252525;
+  color: #1a3e2f;
   font-family: ${({ theme }) => theme.fontFamily.pica};
   font-weight: 400;
-  font-size: 20px;
+  font-size: 48px;
   line-height: 0.6;
-  text-align: center;
+  letter-spacing: 0%;
 `;
 
 export const Card1TextWrap = styled.div`
-  display: flex;
-  justify-content: space-between;
+  padding-top: 5%;
+  padding-left: 15%;
 `;
 
 export const Card1Text = styled.p`
-  width: 47%;
+  width: 37%;
+  margin-top: ${({ theme }) => theme.spacing(3)}px;
   color: #252525;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
   font-size: 16px;
   line-height: 1.4;
+  white-space: pre-wrap;
+`;
+
+export const Card1TextAlt = styled.p`
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  width: 33%;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+`;
+
+export const Lines1 = styled.img`
+  position: absolute;
+  top: 39%;
+  left: 15%;
+  width: 14%;
+`;
+
+export const Lines2 = styled.img`
+  position: absolute;
+  top: 36.5%;
+  left: 28%;
+  width: 12%;
+`;
+
+export const Card1Date = styled.p`
+  position: absolute;
+  top: 5%;
+  left: 33%;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 56px;
+  line-height: 0.5;
+  letter-spacing: 2%;
+  rotate: -14deg;
 `;
 
 export const Card2Container = styled.div<StyledCardContainerProps>`

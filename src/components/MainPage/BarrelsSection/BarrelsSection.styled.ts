@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export const Section = styled.section`
   position: relative;
   background-color: #500800;
+  padding-top: ${({ theme }) => theme.spacing(50)}px;
 `;
 
 export const CutImg = styled.img`
@@ -28,9 +29,17 @@ export const Container = styled.div`
 
 export const LightLeftWrap = styled.div`
   position: absolute;
+  z-index: 20;
   top: -235px;
   left: -315px;
   pointer-events: none;
+  transform: rotate(-15deg);
+  transform-origin: center left;
+  transition: transform 1.2s ease-out;
+
+  &.in-view {
+    transform: rotate(0deg);
+  }
 `;
 
 export const LightLeft = styled.img`
@@ -40,9 +49,17 @@ export const LightLeft = styled.img`
 
 export const LightRightWrap = styled.div`
   position: absolute;
+  z-index: 20;
   top: -175px;
   right: -225px;
   pointer-events: none;
+  transform: rotate(15deg);
+  transform-origin: center right;
+  transition: transform 1.2s ease-out;
+
+  &.in-view {
+    transform: rotate(0deg);
+  }
 `;
 
 export const LightRight = styled.img`
@@ -72,7 +89,7 @@ export const BarrelLeftImg = styled.img`
   position: absolute;
   top: -12px;
   left: -13px;
-  width: 357px;
+  width: 347px;
   max-width: none;
 `;
 
@@ -85,7 +102,7 @@ export const BarrelTextWrap = styled.div`
 
 export const BarrelTopTextWrap = styled(BarrelTextWrap)`
   width: 160px;
-  margin-left: ${({ theme }) => theme.spacing(36)}px;
+  margin-left: ${({ theme }) => theme.spacing(60)}px;
 `;
 
 export const BarrelTitle = styled.p`
@@ -108,6 +125,7 @@ export const BarrelText = styled.p`
 
 export const BarrelLinkBottom = styled(Link)`
   position: absolute;
+  z-index: 10;
   bottom: 0;
   left: 316px;
   display: flex;
@@ -117,8 +135,8 @@ export const BarrelLinkBottom = styled(Link)`
 
 export const BarrelLinkTop = styled(Link)`
   position: absolute;
-  top: -90px;
-  right: 207px;
+  top: -190px;
+  right: 297px;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)}px;

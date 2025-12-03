@@ -4,7 +4,7 @@ import AboutSection from '@MainPageComponents/AboutSection';
 import BarrelsSection from '@MainPageComponents/BarrelsSection';
 import TravelSection from '@MainPageComponents/TravelSection';
 import StorySection from '@MainPageComponents/StorySection';
-import MediaSection from '@MainPageComponents/MediaSection';
+// import MediaSection from '@MainPageComponents/MediaSection';
 import BottlesSection from '@MainPageComponents/BottlesSection';
 import OrderSection from '@MainPageComponents/OrderSection';
 import FAQSection from '@MainPageComponents/FAQSection';
@@ -20,7 +20,7 @@ const Main: FC = () => {
       <AboutSection />
       <TravelSection />
       <StorySection />
-      <MediaSection />
+      {/* <MediaSection /> */}
       <BottlesSection />
       <OrderSection />
       <FAQSection />

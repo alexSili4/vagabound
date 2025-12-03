@@ -20,6 +20,13 @@ import { useVideo } from '@/hooks';
 const HeroSection: FC = () => {
   const { videoRef } = useVideo();
 
+  const handleScrollToBarrels = () => {
+    const barrelsSection = document.getElementById('barrels');
+    if (barrelsSection) {
+      barrelsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <Section data-header-theme='light'>
       <Video>
@@ -30,7 +37,7 @@ const HeroSection: FC = () => {
         <Title>the spirit worth chasing</Title>
         <SwitcherBtnWrap>
           <Logo />
-          <SwitcherBtn type='button'>
+          <SwitcherBtn type='button' onClick={handleScrollToBarrels}>
             <SwitcherBtnImgDefault src={imgDefault} alt='Кнопка' />
             <SwitcherBtnImgHover src={imgHover} alt='Кнопка' />
           </SwitcherBtn>

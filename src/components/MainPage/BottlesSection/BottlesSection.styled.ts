@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Section = styled.section`
   background-color: #500800;
-  padding-top: ${({ theme }) => theme.spacing(100)}px;
+  /* padding-top: ${({ theme }) => theme.spacing(100)}px; */
 `;
 
 export const List = styled.ul`

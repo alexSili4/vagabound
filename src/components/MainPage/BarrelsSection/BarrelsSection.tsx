@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import barrelLeft from '@/images/barrels/barrel-left.webp';
 import barrelRight from '@/images/barrels/barrel-right.webp';
 import barrelBottom from '@/images/barrels/barrel-bottom.webp';
@@ -68,11 +68,35 @@ const Label: FC = () => {
 };
 
 const BarrelsSection: FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <Section>
+    <Section id='barrels'>
       <CutImg src={cut} alt='Декоративний обрив' />
       <Title>Бочки</Title>
-      <Container>
+      <Container ref={containerRef}>
         <BarrelLinkLeft to={PagePaths.maisie}>
           <BarrelCardLeft>
             <BarrelImgLeftWrap>
@@ -132,10 +156,10 @@ const BarrelsSection: FC = () => {
           </BarrelTextWrap>
         </BarrelLinkRight>
 
-        <LightLeftWrap>
+        <LightLeftWrap className={isInView ? 'in-view' : ''}>
           <LightLeft src={lightLeft} alt='Прожектор' />
         </LightLeftWrap>
-        <LightRightWrap>
+        <LightRightWrap className={isInView ? 'in-view' : ''}>
           <LightRight src={lightRight} alt='Прожектор' />
         </LightRightWrap>
       </Container>

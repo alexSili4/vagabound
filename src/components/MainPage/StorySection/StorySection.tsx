@@ -16,11 +16,8 @@ import {
   Card1,
   Card2,
   Card1Text,
-  Card1TextContainer,
-  Card1Logo,
   Card1TextWrap,
   Card1Title,
-  Card1TitleWrap,
   Controls,
   SliderBtn,
   Card2Container,
@@ -36,6 +33,10 @@ import {
   Card4Text,
   Card5Text,
   Signature,
+  Card1Date,
+  Card1TextAlt,
+  Lines1,
+  Lines2,
 } from './StorySection.styled';
 import book from '@/images/story/book.webp';
 import card1 from '@/images/story/card-1.webp';
@@ -44,7 +45,46 @@ import card3 from '@/images/story/card-3.webp';
 import card4 from '@/images/story/card-4.webp';
 import card5 from '@/images/story/card-5.webp';
 import card6 from '@/images/story/card-6.webp';
+import lines1 from '@/images/story/lines-1.webp';
+import lines2 from '@/images/story/lines-2.webp';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
+
+const Card1Component: FC<{ isActive: boolean }> = ({ isActive }) => {
+  return (
+    <Card1Container isActive={isActive} data-header-theme='light'>
+      <Card1TextWrap>
+        <Card1Title>vagabound</Card1Title>
+        <Card1Date>11/24/25’</Card1Date>
+        <Card1 src={card1} alt='' />
+        <Card2 src={card2} alt='' />
+        <Card1Text>
+          {'      '}
+          Це клуб ексцентричних дослідників, які шукають відповіді там, де наука
+          боїться навіть поставити питання.
+          <br />
+          {'      '}У доробку Vagabound — експерименти, про які мовчать
+          підручники:
+          <br />
+          {'      '}Чи можливо одомашнити блискавку? Як смакуватиме вечеря, якій
+          кухар шепотів компліменти? Скільки треба кричати в мушлю, щоб записати
+          крик? Що, якщо об’єднати скелелазіння і шибарі?
+        </Card1Text>
+        <Card1TextAlt>
+          {'      '}Усі дослідження Vagabound були під грифом «Цілком таємно».
+          Аж до сьогодні. Бо для наступного експерименту необхідні свідки, які
+          впливають на результат.
+          <br />
+          {'      '}Ми переконані: віскі настоюється не лише в деревині, а й у
+          звуках, світлі та часі — у вібраціях і ритмах. Ця пригода — доказ
+          того, що світ трохи дивніший, ніж здається, і набагато цікавіший, ніж
+          ми звикли думати.
+        </Card1TextAlt>
+        <Lines1 src={lines1} alt='' />
+        <Lines2 src={lines2} alt='' />
+      </Card1TextWrap>
+    </Card1Container>
+  );
+};
 
 const StorySection: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -91,42 +131,7 @@ const StorySection: FC = () => {
 
             <Book src={book} alt='Книга' />
 
-            <Card1Container
-              isActive={activeIndex === 0}
-              data-header-theme='light'
-            >
-              <Card1 src={card1} alt='Фото' />
-              <Card2 src={card2} alt='Фото' />
-
-              <Card1TextContainer>
-                <Card1TitleWrap>
-                  <Card1Logo />
-                  <Card1Title>the spirit worth chasing / filling</Card1Title>
-                </Card1TitleWrap>
-
-                <Card1TextWrap>
-                  <Card1Text>
-                    Vagabound — це клуб ексцентричних дослідників, які шукають
-                    відповіді там, де наука боїться навіть поставити питання. У
-                    доробку Vagabound — експерименти, про які мовчать
-                    підручники: Чи можливо одомашнити блискавку? Як смакуватиме
-                    вечеря, якій кухар шепотів компліменти? Скільки треба
-                    кричати в мушлю, щоб записати крик? Що, якщо об’єднати
-                    скелелазіння і шибарі?
-                  </Card1Text>
-                  <Card1Text>
-                    Що буде, якщо говорити перед дзеркалом задом наперед? Усі
-                    дослідження Vagabound були під грифом «Цілком таємно». Аж до
-                    сьогодні. Бо для наступного експерименту необхідні свідки,
-                    які впливають на результат. Ми переконані: віскі настоюється
-                    не лише в деревині, а й у звуках, світлі та часі — у
-                    вібраціях і ритмах. Ця пригода — доказ того, що світ трохи
-                    дивніший, ніж здається, і набагато цікавіший, ніж ми звикли
-                    думати.
-                  </Card1Text>
-                </Card1TextWrap>
-              </Card1TextContainer>
-            </Card1Container>
+            <Card1Component isActive={activeIndex === 0} />
 
             <Card2Container
               isActive={activeIndex === 1}

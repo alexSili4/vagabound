@@ -44,3 +44,18 @@ export const Title = styled.h1`
   letter-spacing: 2%;
   text-transform: uppercase;
 `;
+
+export const Video = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`;
+
+export const StyledVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 80%;
+`;

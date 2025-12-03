@@ -44,7 +44,7 @@ const usePreviewVideo = ({ onVideoEnded }: UsePreviewVideoProps) => {
     if (!video) return;
 
     const handleTimeUpdate = () => {
-      const limit = 19;
+      const limit = 3;
 
       if (video.currentTime >= limit && !isCheckAge) {
         video.pause();
