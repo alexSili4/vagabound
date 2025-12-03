@@ -21,6 +21,7 @@ export const Container = styled.div`
 `;
 
 export const TextWrap = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)}px;
@@ -55,4 +56,18 @@ export const Image = styled.img`
   right: 768px;
   bottom: 0;
   height: 856px;
+`;
+
+export const Line = styled.img`
+  position: absolute;
+  bottom: 92px;
+  left: 197px;
+  width: 236px;
+`;
+
+export const Lines = styled.img`
+  position: absolute;
+  bottom: -10px;
+  left: 408px;
+  width: 83px;
 `;

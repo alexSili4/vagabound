@@ -8,8 +8,12 @@ import {
   TextWrap,
   Title,
   Image,
+  Line,
+  Lines,
 } from './PreferencesSection.styled';
 import image from '@/images/barrel-page/lochan/image.webp';
+import line from '@/images/barrel-page/lochan/line.webp';
+import lines from '@/images/barrel-page/lochan/lines.webp';
 
 const PreferencesSection: FC = () => {
   return (
@@ -45,6 +49,9 @@ const PreferencesSection: FC = () => {
             Якось він переслідував кішку дев’ять кварталів, уявивши себе актором
             «Cats».
           </Text>
+
+          <Line src={line} alt='' />
+          <Lines src={lines} alt='' />
         </TextWrap>
         <TextWrap>
           <Title>Лохан не любить:</Title>
