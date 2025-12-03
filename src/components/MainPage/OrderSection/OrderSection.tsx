@@ -221,7 +221,7 @@ const OrderSection: FC = () => {
         </FormWrap>
 
         <SuccessMsgWrap isSuccess={isSuccess}>
-          <SuccessMsgBg src={successMsgBg} alt='' />
+          <SuccessMsgBg src={successMsgBg} alt='Конверт' />
           <SuccessMsgTextWrap>
             <SuccessMsgTitle>дякуємо за замовлення!</SuccessMsgTitle>
             <SuccessMsgText>

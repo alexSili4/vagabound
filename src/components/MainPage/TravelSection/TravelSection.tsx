@@ -25,6 +25,7 @@ import {
 import screen2 from '@/images/travel/screen-2.webp';
 import screen3 from '@/images/travel/screen-3.webp';
 import screen4 from '@/images/travel/screen-4.webp';
+import screen5 from '@/images/travel/screen-5.webp';
 import barrel from '@/images/travel/barrel.webp';
 import barrelRight from '@/images/travel/barrel-right.webp';
 import barrelLeft from '@/images/travel/barrel-left.webp';
@@ -78,7 +79,11 @@ const TravelSection: FC = () => {
 
       <BarrelCenterWrap ref={barrelWrapRef}>
         <Barrel src={barrel} alt='Бочка' />
-        <Vagabound src={vagabound} alt='' style={{ opacity: logoOpacity }} />
+        <Vagabound
+          src={vagabound}
+          alt='Логотип'
+          style={{ opacity: logoOpacity }}
+        />
       </BarrelCenterWrap>
 
       <Space1></Space1>
@@ -121,6 +126,9 @@ const TravelSection: FC = () => {
 
       <Screen data-header-theme='light'>
         <Image src={screen2} alt='Банер' />
+      </Screen>
+      <Screen data-header-theme='light'>
+        <Image src={screen5} alt='Банер' />
       </Screen>
       <Screen data-header-theme='dark'>
         <Image src={screen3} alt='Банер' />

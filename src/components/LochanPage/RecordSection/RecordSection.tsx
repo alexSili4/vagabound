@@ -19,8 +19,8 @@ const RecordSection: FC = () => {
       <SectionTitle>Експеримент</SectionTitle>
 
       <Container>
-        <Doll src={doll} alt='' />
-        <Image src={barrelWithDolls} alt='' />
+        <Doll src={doll} alt='Лялька' />
+        <Image src={barrelWithDolls} alt='Бочка та ляльки' />
         <TextWrap>
           <Title>Запис №42</Title>
           <Text>

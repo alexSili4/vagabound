@@ -56,16 +56,16 @@ const BagSection: FC = () => {
       <Container>
         <BagBtn type='button' onClick={onBtnClick}>
           <Closed isOpen={isOpen}>
-            <Label src={label} alt='' isOpen={isOpen} />
-            <ClosedBag src={closedBag} alt='' />
-            <Arrow src={arrow} alt='' />
+            <Label src={label} alt='Етикетка' isOpen={isOpen} />
+            <ClosedBag src={closedBag} alt='Валіза' />
+            <Arrow src={arrow} alt='Стрілка' />
             <Text>Відкрий мене</Text>
           </Closed>
 
           <Open isOpen={isOpen}>
-            <OpenBag src={openBag} alt='' />
+            <OpenBag src={openBag} alt='Валіза' />
             <VideoWrap isOpen={isOpen}>
-              <VideoBg src={videoBg} alt='' />
+              <VideoBg src={videoBg} alt='Задній фон' />
               <StyledVideo
                 ref={videoRef}
                 src={preview}
@@ -74,7 +74,7 @@ const BagSection: FC = () => {
                 loop
               />
             </VideoWrap>
-            <Ticket src={ticket} alt='' isOpen={isOpen} />
+            <Ticket src={ticket} alt='Купон' isOpen={isOpen} />
             <Letter isOpen={isOpen}>
               <LetterTitle>Lorem ipsum dolor sit amet,</LetterTitle>
               <LetterText>

@@ -48,7 +48,7 @@ import labelBg from '@/images/barrels/label-bg.webp';
 const Label: FC = () => {
   return (
     <LabelContainer>
-      <LabelBg src={labelBg} alt='' />
+      <LabelBg src={labelBg} alt='Купон' />
 
       <LabelTextWrap>
         <LabelTitle>залишок партії</LabelTitle>

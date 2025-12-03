@@ -29,7 +29,7 @@ const AboutSection: FC = () => {
             Чепелтон
           </Title>
           <TextWrap>
-            <AboutAccent src={aboutAccent} alt='' />
+            <AboutAccent src={aboutAccent} alt='Акцент' />
             <Text>
               Лохан Чепелтон — мріє стати відомим актором.
               <br />

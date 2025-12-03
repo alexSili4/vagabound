@@ -31,8 +31,8 @@ const HeroSection: FC = () => {
         <SwitcherBtnWrap>
           <Logo />
           <SwitcherBtn type='button'>
-            <SwitcherBtnImgDefault src={imgDefault} alt='' />
-            <SwitcherBtnImgHover src={imgHover} alt='' />
+            <SwitcherBtnImgDefault src={imgDefault} alt='Кнопка' />
+            <SwitcherBtnImgHover src={imgHover} alt='Кнопка' />
           </SwitcherBtn>
           <Text>
             Шотландія. Чотири бочки — один експеримент. Подорож, що змінить смак

@@ -48,7 +48,7 @@ const Question1: FC = () => {
           <AnswerText>Бо бочка катається по всій Шотландії.</AnswerText>
         </Answer>
       </AnswerWrap>
-      <Accent src={accent} alt='' isShowElement={isShowElement} />
+      <Accent src={accent} alt='Акцент' isShowElement={isShowElement} />
     </Question>
   );
 };
@@ -67,7 +67,7 @@ const Question2: FC = () => {
         </IconWrap>
       </QuestionBtn>
 
-      <Paper src={paper} alt='' isShowElement={isShowElement} />
+      <Paper src={paper} alt='Папірець' isShowElement={isShowElement} />
       <AnswerWrap
         ref={elementRef}
         scrollHeight={elementScrollHeight}

@@ -16,7 +16,7 @@ const PreferencesSection: FC = () => {
     <Section>
       <SectionTitle>Вподбання</SectionTitle>
       <Container>
-        <Image src={image} alt='' />
+        <Image src={image} alt='Зображення' />
         <TextWrap>
           <Title>Лохан любить:</Title>
           <Text>
