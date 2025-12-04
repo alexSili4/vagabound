@@ -42,18 +42,44 @@ import {
   BarrelLinkBottom,
 } from './BarrelsSection.styled';
 import cut from '@/images/barrels/cut.webp';
-import { PagePaths } from '@/constants';
+import { PagePaths, SectionId } from '@/constants';
 import labelBg from '@/images/barrels/label-bg.webp';
+import { useCounterAnimation } from '@/hooks';
 
 const Label: FC = () => {
+  const labelRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+  const count = useCounterAnimation(34, isInView, 2000);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { threshold: 0.8 }
+    );
+
+    if (labelRef.current) {
+      observer.observe(labelRef.current);
+    }
+
+    return () => {
+      if (labelRef.current) {
+        observer.unobserve(labelRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <LabelContainer>
+    <LabelContainer ref={labelRef}>
       <LabelBg src={labelBg} alt='Купон' />
 
       <LabelTextWrap>
         <LabelTitle>залишок партії</LabelTitle>
         <LabelNumber>
-          <span>34</span>
+          <span>{count}</span>
           <TotalNumber>/76</TotalNumber>
         </LabelNumber>
         <LabelDesc>пляшок</LabelDesc>
@@ -93,7 +119,7 @@ const BarrelsSection: FC = () => {
   }, []);
 
   return (
-    <Section id='barrels'>
+    <Section id={SectionId.barrels}>
       <CutImg src={cut} alt='Декоративний обрив' />
       <Title>Бочки</Title>
       <Container ref={containerRef}>

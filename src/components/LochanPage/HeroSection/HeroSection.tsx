@@ -10,10 +10,10 @@ const HeroSection: FC = () => {
   return (
     <Section>
       <Container>
-        <GoHomeLink />
         <Video>
           <StyledVideo ref={videoRef} src={lochan} muted playsInline loop />
         </Video>
+        <GoHomeLink />
       </Container>
     </Section>
   );

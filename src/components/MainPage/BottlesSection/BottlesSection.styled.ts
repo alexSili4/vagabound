@@ -18,12 +18,15 @@ export const Card1 = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: space-between;
   gap: ${({ theme }) => theme.spacing(6)}px;
+  height: 100%;
   padding-left: ${({ theme }) => theme.spacing(10)}px;
   padding-right: ${({ theme }) => theme.spacing(6)}px;
   padding-bottom: ${({ theme }) => theme.spacing(12)}px;
   padding-top: ${({ theme }) => theme.spacing(12)}px;
   background-color: #1a3e2f;
+  overflow: hidden;
 `;
 
 export const Card2 = styled(Card1)`
@@ -54,12 +57,28 @@ export const Name = styled.p`
 
 export const CardContent = styled.div``;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  transition: scale ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    scale: 1.05;
+  }
+`;
 
 export const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)}px;
+`;
+
+export const CardName = styled.p`
+  color: #e8e8e8;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+  text-transform: uppercase;
 `;
 
 export const CardInfoItem = styled.div`
@@ -83,6 +102,10 @@ export const CardText = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.4;
+`;
+
+export const Accent = styled.span`
+  font-weight: 700;
 `;
 
 export const Delimiter = styled.div`

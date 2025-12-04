@@ -147,6 +147,7 @@ export const AnswerText = styled.p`
   font-size: 18px;
   line-height: 1.4;
   letter-spacing: 0%;
+  white-space: pre-wrap;
 `;
 
 export const AnswerText2 = styled(AnswerText)`

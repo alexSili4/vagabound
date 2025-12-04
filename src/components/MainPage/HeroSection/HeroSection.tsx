@@ -16,12 +16,13 @@ import imgDefault from '@/images/hero/switcher-default.webp';
 import imgHover from '@/images/hero/switcher-hover.webp';
 import hero from '@/video/hero.mp4';
 import { useVideo } from '@/hooks';
+import { SectionId } from '@/constants';
 
 const HeroSection: FC = () => {
   const { videoRef } = useVideo();
 
   const handleScrollToBarrels = () => {
-    const barrelsSection = document.getElementById('barrels');
+    const barrelsSection = document.getElementById(SectionId.barrels);
     if (barrelsSection) {
       barrelsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }

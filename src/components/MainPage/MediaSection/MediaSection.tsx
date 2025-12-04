@@ -29,6 +29,7 @@ import card8 from '@/images/media/card-8.webp';
 import stamp from '@/images/media/stamp.webp';
 import lines from '@/images/media/lines.webp';
 import { useScroll, useTransform } from 'framer-motion';
+import { SectionId } from '@/constants';
 
 const MediaSection: FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,7 +48,7 @@ const MediaSection: FC = () => {
   const card8Y = useTransform(scrollYProgress, [0.5, 0.65], [1200, 0]);
 
   return (
-    <Section>
+    <Section id={SectionId.social}>
       <Paper src={paper} alt='Світлина' />
 
       <ScreenWrap ref={containerRef}>

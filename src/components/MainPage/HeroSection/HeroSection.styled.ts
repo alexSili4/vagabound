@@ -43,6 +43,38 @@ export const SwitcherBtn = styled.button`
   justify-content: center;
   width: 200px;
   height: 204px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-20deg);
+    pointer-events: none;
+  }
+
+  &:is(:hover, :focus)::before {
+    animation: shine 0.6s ease-in-out forwards;
+  }
+
+  @keyframes shine {
+    from {
+      left: -100%;
+    }
+    to {
+      left: 150%;
+    }
+  }
 `;
 
 export const SwitcherBtnImg = styled.img`

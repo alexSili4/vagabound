@@ -5,6 +5,15 @@ export const Section = styled.section`
   background-color: #500800;
 `;
 
+export const BarrelContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 30dvh;
+`;
+
 export const Title = styled.h2`
   position: absolute;
   scale: 0;
@@ -12,7 +21,7 @@ export const Title = styled.h2`
 
 export const FirstScreen = styled.div`
   position: relative;
-  height: 150dvh;
+  height: 0;
 `;
 
 export const Screen = styled.div`
@@ -40,6 +49,19 @@ export const BarrelWrap = styled.div`
 
 export const BarrelCenterWrap = styled(BarrelWrap)`
   z-index: 100;
+`;
+
+export const BarrelWithLogoWrap = styled.div`
+  position: absolute;
+  bottom: 16.5dvh;
+  left: 50%;
+  height: 50dvh;
+  aspect-ratio: 343 / 433;
+  transform: translateX(-50%);
+`;
+
+export const BarrelCenter = styled.img`
+  width: 100%;
 `;
 
 export const Barrel = styled.img`
@@ -113,9 +135,9 @@ export const Space6 = styled.div`
 export const Vagabound = styled.img`
   position: absolute;
   left: 50%;
-  bottom: 22dvh;
+  top: 50%;
   width: 236px;
   height: 236px;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-50%);
   transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
 `;

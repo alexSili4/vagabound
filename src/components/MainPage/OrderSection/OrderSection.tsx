@@ -45,7 +45,7 @@ import {
 } from './OrderSection.styled';
 import { IContactsForm } from '@/types/order';
 import { useForm } from 'react-hook-form';
-import { contacts } from '@/constants';
+import { contacts, SectionId } from '@/constants';
 import successMsgBg from '@/images/order/success-msg.webp';
 
 interface IInputProps {
@@ -194,7 +194,7 @@ const OrderSection: FC = () => {
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
   return (
-    <Section>
+    <Section id={SectionId.contacts}>
       <Container>
         <PostboxWrap>
           <BlackBox></BlackBox>

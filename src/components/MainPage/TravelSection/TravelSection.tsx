@@ -5,7 +5,6 @@ import {
   Image,
   Screen,
   Title,
-  Barrel,
   BarrelWrap,
   BarrelRight,
   BarrelLeft,
@@ -21,6 +20,9 @@ import {
   BarrelLeftBottom,
   BarrelCenterWrap,
   Vagabound,
+  BarrelWithLogoWrap,
+  BarrelCenter,
+  BarrelContainer,
 } from './TravelSection.styled';
 import screen2 from '@/images/travel/screen-2.webp';
 import screen3 from '@/images/travel/screen-3.webp';
@@ -77,50 +79,43 @@ const TravelSection: FC = () => {
     <Section ref={sectionRef}>
       <Title>Мандрівка бочки</Title>
 
-      <BarrelCenterWrap ref={barrelWrapRef}>
-        <Barrel src={barrel} alt='Бочка' />
-        <Vagabound
-          src={vagabound}
-          alt='Логотип'
-          style={{ opacity: logoOpacity }}
-        />
-      </BarrelCenterWrap>
+      <BarrelContainer>
+        <Space1></Space1>
 
-      <Space1></Space1>
+        <BarrelWrap>
+          <BarrelRightTop src={barrel} alt='Бочка' />
+        </BarrelWrap>
 
-      <BarrelWrap>
-        <BarrelRightTop src={barrel} alt='Бочка' />
-      </BarrelWrap>
+        <Space2></Space2>
 
-      <Space2></Space2>
+        <BarrelWrap>
+          <BarrelLeftTop src={barrel} alt='Бочка' />
+        </BarrelWrap>
 
-      <BarrelWrap>
-        <BarrelLeftTop src={barrel} alt='Бочка' />
-      </BarrelWrap>
+        <Space3></Space3>
 
-      <Space3></Space3>
+        <BarrelWrap>
+          <BarrelLeft src={barrelLeft} alt='Бочка' />
+        </BarrelWrap>
 
-      <BarrelWrap>
-        <BarrelLeft src={barrelLeft} alt='Бочка' />
-      </BarrelWrap>
+        <Space4></Space4>
 
-      <Space4></Space4>
+        <BarrelWrap>
+          <BarrelRightBottom src={barrel} alt='Бочка' />
+        </BarrelWrap>
 
-      <BarrelWrap>
-        <BarrelRightBottom src={barrel} alt='Бочка' />
-      </BarrelWrap>
+        <Space5></Space5>
 
-      <Space5></Space5>
+        <BarrelWrap>
+          <BarrelRight src={barrelRight} alt='Бочка' />
+        </BarrelWrap>
 
-      <BarrelWrap>
-        <BarrelRight src={barrelRight} alt='Бочка' />
-      </BarrelWrap>
+        <Space6></Space6>
 
-      <Space6></Space6>
-
-      <BarrelWrap>
-        <BarrelLeftBottom src={barrel} alt='Бочка' />
-      </BarrelWrap>
+        <BarrelWrap>
+          <BarrelLeftBottom src={barrel} alt='Бочка' />
+        </BarrelWrap>
+      </BarrelContainer>
 
       <FirstScreen></FirstScreen>
 
@@ -136,6 +131,19 @@ const TravelSection: FC = () => {
       <Screen data-header-theme='light'>
         <Image src={screen4} alt='Банер' />
       </Screen>
+
+      <BarrelContainer>
+        <BarrelCenterWrap ref={barrelWrapRef}>
+          <BarrelWithLogoWrap>
+            <BarrelCenter src={barrel} alt='Бочка' />
+            <Vagabound
+              src={vagabound}
+              alt='Логотип'
+              style={{ opacity: logoOpacity }}
+            />
+          </BarrelWithLogoWrap>
+        </BarrelCenterWrap>
+      </BarrelContainer>
     </Section>
   );
 };
