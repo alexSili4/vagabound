@@ -2,15 +2,22 @@ import styled from '@emotion/styled';
 
 export const Section = styled.section`
   background-color: #500800;
-  /* padding-top: ${({ theme }) => theme.spacing(100)}px; */
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    padding-top: ${({ theme }) => theme.spacing(100)}px;
+  }
 `;
 
 export const List = styled.ul`
-  display: flex;
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: flex;
+  }
 `;
 
 export const ListItem = styled.li`
-  width: 25%;
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 25%;
+  }
 `;
 
 export const Card1 = styled.div`
@@ -18,15 +25,17 @@ export const Card1 = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: space-between;
   gap: ${({ theme }) => theme.spacing(6)}px;
-  height: 100%;
-  padding-left: ${({ theme }) => theme.spacing(10)}px;
-  padding-right: ${({ theme }) => theme.spacing(6)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(12)}px;
-  padding-top: ${({ theme }) => theme.spacing(12)}px;
+  padding-left: ${({ theme }) => theme.spacing(4)}px;
+  padding-right: ${({ theme }) => theme.spacing(4)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(6)}px;
+  padding-top: ${({ theme }) => theme.spacing(6)}px;
   background-color: #1a3e2f;
-  overflow: hidden;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    justify-content: space-between;
+    height: 100%;
+  }
 `;
 
 export const Card2 = styled(Card1)`
@@ -43,7 +52,7 @@ export const Card4 = styled(Card1)`
 
 export const Name = styled.p`
   position: absolute;
-  top: 72px;
+  top: 50px;
   left: 57%;
   rotate: -15deg;
   color: #ebac3d;
@@ -53,32 +62,35 @@ export const Name = styled.p`
   font-size: 104px;
   line-height: 0.3;
   letter-spacing: 2%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    top: 72px;
+    left: 57%;
+  }
 `;
 
 export const CardContent = styled.div``;
 
-export const Image = styled.img`
-  transition: scale ${({ theme }) => theme.transitionDurationAndFunc};
+export const Image = styled.img``;
 
-  &:is(:hover, :focus) {
-    scale: 1.05;
+export const CardInfoWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    gap: ${({ theme }) => theme.spacing(3)}px;
   }
 `;
 
 export const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(3)}px;
-`;
+  gap: ${({ theme }) => theme.spacing(2)}px;
 
-export const CardName = styled.p`
-  color: #e8e8e8;
-  font-family: ${({ theme }) => theme.fontFamily.rubik};
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 1.4;
-  letter-spacing: 0%;
-  text-transform: uppercase;
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    gap: ${({ theme }) => theme.spacing(3)}px;
+  }
 `;
 
 export const CardInfoItem = styled.div`
@@ -104,10 +116,6 @@ export const CardText = styled.p`
   line-height: 1.4;
 `;
 
-export const Accent = styled.span`
-  font-weight: 700;
-`;
-
 export const Delimiter = styled.div`
   height: 1px;
   background-color: rgba(232, 232, 232, 0.48);
@@ -118,7 +126,6 @@ export const CardLink = styled.a`
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 200px;
   height: 44px;
   border-radius: 8px;
   background-color: #e8e8e8;
@@ -129,5 +136,74 @@ export const CardLink = styled.a`
   line-height: 1.2;
   letter-spacing: -1%;
   text-align: center;
+  text-transform: uppercase;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    max-width: 200px;
+  }
+`;
+
+export const Desk = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    display: none;
+  }
+`;
+
+export const Accordion = styled.div`
+  position: relative;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: none;
+  }
+`;
+
+export const AccordionBtn = styled.button`
+  display: flex;
+  align-items: start;
+  gap: ${({ theme }) => theme.spacing(1)}px;
+  width: 100%;
+  color: rgba(232, 232, 232, 0.8);
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: left;
+`;
+
+export const IconWrap = styled.span<{ isShowElement: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e8e8e8;
+  transform: rotateX(${({ isShowElement }) => (isShowElement ? 180 : 0)}deg);
+  transition: transform ${({ theme }) => theme.transitionDurationAndFunc};
+`;
+
+export const ContentWrap = styled.div<{
+  isShowElement: boolean;
+  scrollHeight: number | null;
+}>`
+  max-height: ${({ isShowElement, scrollHeight }) =>
+    isShowElement ? scrollHeight : 0}px;
+  overflow-y: hidden;
+  transition: max-height ${({ theme }) => theme.transitionDurationAndFunc};
+`;
+
+export const Content = styled.div`
+  padding-top: ${({ theme }) => theme.spacing(4)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(6)}px;
+`;
+
+export const Accent = styled.span`
+  font-weight: 700;
+`;
+
+export const CardName = styled.p`
+  color: #e8e8e8;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0%;
   text-transform: uppercase;
 `;

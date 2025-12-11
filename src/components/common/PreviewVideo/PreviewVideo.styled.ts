@@ -59,8 +59,8 @@ export const YesBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 69px;
-  height: 44px;
+  width: 120px;
+  height: 48px;
   background-color: #f6c6e4;
   border-radius: 8px;
   color: #252525;
@@ -76,6 +76,11 @@ export const YesBtn = styled.button`
     outline: none;
     box-shadow: 0px 0px 0px 4px rgba(246, 198, 228, 0.48),
       0px 0px 0px 2px rgba(26, 62, 47, 1);
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 69px;
+    height: 44px;
   }
 `;
 
@@ -118,8 +123,8 @@ export const NoBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 55px;
-  height: 44px;
+  width: 120px;
+  height: 48px;
   background-color: transparent;
   border-radius: 8px;
   border: 1px solid #f6c6e4;
@@ -140,5 +145,10 @@ export const NoBtn = styled.button`
     background-color: #500800;
     box-shadow: 0px 0px 0px 4px rgba(246, 198, 228, 0.48),
       0px 0px 0px 2px #1a3e2f;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 55px;
+    height: 44px;
   }
 `;

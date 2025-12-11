@@ -27,12 +27,16 @@ import { IoIosArrowRoundDown } from 'react-icons/io';
 import { SectionId } from '@/constants';
 
 const Question1: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>01</Position>
         <QuestionBtnLabel>Хто ви?</QuestionBtnLabel>
         <IconWrap isShowElement={isShowElement}>
@@ -87,12 +91,16 @@ const Question1: FC = () => {
 };
 
 const Question2: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>02</Position>
         <QuestionBtnLabel>Це можна буде купити?</QuestionBtnLabel>
         <IconWrap isShowElement={isShowElement}>
@@ -126,12 +134,16 @@ const Question2: FC = () => {
 };
 
 const Question3: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>03</Position>
         <QuestionBtnLabel>
           Звідки я дізнаюсь, що все те, що ви робили з бочками, вплинуло на смак
@@ -174,12 +186,16 @@ const Question3: FC = () => {
 };
 
 const Question4: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>04</Position>
         <QuestionBtnLabel>
           Ви ж в курсі, що насправді бочки — не живі істоти й вони не
@@ -218,12 +234,16 @@ const Question4: FC = () => {
 };
 
 const Question5: FC = () => {
-  const { elementRef, elementScrollHeight, isShowElement, onQuestionBtnClick } =
-    useAccordionElement();
+  const {
+    elementRef,
+    elementScrollHeight,
+    isShowElement,
+    onAccordionBtnClick,
+  } = useAccordionElement();
 
   return (
     <Question>
-      <QuestionBtn onClick={onQuestionBtnClick}>
+      <QuestionBtn onClick={onAccordionBtnClick}>
         <Position>05</Position>
         <QuestionBtnLabel>Чи можна купити саму бочку?</QuestionBtnLabel>
         <IconWrap isShowElement={isShowElement}>

@@ -1,7 +1,7 @@
 import FBLogoIcon from '@/icons/footer/fb.svg?react';
 import InstagramLogoIcon from '@/icons/footer/instagram.svg?react';
 import SilpoLogoIcon from '@/icons/footer/silpo.svg?react';
-import DSLogoIcon from '@/icons/footer/ds.svg?react';
+import DSLogoIcon from '@/icons/ds-logo.svg?react';
 import DelimiterIcon from '@/icons/footer/delimiter.svg?react';
 import styled from '@emotion/styled';
 
@@ -9,8 +9,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: ${({ theme }) => theme.spacing(30)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(16)}px;
+  padding: ${({ theme }) => theme.spacing(4)}px;
+  padding-top: ${({ theme }) => theme.spacing(10)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(10)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    padding-top: ${({ theme }) => theme.spacing(30)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(16)}px;
+  }
 `;
 
 export const Vagabound = styled.img`
@@ -24,6 +30,10 @@ export const NavLinks = styled.ul`
   justify-content: center;
   gap: ${({ theme }) => theme.spacing(10)}px;
   margin-top: ${({ theme }) => theme.spacing(16)}px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    display: none;
+  }
 `;
 
 export const Anchor = styled.a`
@@ -35,11 +45,19 @@ export const Anchor = styled.a`
 `;
 
 export const LogoList = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: ${({ theme }) => theme.spacing(10)}px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+  row-gap: 40px;
+  width: 100%;
   margin-top: ${({ theme }) => theme.spacing(10)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: ${({ theme }) => theme.spacing(10)}px;
+  }
 `;
 
 export const ListItem = styled.li``;
@@ -60,6 +78,10 @@ export const TextWrap = styled.div`
   justify-content: center;
   gap: ${({ theme }) => theme.spacing(6)}px;
   margin-top: ${({ theme }) => theme.spacing(6)}px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    flex-direction: column;
+  }
 `;
 
 export const Text = styled.p`
@@ -68,6 +90,10 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 20px;
   line-height: 0.6;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    order: 2;
+  }
 `;
 
 export const Copy = styled.p`
@@ -86,13 +112,21 @@ export const Warning = styled.p`
   font-family: ${({ theme }) => theme.fontFamily.cormorantGaramond};
   font-weight: 300;
   font-style: Light;
-  font-size: 84px;
+  font-size: 40px;
   line-height: 0.6;
   text-align: center;
   font-variant: small-caps;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    font-size: 84px;
+  }
 `;
 
-export const DSLogo = styled(DSLogoIcon)``;
+export const DSLogo = styled(DSLogoIcon)`
+  width: 128px;
+  height: 40px;
+  fill: #e8e8e8;
+`;
 
 export const SilpoLogo = styled(SilpoLogoIcon)``;
 
@@ -100,4 +134,8 @@ export const InstagramLogo = styled(InstagramLogoIcon)``;
 
 export const FBLogo = styled(FBLogoIcon)``;
 
-export const Delimiter = styled(DelimiterIcon)``;
+export const Delimiter = styled(DelimiterIcon)`
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    order: 1;
+  }
+`;

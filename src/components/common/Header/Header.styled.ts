@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import DSLogoIcon from '@/icons/ds-logo.svg?react';
 import VagaboungLogoIcon from '@/icons/vagabound.svg?react';
+import CartIcon from '@/icons/header/cart.svg?react';
+import { motion } from 'framer-motion';
 
 export const StyledHeader = styled.header`
   position: fixed;
@@ -18,28 +20,35 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1200px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 1200px;
+  }
 `;
+
+export const DSLink = styled.a``;
 
 export const DSLogo = styled(DSLogoIcon)<{ isDark: boolean }>`
   width: 125px;
   fill: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
   transition: fill ${({ theme }) => theme.transitionDurationAndFunc};
 
-  a:is(:hover, :focus) > & {
-    fill: ${({ isDark }) => (isDark ? '#252525' : '#FFFFFF')};
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
   }
 `;
 
-export const OrderLink = styled.a`
+export const OrderLink = styled.a<{ isMobMenu: boolean; isDesk: boolean }>`
   position: relative;
-  display: flex;
+  display: ${({ isDesk }) => (isDesk ? 'none' : 'flex')};
   align-items: center;
   justify-content: center;
-  width: 122px;
-  height: 44px;
+  width: ${({ isMobMenu }) => (isMobMenu ? '100%' : '122px')};
+  height: ${({ isMobMenu }) => (isMobMenu ? '48px' : '44px')};
   background-color: #f6c6e4;
   border-radius: 8px;
   color: #252525;
@@ -55,6 +64,10 @@ export const OrderLink = styled.a`
     outline: none;
     box-shadow: 0px 0px 0px 4px rgba(246, 198, 228, 0.48),
       0px 0px 0px 2px rgba(26, 62, 47, 1);
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: flex;
   }
 `;
 
@@ -103,6 +116,12 @@ export const NavWrap = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.spacing(3)}px;
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: адуч;
+  }
 `;
 
 export const Anchor = styled.a<{ $isDark?: boolean }>`
@@ -121,12 +140,124 @@ export const Anchor = styled.a<{ $isDark?: boolean }>`
   }
 `;
 
-export const VagaboungLogo = styled(VagaboungLogoIcon)<{ isDark?: boolean }>`
-  width: 154px;
-  fill: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
+export const VagaboungLogo = styled(VagaboungLogoIcon)<{
+  isDark?: boolean;
+  isMobMenu?: boolean;
+}>`
+  position: relative;
+  z-index: 100;
+  width: 131px;
+  fill: ${({ isDark, isMobMenu }) =>
+    isMobMenu ? '#E8E8E8' : isDark ? '#FFFFFF' : '#252525'};
   transition: fill ${({ theme }) => theme.transitionDurationAndFunc};
 
-  &:is(:hover, :focus) {
-    fill: ${({ isDark }) => (isDark ? '#252525' : '#FFFFFF')};
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 154px;
   }
+`;
+
+// mobile menu
+export const MenuBtn = styled.button<{ isDark: boolean }>`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  color: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: none;
+  }
+`;
+
+export const Backdrop = styled(motion.div)`
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100dvh;
+  background-color: #1a3e2f;
+  padding-top: ${({ theme }) => theme.spacing(8)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(8)}px;
+  padding-left: ${({ theme }) => theme.spacing(4)}px;
+  padding-right: ${({ theme }) => theme.spacing(4)}px;
+`;
+
+export const MobMenuLinks = styled.ul`
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacing(8)}px;
+`;
+
+export const ListItem = styled.li``;
+
+export const MobAnchor = styled.a`
+  display: block;
+  width: 100%;
+  color: #f6c6e4;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 2%;
+  text-align: center;
+  text-transform: uppercase;
+`;
+
+export const MobSocialLinks = styled.ul`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(5)}px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const DSSocialLogo = styled.img`
+  width: 24px;
+  height: 28px;
+`;
+
+export const SilpoSocialLogo = styled.img`
+  width: 44px;
+  height: 28px;
+`;
+
+export const MobOrderLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: #f6c6e4;
+  border-radius: 8px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: none;
+  }
+`;
+
+export const Cart = styled(CartIcon)`
+  width: 20px;
+  height: 20px;
+`;
+
+export const ExternalLink = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #e8e8e8;
+`;
+
+export const MobControls = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(10)}px;
 `;
