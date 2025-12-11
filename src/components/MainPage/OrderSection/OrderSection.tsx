@@ -29,7 +29,6 @@ import {
   InputsWrap,
   SubmitBtn,
   FormHeader,
-  FormText,
   FormTitle,
   LetterPartTop,
   LetterPartTopGreen,
@@ -42,6 +41,7 @@ import {
   SuccessMsgText,
   SuccessMsgTextWrap,
   SuccessMsgTitle,
+  Error,
 } from './OrderSection.styled';
 import { IContactsForm } from '@/types/order';
 import { useForm } from 'react-hook-form';
@@ -55,6 +55,7 @@ interface IInputProps {
   onOptionChange?: (option: string) => void;
   type?: HTMLInputTypeAttribute;
   settings: object;
+  error?: string;
 }
 
 interface IOrderFormProps {
@@ -69,8 +70,11 @@ const Input: FC<IInputProps> = ({
   onOptionChange,
   settings,
   type = 'text',
+  error,
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const isError = Boolean(error);
 
   const toggleIsOpen = () => {
     setIsOpen((prevState) => !prevState);
@@ -87,9 +91,11 @@ const Input: FC<IInputProps> = ({
       <StyledInput
         type={type}
         placeholder={placeholder}
-        disabled={isSelect}
+        readOnly={isSelect}
+        isError={isError}
         {...settings}
       />
+      {isError && <Error>{error}</Error>}
       {isSelect && (
         <>
           <OpenSelectBtn type='button' onClick={onBtnClick}></OpenSelectBtn>
@@ -123,10 +129,16 @@ const Input: FC<IInputProps> = ({
 };
 
 const OrderForm: FC<IOrderFormProps> = ({ updateIsSuccess, isSuccess }) => {
-  const { register, handleSubmit, reset, setValue } = useForm<IContactsForm>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setValue,
+    formState: { errors },
+  } = useForm<IContactsForm>({ mode: 'onBlur' });
 
   const onOptionChange = (option: string) => {
-    setValue('barrel', option);
+    setValue('barrel', option, { shouldValidate: true });
   };
 
   const onSubmit = (data: IContactsForm) => {
@@ -146,41 +158,52 @@ const OrderForm: FC<IOrderFormProps> = ({ updateIsSuccess, isSuccess }) => {
 
     value = value.replace(/^(\++)/, '+');
 
-    setValue('phone', value);
+    setValue('phone', value, { shouldValidate: true });
   };
 
   return (
     <FormContainer isSuccess={isSuccess}>
       <FormHeader>
         <FormTitle>Надішліть свої контактні дані для передзамовлення</FormTitle>
-        <FormText>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-          vulputate libero et velit interdum
-        </FormText>
       </FormHeader>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <InputsWrap>
           <Input
             placeholder='ПІБ'
-            settings={register('name', { required: true })}
+            settings={register('name', { required: 'Вкажіть своє імя' })}
+            error={errors.name?.message}
           />
           <Input
             placeholder='Телефон'
             settings={register('phone', {
-              required: true,
+              required: 'Вкажіть свій телефон',
               onChange: onPhoneChange,
+              pattern: {
+                value:
+                  /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im,
+                message: 'Вкажіть свій телефон',
+              },
             })}
+            error={errors.phone?.message}
           />
           <Input
             placeholder='E-mail'
             type='email'
-            settings={register('email', { required: true })}
+            settings={register('email', {
+              required: 'Вкажіть свій email',
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: 'Вкажіть свій email',
+              },
+            })}
+            error={errors.email?.message}
           />
           <Input
             placeholder='Оберіть бочку'
             options={contacts.barrels}
             onOptionChange={onOptionChange}
-            settings={register('barrel', { required: true })}
+            settings={register('barrel', { required: 'Оберіть бажану бочку' })}
+            error={errors.barrel?.message}
             isSelect
           />
         </InputsWrap>

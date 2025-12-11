@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 
 export const Section = styled.section`
+  position: relative;
   padding-top: ${({ theme }) => theme.spacing(30)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(150)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(30)}px;
   background-color: #500800;
 `;
 
@@ -33,4 +34,11 @@ export const Text = styled.p`
   font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
+`;
+
+export const CutImg = styled.img`
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
 `;

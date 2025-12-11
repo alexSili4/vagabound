@@ -5,13 +5,7 @@ export const Section = styled.section`
   position: relative;
   background-color: #500800;
   padding-top: ${({ theme }) => theme.spacing(50)}px;
-`;
-
-export const CutImg = styled.img`
-  position: absolute;
-  top: -40px;
-  left: 0;
-  width: 100%;
+  padding-bottom: ${({ theme }) => theme.spacing(150)}px;
 `;
 
 export const Title = styled.h2`
@@ -40,6 +34,10 @@ export const LightLeftWrap = styled.div`
   &.in-view {
     transform: rotate(0deg);
   }
+
+  &.tracking {
+    transition: transform 0.3s ease-out;
+  }
 `;
 
 export const LightLeft = styled.img`
@@ -59,6 +57,10 @@ export const LightRightWrap = styled.div`
 
   &.in-view {
     transform: rotate(0deg);
+  }
+
+  &.tracking {
+    transition: transform 0.3s ease-out;
   }
 `;
 

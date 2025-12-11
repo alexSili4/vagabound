@@ -17,6 +17,8 @@ import imgHover from '@/images/hero/switcher-hover.webp';
 import hero from '@/video/hero.mp4';
 import { useVideo } from '@/hooks';
 import { SectionId } from '@/constants';
+import { playSound } from '@/utils';
+import bellSound from '@/audio/bell.mp3';
 
 const HeroSection: FC = () => {
   const { videoRef } = useVideo();
@@ -25,6 +27,8 @@ const HeroSection: FC = () => {
     const barrelsSection = document.getElementById(SectionId.barrels);
     if (barrelsSection) {
       barrelsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      playSound(bellSound);
     }
   };
 

@@ -18,6 +18,7 @@ import {
   Container,
 } from './FooterContent.styled';
 import vagabound from '@/images/footer/vagabound.webp';
+import { SectionId } from '@/constants';
 
 const FooterContent: FC = () => {
   return (
@@ -25,23 +26,23 @@ const FooterContent: FC = () => {
       <Vagabound src={vagabound} alt='Логотип' />
       <NavLinks>
         <ListItem>
-          <Anchor href='/'>Про проєкт</Anchor>
+          <Anchor href={`#${SectionId.about}`}>Про проєкт</Anchor>
         </ListItem>
         <ListItem>
-          <Anchor href='/'>Історія</Anchor>
+          <Anchor href={`#${SectionId.history}`}>Історія</Anchor>
         </ListItem>
         <ListItem>
-          <Anchor href='/'>Ми в соцмережах</Anchor>
+          <Anchor href={`#${SectionId.social}`}>Ми в соцмережах</Anchor>
         </ListItem>
         <ListItem>
-          <Anchor href='/'>Замовити</Anchor>
+          <Anchor href={`#${SectionId.contacts}`}>Замовити</Anchor>
         </ListItem>
         <ListItem>
-          <Anchor href='/'>Часті питання</Anchor>
+          <Anchor href={`#${SectionId.faq}`}>Часті питання</Anchor>
         </ListItem>
-        <ListItem>
+        {/* <ListItem>
           <Anchor href='/'>Відгуки експертів</Anchor>
-        </ListItem>
+        </ListItem> */}
       </NavLinks>
       <LogoList>
         <ListItem>

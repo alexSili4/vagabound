@@ -170,11 +170,12 @@ export const InputsWrap = styled.div`
   gap: ${({ theme }) => theme.spacing(1.5)}px;
 `;
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<{ isError: boolean }>`
   width: 100%;
   height: 35px;
   background-color: ${({ theme }) => theme.colors.white};
-  border: 1px solid #e8e8e8;
+  border: 1px solid;
+  border-color: ${({ isError }) => (isError ? '#F55452' : '#e8e8e8')};
   border-radius: 4px;
   padding-left: ${({ theme }) => theme.spacing(4)}px;
   padding-right: ${({ theme }) => theme.spacing(4)}px;
@@ -184,10 +185,19 @@ export const StyledInput = styled.input`
   font-size: 14px;
   line-height: 1;
   outline: none;
+  transition: border-color ${({ theme }) => theme.transitionDurationAndFunc};
 
   &::placeholder {
     color: rgba(37, 37, 37, 0.48);
   }
+`;
+
+export const Error = styled.p`
+  color: #f55452;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 1.4;
 `;
 
 export const InputWrap = styled.div`

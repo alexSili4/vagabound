@@ -10,7 +10,8 @@ export const StyledLink = styled(Link)`
   width: 123px;
   height: 44px;
   border-radius: 8px;
-  border: 1px solid #252525;
+  border: 1px solid;
+  border-color: #252525;
   color: #252525;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
@@ -19,4 +20,13 @@ export const StyledLink = styled(Link)`
   letter-spacing: -1%;
   text-align: center;
   text-transform: uppercase;
+  transition: background-color ${({ theme }) => theme.transitionDurationAndFunc},
+    border-color ${({ theme }) => theme.transitionDurationAndFunc},
+    color ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    background-color: #252525;
+    border-color: #252525;
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;

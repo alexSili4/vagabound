@@ -48,6 +48,7 @@ import card6 from '@/images/story/card-6.webp';
 import lines1 from '@/images/story/lines-1.webp';
 import lines2 from '@/images/story/lines-2.webp';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
+import { SectionId } from '@/constants';
 
 const Card1Component: FC<{ isActive: boolean }> = ({ isActive }) => {
   return (
@@ -90,18 +91,10 @@ const StorySection: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   const incrementActiveIndex = () => {
-    if (activeIndex === 2) {
-      return;
-    }
-
     setActiveIndex((prevState) => prevState + 1);
   };
 
   const decrementActiveIndex = () => {
-    if (activeIndex === 0) {
-      return;
-    }
-
     setActiveIndex((prevState) => prevState - 1);
   };
 
@@ -118,7 +111,7 @@ const StorySection: FC = () => {
   };
 
   return (
-    <Section>
+    <Section id={SectionId.history}>
       <Title>Історія</Title>
       <Container>
         <Background src={background} alt='Фон' />
@@ -214,10 +207,18 @@ const StorySection: FC = () => {
           </BookWrap>
 
           <Controls>
-            <SliderBtn type='button' onClick={onPrevSlideBtnClick}>
+            <SliderBtn
+              type='button'
+              onClick={onPrevSlideBtnClick}
+              disabled={activeIndex === 0}
+            >
               <IoIosArrowRoundBack size={28} />
             </SliderBtn>
-            <SliderBtn type='button' onClick={onNextSlideBtnClick}>
+            <SliderBtn
+              type='button'
+              onClick={onNextSlideBtnClick}
+              disabled={activeIndex === 2}
+            >
               <IoIosArrowRoundForward size={28} />
             </SliderBtn>
           </Controls>

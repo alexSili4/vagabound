@@ -18,7 +18,7 @@ import {
   QuestionBtnLabel,
   Line,
   // Accent,
-  AnswerText2,
+  // AnswerText2,
   // Paper,
 } from './FAQSection.styled';
 import { IoIosArrowRoundDown } from 'react-icons/io';
@@ -107,7 +107,7 @@ const Question2: FC = () => {
         isShowElement={isShowElement}
       >
         <Answer>
-          <AnswerText2>
+          <AnswerText>
             Так. В нашому плані, десь там, за два шари нижче, після розваг і
             експериментів, йде комерційний шар. Результатом цього проєкту
             стануть справжнісінькі пляшки високоякісного односолодового
@@ -118,7 +118,7 @@ const Question2: FC = () => {
             <br />
             Ціни для підписників на цьому сайті будуть кращими за ті, що пізніше
             з’являться в крамницях. Так, це натяк. Підписуйтесь.{' '}
-          </AnswerText2>
+          </AnswerText>
         </Answer>
       </AnswerWrap>
     </Question>

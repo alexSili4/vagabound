@@ -14,7 +14,6 @@ import {
 } from './Header.styled';
 import { Link } from 'react-router-dom';
 import { PagePaths, SectionId } from '@/constants';
-
 interface INavigationProps {
   isDark: boolean;
 }
@@ -150,9 +149,15 @@ const Header: FC = () => {
   return (
     <StyledHeader ref={headerRef}>
       <Container>
-        <DSLogo isDark={isDark} />
+        <a
+          href='https://www.instagram.com/drinksetterua/'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <DSLogo isDark={isDark} />
+        </a>
         <Navigation isDark={isDark} />
-        <OrderLink href='/'>
+        <OrderLink href={`#${SectionId.contacts}`}>
           <OrderLinkBg></OrderLinkBg>
           <OrderLinkActiveBg></OrderLinkActiveBg>
           <OrderLinkTitle>ЗАМОВИТИ</OrderLinkTitle>

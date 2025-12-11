@@ -120,12 +120,12 @@ export const Ticket = styled.img<IStyledProps>`
 
 export const Letter = styled.div<IStyledProps>`
   position: absolute;
-  right: 77px;
-  bottom: 178px;
-  width: 332px;
-  height: 292px;
-  padding: ${({ theme }) => theme.spacing(8)}px;
+  right: 47px;
+  bottom: -150px;
+  width: 350px;
+  padding: ${({ theme }) => theme.spacing(4)}px;
   padding-top: ${({ theme }) => theme.spacing(3)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(40)}px;
   background-image: url(${letterBg});
   background-position: 0 0;
   background-size: 100% 100%;

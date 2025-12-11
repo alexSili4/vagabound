@@ -1,9 +1,13 @@
 import { FC } from 'react';
-import { Section, Container, Text, Title } from './AboutSection.styled';
+import { Section, Container, Text, Title, CutImg } from './AboutSection.styled';
+import { SectionId } from '@/constants';
+import cut from '@/images/barrels/cut.webp';
 
 const AboutSection: FC = () => {
   return (
-    <Section>
+    <Section id={SectionId.about}>
+      <CutImg src={cut} alt='Декоративний обрив' />
+
       <Container>
         <Title>ПРО ПРОЄКТ</Title>
         <Text>

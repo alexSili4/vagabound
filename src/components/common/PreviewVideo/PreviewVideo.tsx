@@ -32,7 +32,7 @@ const CheckAgeWindow: FC<ICheckAgeWindowProps> = ({
   const onNoBtnClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
 
-    window.location.href = 'https://www.google.com';
+    window.location.href = 'https://silpo.ua/category/soky-i-nektary-5101';
   };
 
   const transition: Transition = {
@@ -117,9 +117,11 @@ export const PreviewVideoWindow: FC<IPreviewVideoWindowProps> = ({
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.scrollbarGutter = '';
 
     return () => {
       document.body.style.overflow = '';
+      document.documentElement.style.scrollbarGutter = 'stable';
     };
   }, []);
 

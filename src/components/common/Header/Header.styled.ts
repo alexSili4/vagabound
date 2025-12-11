@@ -27,6 +27,10 @@ export const DSLogo = styled(DSLogoIcon)<{ isDark: boolean }>`
   width: 125px;
   fill: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
   transition: fill ${({ theme }) => theme.transitionDurationAndFunc};
+
+  a:is(:hover, :focus) > & {
+    fill: ${({ isDark }) => (isDark ? '#252525' : '#FFFFFF')};
+  }
 `;
 
 export const OrderLink = styled.a`
@@ -111,10 +115,18 @@ export const Anchor = styled.a<{ $isDark?: boolean }>`
   text-transform: uppercase;
   text-align: center;
   transition: color ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    color: ${({ $isDark }) => ($isDark ? '#252525' : '#FFFFFF')};
+  }
 `;
 
 export const VagaboungLogo = styled(VagaboungLogoIcon)<{ isDark?: boolean }>`
   width: 154px;
   fill: ${({ isDark }) => (isDark ? '#FFFFFF' : '#252525')};
   transition: fill ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    fill: ${({ isDark }) => (isDark ? '#252525' : '#FFFFFF')};
+  }
 `;

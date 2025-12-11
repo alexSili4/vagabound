@@ -15,9 +15,9 @@ const Main: FC = () => {
     <>
       <div style={{ overflow: 'hidden' }}>
         <HeroSection />
+        <AboutSection />
         <BarrelsSection />
       </div>
-      <AboutSection />
       <TravelSection />
       <StorySection />
       {/* <MediaSection /> */}

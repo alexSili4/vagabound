@@ -3,6 +3,8 @@ const enum SectionId {
   social = 'social',
   contacts = 'contacts',
   faq = 'faq',
+  about = 'about',
+  history = 'history',
 }
 
 export default SectionId;

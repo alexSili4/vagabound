@@ -80,6 +80,11 @@ export const SliderBtn = styled.button`
   border-radius: 50%;
   color: #e8e8e8;
   pointer-events: all;
+  transition: opacity ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:disabled {
+    opacity: 0.5;
+  }
 `;
 
 export const Card1Container = styled.div<StyledCardContainerProps>`

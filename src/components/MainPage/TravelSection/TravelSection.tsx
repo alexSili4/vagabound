@@ -75,6 +75,21 @@ const TravelSection: FC = () => {
     };
   }, [logoOpacity]);
 
+  useEffect(() => {
+    if (logoOpacity === 1) {
+      document.body.style.overflow = 'hidden';
+
+      const timer = setTimeout(() => {
+        document.body.style.overflow = '';
+      }, 500);
+
+      return () => {
+        clearTimeout(timer);
+        document.body.style.overflow = '';
+      };
+    }
+  }, [logoOpacity]);
+
   return (
     <Section ref={sectionRef}>
       <Title>Мандрівка бочки</Title>
