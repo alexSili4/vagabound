@@ -7,6 +7,10 @@ export const Container = styled.div`
   height: 669px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    display: none;
+  }
 `;
 
 export const LightLeftWrap = styled.div`

@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Section, Title } from './BarrelsSection.styled';
 import { SectionId } from '@/constants';
 import BarrelsSectionDeskContent from '@MainPageComponents/BarrelsSectionDeskContent';
+import BarrelsSectionMobContent from '@MainPageComponents/BarrelsSectionMobContent';
 
 const BarrelsSection: FC = () => {
   return (
@@ -9,6 +10,7 @@ const BarrelsSection: FC = () => {
       <Title>Бочки</Title>
 
       <BarrelsSectionDeskContent />
+      <BarrelsSectionMobContent />
     </Section>
   );
 };

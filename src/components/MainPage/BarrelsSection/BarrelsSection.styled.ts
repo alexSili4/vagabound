@@ -3,8 +3,13 @@ import styled from '@emotion/styled';
 export const Section = styled.section`
   position: relative;
   background-color: #500800;
-  padding-top: ${({ theme }) => theme.spacing(50)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(150)}px;
+  padding-top: ${({ theme }) => theme.spacing(20)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(20)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    padding-top: ${({ theme }) => theme.spacing(50)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(150)}px;
+  }
 `;
 
 export const Title = styled.h2`
