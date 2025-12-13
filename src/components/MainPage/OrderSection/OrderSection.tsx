@@ -42,6 +42,7 @@ import {
   SuccessMsgTextWrap,
   SuccessMsgTitle,
   Error,
+  PostboxContainer,
 } from './OrderSection.styled';
 import { IContactsForm } from '@/types/order';
 import { useForm } from 'react-hook-form';
@@ -219,14 +220,16 @@ const OrderSection: FC = () => {
   return (
     <Section id={SectionId.contacts}>
       <Container>
-        <PostboxWrap>
+        <PostboxWrap isSuccess={isSuccess}>
           <BlackBox></BlackBox>
-          <Postbox src={postbox} alt='Поштова скринька' />
-          <PostboxAlt
-            src={postbox}
-            alt='Поштова скринька'
-            isSuccess={isSuccess}
-          />
+          <PostboxContainer>
+            <Postbox src={postbox} alt='Поштова скринька' />
+            <PostboxAlt
+              src={postbox}
+              alt='Поштова скринька'
+              isSuccess={isSuccess}
+            />
+          </PostboxContainer>
         </PostboxWrap>
 
         <FormWrap isSuccess={isSuccess}>

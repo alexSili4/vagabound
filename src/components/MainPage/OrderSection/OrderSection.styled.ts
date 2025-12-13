@@ -5,36 +5,80 @@ import { animations } from '@/constants';
 
 export const Section = styled.section`
   background-color: #500800;
-  padding-top: ${({ theme }) => theme.spacing(33)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(17)}px;
+  padding-top: ${({ theme }) => theme.spacing(60)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(100)}px;
+  overflow: hidden;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    padding-top: ${({ theme }) => theme.spacing(33)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(17)}px;
+  }
 `;
 
 export const Container = styled.div`
   position: relative;
-  width: 900px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: ${({ theme }) => theme.spacing(4)}px;
+  padding-right: ${({ theme }) => theme.spacing(4)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 900px;
+  }
 `;
 
-export const PostboxWrap = styled.div`
+export const PostboxWrap = styled.div<{ isSuccess: boolean }>`
   position: relative;
   width: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    padding-left: ${({ theme }) => theme.spacing(10)}px;
+    padding-right: ${({ theme }) => theme.spacing(10)}px;
+    rotate: ${({ isSuccess }) => (isSuccess ? 0 : '10.3deg')};
+    transition: rotate ${({ theme }) => theme.transitionWithDelay};
+  }
+`;
+
+export const PostboxContainer = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    position: relative;
+    max-width: 402px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const Postbox = styled.img`
   position: relative;
   z-index: 1;
-  width: 402px;
+  width: 100%;
+  max-width: 402px;
 `;
 
 export const BlackBox = styled.div`
   position: absolute;
   z-index: 0;
-  top: 100px;
-  left: 10px;
-  width: 380px;
-  height: 350px;
+  top: 10%;
+  left: 11%;
+  width: 78%;
+  max-width: 380px;
+  height: 50%;
   background-color: #000000;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    top: 100px;
+    left: 10px;
+    width: 380px;
+    height: 350px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 export const PostboxAlt = styled(Postbox)<{ isSuccess: boolean }>`
@@ -50,34 +94,59 @@ export const PostboxAlt = styled(Postbox)<{ isSuccess: boolean }>`
 export const FormWrap = styled.div<{ isSuccess: boolean }>`
   position: absolute;
   z-index: 5;
-  bottom: 37px;
-  left: 263px;
+  bottom: -50%;
+  left: 3%;
+  right: 3%;
   display: flex;
   height: 150dvh;
   overflow: hidden;
   ${({ isSuccess }) =>
     isSuccess &&
     css`
-      animation: ${animations.letter} 1200ms linear both;
+      animation: ${animations.letterMob} 1200ms linear both;
       animation-delay: 400ms;
-    `}
+    `};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    bottom: 37px;
+    left: 263px;
+    right: auto;
+    display: flex;
+    overflow: hidden;
+    ${({ isSuccess }) =>
+      isSuccess &&
+      css`
+        animation: ${animations.letter} 1200ms linear both;
+        animation-delay: 400ms;
+      `};
+  }
 `;
 
 export const Letter = styled.img`
   align-self: flex-end;
-  width: 656px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 656px;
+  }
 `;
 
 export const LetterPartTopWrap = styled.div<{ isSuccess: boolean }>`
   position: absolute;
   z-index: ${({ isSuccess }) => (isSuccess ? 12 : 9)};
-  bottom: 369px;
-  left: 14px;
+  bottom: 22%;
+  left: 0;
+  right: 0;
   transform: rotateX(${({ isSuccess }) => (isSuccess ? '180deg' : '0deg')});
   transform-origin: bottom;
   transition: transform ${({ theme }) => theme.transitionDurationAndFunc},
     z-index 0s;
   transition-delay: 400ms;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    bottom: 369px;
+    left: 14px;
+    right: auto;
+  }
 `;
 
 export const LetterPartTop = styled.img<{ isSuccess: boolean }>`
@@ -98,38 +167,51 @@ export const LetterPart = styled.img`
   position: absolute;
   z-index: 11;
   bottom: 0px;
-  left: 12px;
-  width: 612px;
+  left: 0px;
+  width: 100%;
   pointer-events: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    bottom: 0px;
+    left: 12px;
+    width: 612px;
+  }
 `;
 
 export const FormContainer = styled.div<{ isSuccess: boolean }>`
   position: absolute;
   z-index: 10;
-  bottom: 58px;
+  bottom: -4%;
   left: 50%;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)}px;
-  width: 438px;
+  width: 98%;
   height: 652px;
-  padding: ${({ theme }) => theme.spacing(20)}px;
-  padding-top: ${({ theme }) => theme.spacing(34)}px;
+  padding: ${({ theme }) => theme.spacing(5)}px;
+  padding-top: ${({ theme }) => theme.spacing(30)}px;
   background-image: url(${formBg});
   background-position: 0 0;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   translate: ${({ isSuccess }) =>
     isSuccess ? '-50% 55% !important' : '-50% 0'};
-  rotate: ${({ isSuccess }) => (isSuccess ? '0deg !important' : '-2deg')};
   opacity: ${({ isSuccess }) => (isSuccess ? 0 : 1)};
   transition: translate ${({ theme }) => theme.transitionDurationAndFunc},
     rotate ${({ theme }) => theme.transitionDurationAndFunc},
     opacity ${({ theme }) => theme.transitionWithDelay};
 
-  &:not(:hover, :has(input:focus)) {
-    translate: -50% 208px;
-    rotate: 6deg;
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    bottom: 58px;
+    width: 438px;
+    padding: ${({ theme }) => theme.spacing(20)}px;
+    padding-top: ${({ theme }) => theme.spacing(34)}px;
+    rotate: ${({ isSuccess }) => (isSuccess ? '0deg !important' : '-2deg')};
+
+    &:not(:hover, :has(input:focus)) {
+      translate: -50% 208px;
+      rotate: 6deg;
+    }
   }
 `;
 
@@ -261,18 +343,30 @@ export const SubmitBtn = styled.button`
 
 export const SuccessMsgWrap = styled.div<{ isSuccess: boolean }>`
   position: absolute;
-  z-index: ${({ isSuccess }) => (isSuccess ? 20 : 0)};
+  z-index: ${({ isSuccess }) => (isSuccess ? 20 : -1)};
   bottom: 37px;
-  left: 263px;
-  transform: translateX(-60%) translateY(10%) scale(0.4);
+  left: 5%;
+  right: 5%;
+  transform: translateX(0) translateY(20%) scale(0.4);
   transition: z-index ${({ theme }) => theme.transitionDurationAndFunc};
   transition-delay: 2000ms;
   ${({ isSuccess }) =>
     isSuccess &&
     css`
-      animation: ${animations.successMsg} 1200ms linear both;
+      animation: ${animations.successMsgMob} 1200ms linear both;
       animation-delay: 1600ms;
     `}
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    bottom: 37px;
+    left: 263px;
+    ${({ isSuccess }) =>
+      isSuccess &&
+      css`
+        animation: ${animations.successMsg} 1200ms linear both;
+        animation-delay: 1600ms;
+      `}
+  }
 `;
 
 export const SuccessMsgBg = styled.img`
@@ -297,21 +391,27 @@ export const SuccessMsgTitle = styled.p`
   color: #1a3e2f;
   font-family: ${({ theme }) => theme.fontFamily.viaoda};
   font-weight: 400;
-  /* font-size: 32px; */
-  font-size: 48px;
+  font-size: 32px;
   line-height: 1.2;
   letter-spacing: 0%;
   text-align: center;
   text-transform: uppercase;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    font-size: 48px;
+  }
 `;
 
 export const SuccessMsgText = styled.p`
   color: #1a3e2f;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 300;
-  /* font-size: 14px; */
-  font-size: 20px;
+  font-size: 14px;
   line-height: 1.2;
   letter-spacing: 0%;
   text-align: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    font-size: 20px;
+  }
 `;
