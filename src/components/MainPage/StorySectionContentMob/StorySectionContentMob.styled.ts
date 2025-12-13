@@ -136,7 +136,7 @@ export const Slide3Title = styled.p`
   color: #252525;
   font-family: ${({ theme }) => theme.fontFamily.pica};
   font-weight: 400;
-  font-size: 62px;
+  font-size: 40px;
   line-height: 0.6;
   letter-spacing: 0%;
 `;
@@ -145,7 +145,7 @@ export const Slide3Text = styled.p`
   color: #252525;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.4;
   letter-spacing: 0%;
 `;
@@ -162,7 +162,7 @@ export const Slide4Container = styled.div`
 `;
 
 export const Slide4Title = styled.p`
-  width: 70%;
+  width: 90%;
   color: #000000;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
@@ -177,7 +177,7 @@ export const Slide4TextWrap = styled.div`
 `;
 
 export const Slide4Text = styled.p`
-  width: 50%;
+  width: 80%;
   color: #000000;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
@@ -190,7 +190,7 @@ export const Slide5Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(4)}px;
-  padding-top: 12%;
+  padding-top: 9%;
   padding-bottom: 32%;
   padding-left: 9%;
   padding-right: 12%;

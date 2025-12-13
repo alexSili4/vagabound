@@ -112,14 +112,20 @@ const Slide3: FC = () => {
   return (
     <Slide3Container>
       <Slide3TitleWrap>
-        <Slide3Title>the spirit</Slide3Title>
+        <Slide3Title>Бортовий Журнал</Slide3Title>
         <img src={slide3Img} alt='' />
       </Slide3TitleWrap>
 
       <Slide3Text>
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-        inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac
-        scelerisque ante pulvinar. Donec ut rhoncus ex.
+        Суб’єкт: Лохан
+        <br />
+        Експеримент: участь у зйомках авангардного римейку «Гуллівера». Деталі:
+        Лохана помістили в макет міста ліліпутів. Оскільки інші актори були
+        надто малі, Лохан нарешті відчув себе Великою Зіркою. Він грав
+        Гуллівера, який мовчки споглядає метушню дрібних людей. Спостереження:
+        деревина роздулася від гордості; тиск усередині бочки зріс на 15%. Вплив
+        на смак: у віскі з’явилися нотки величі та ледь помітний присмак
+        зіркової хвороби.
       </Slide3Text>
     </Slide3Container>
   );
@@ -129,14 +135,18 @@ const Slide4: FC = () => {
   return (
     <Slide4Container>
       <Slide4Title>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-        libero et velit interdum, ac aliquet odio mattis.
+        Експеримент: сеанс вінілової терапії.
+        <br />
+        Деталі: з програвача 24 години лунав джаз 30-х років із характерним
+        потріскуванням голки. Спостереження: Мейзі занурилася в стан глибокої
+        ностальгії.
       </Slide4Title>
 
       <Slide4TextWrap>
         <img src={slide4Img} alt='' />
         <Slide4Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Вплив на смак: напій набув «теплого лампового» характеру; дегустатори
+          відзначають, що після ковтка хочеться вдягнути твідовий піджак.
         </Slide4Text>
       </Slide4TextWrap>
     </Slide4Container>
@@ -149,10 +159,14 @@ const Slide5: FC = () => {
       <img src={slide5Img} alt='' />
 
       <Slide5Text>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate
-        libero et velit interdum, ac aliquet odio mattis. Lorem ipsum dolor sit
-        amet, consectetur adipiscing elit. Nunc vulputate libero et velit
-        interdum, ac aliquet odio mattis.
+        Суб’єкт: Рорі
+        <br />
+        Експеримент: аудіосимуляція трансконтинентального експресу. Деталі: для
+        Рорі увімкнули зациклений запис: «чух-чух… чух-чух…» та звук перонного
+        дзвона. Спостереження: уперше за весь час експерименту Рорі заспокоївся.
+        Він увійшов у медитативний транс, ритмічно погойдуючись (або це нам
+        здалося). Вплив на смак: смак став стрімким і прямим, мов рельси;
+        з’явився довгий фініш, що нагадує нескінченну дорогу додому.
       </Slide5Text>
     </Slide5Container>
   );
