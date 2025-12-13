@@ -13,7 +13,7 @@ const LochanPage = lazy(() => import('@/pages/LochanPage'));
 const App: FC = () => {
   return (
     <>
-      {/* <PreviewVideo /> */}
+      <PreviewVideo />
       <Routes>
         <Route path={PagePaths.root} element={<SharedLayout />}>
           <Route index element={<MainPage />} />
