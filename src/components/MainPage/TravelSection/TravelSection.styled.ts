@@ -3,6 +3,10 @@ import styled from '@emotion/styled';
 export const Section = styled.section`
   position: relative;
   background-color: #500800;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.desk - 1}px) {
+    padding-top: 10dvh;
+  }
 `;
 
 export const BarrelContainer = styled.div`
@@ -11,7 +15,11 @@ export const BarrelContainer = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  padding-top: 30dvh;
+  padding-top: 60dvh;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    padding-top: 30dvh;
+  }
 `;
 
 export const Title = styled.h2`
@@ -76,18 +84,36 @@ export const Barrel = styled.img`
 export const BarrelRightTop = styled(Barrel)`
   left: 73.3%;
   transform: translateX(0);
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
+  }
 `;
 
 export const BarrelLeftTop = styled(Barrel)`
   left: auto;
   right: 58.8%;
   transform: translateX(0);
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
+  }
 `;
 
 export const BarrelLeft = styled(Barrel)`
   left: 0;
   aspect-ratio: 534 / 866;
   transform: translateX(0);
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
+  }
 `;
 
 export const BarrelRight = styled(Barrel)`
@@ -95,17 +121,35 @@ export const BarrelRight = styled(Barrel)`
   right: 0;
   aspect-ratio: 456 / 866;
   transform: translateX(0);
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
+  }
 `;
 
 export const BarrelRightBottom = styled(Barrel)`
   left: 57%;
   transform: translateX(0);
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
+  }
 `;
 
 export const BarrelLeftBottom = styled(Barrel)`
   left: auto;
   right: 72.1%;
   transform: translateX(0);
+
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
+  }
 `;
 
 export const Space1 = styled.div`

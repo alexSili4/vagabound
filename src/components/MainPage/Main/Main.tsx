@@ -2,7 +2,7 @@ import { FC } from 'react';
 import HeroSection from '@MainPageComponents/HeroSection';
 import AboutSection from '@MainPageComponents/AboutSection';
 // import BarrelsSection from '@MainPageComponents/BarrelsSection';
-// import TravelSection from '@MainPageComponents/TravelSection';
+import TravelSection from '@MainPageComponents/TravelSection';
 import StorySection from '@MainPageComponents/StorySection';
 // import MediaSection from '@MainPageComponents/MediaSection';
 import BottlesSection from '@MainPageComponents/BottlesSection';
@@ -18,7 +18,7 @@ const Main: FC = () => {
         <AboutSection />
         {/* <BarrelsSection /> */}
       </div>
-      {/* <TravelSection /> */}
+      <TravelSection />
       <StorySection />
       {/* <MediaSection /> */}
       <BottlesSection />
