@@ -113,14 +113,12 @@ export const Nav = styled.div`
 `;
 
 export const NavWrap = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing(3)}px;
-
   display: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
-    display: адуч;
+    display: flex;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing(3)}px;
   }
 `;
 
