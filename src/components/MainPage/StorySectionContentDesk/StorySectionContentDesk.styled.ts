@@ -40,6 +40,7 @@ export const Content = styled.div`
   justify-content: center;
   width: 100%;
   height: 100dvh;
+  transition: height ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
 export const BookWrap = styled.div`

@@ -23,12 +23,20 @@ import barrel3 from '@/images/barrels/barrel-3.webp';
 import barrel4 from '@/images/barrels/barrel-4.webp';
 import { Link } from 'react-router-dom';
 import { PagePaths } from '@/constants';
+import { IBarrelSetting } from '@/types/order';
+import { Label } from '@MainPageComponents/BarrelsSectionDeskContent/BarrelsSectionDeskContent';
 
-const Slide1: FC = () => {
+const Slide1: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
   return (
     <SlideContainer>
       <Link to={PagePaths.maisie}>
         <SlideImg src={barrel1} alt='' />
+        <Label
+          totalCount={Number(barrel?.amount ?? 0)}
+          currentCount={
+            Number(barrel?.amount ?? 0) - Number(barrel?.orders ?? 0)
+          }
+        />
       </Link>
 
       <SlideTextWrap>
@@ -43,11 +51,17 @@ const Slide1: FC = () => {
   );
 };
 
-const Slide2: FC = () => {
+const Slide2: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
   return (
     <SlideContainer>
       <Link to={PagePaths.lochan}>
         <SlideImg src={barrel2} alt='' />
+        <Label
+          totalCount={Number(barrel?.amount ?? 0)}
+          currentCount={
+            Number(barrel?.amount ?? 0) - Number(barrel?.orders ?? 0)
+          }
+        />
       </Link>
 
       <SlideTextWrap>
@@ -62,11 +76,17 @@ const Slide2: FC = () => {
   );
 };
 
-const Slide3: FC = () => {
+const Slide3: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
   return (
     <SlideContainer>
       <Link to={PagePaths.rory}>
         <SlideImg src={barrel3} alt='' />
+        <Label
+          totalCount={Number(barrel?.amount ?? 0)}
+          currentCount={
+            Number(barrel?.amount ?? 0) - Number(barrel?.orders ?? 0)
+          }
+        />
       </Link>
 
       <SlideTextWrap>
@@ -81,11 +101,17 @@ const Slide3: FC = () => {
   );
 };
 
-const Slide4: FC = () => {
+const Slide4: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
   return (
     <SlideContainer>
       <Link to={PagePaths.campbell}>
         <SlideImg src={barrel4} alt='' />
+        <Label
+          totalCount={Number(barrel?.amount ?? 0)}
+          currentCount={
+            Number(barrel?.amount ?? 0) - Number(barrel?.orders ?? 0)
+          }
+        />
       </Link>
 
       <SlideTextWrap>
@@ -101,7 +127,12 @@ const Slide4: FC = () => {
   );
 };
 
-const BarrelsSectionMobContent: FC = () => {
+const BarrelsSectionMobContent: FC<{
+  knockdhu: IBarrelSetting | undefined;
+  breival: IBarrelSetting | undefined;
+  williamson: IBarrelSetting | undefined;
+  balblair: IBarrelSetting | undefined;
+}> = ({ knockdhu, breival, williamson, balblair }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -158,16 +189,16 @@ const BarrelsSectionMobContent: FC = () => {
       <Slider ref={emblaRef}>
         <SlidesWrap>
           <Slide>
-            <Slide1 />
+            <Slide1 barrel={knockdhu} />
           </Slide>
           <Slide>
-            <Slide2 />
+            <Slide2 barrel={breival} />
           </Slide>
           <Slide>
-            <Slide3 />
+            <Slide3 barrel={williamson} />
           </Slide>
           <Slide>
-            <Slide4 />
+            <Slide4 barrel={balblair} />
           </Slide>
         </SlidesWrap>
       </Slider>

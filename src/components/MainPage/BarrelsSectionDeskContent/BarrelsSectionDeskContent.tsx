@@ -41,8 +41,9 @@ import lightRight from '@/images/barrels/light-right.webp';
 import labelBg from '@/images/barrels/label-bg.webp';
 import { useCounterAnimation } from '@/hooks';
 import { PagePaths } from '@/constants';
+import { IBarrelSetting } from '@/types/order';
 
-const Label: FC<{ totalCount: number; currentCount: number }> = ({
+export const Label: FC<{ totalCount: number; currentCount: number }> = ({
   totalCount,
   currentCount,
 }) => {
@@ -60,13 +61,15 @@ const Label: FC<{ totalCount: number; currentCount: number }> = ({
       { threshold: 0.8 }
     );
 
-    if (labelRef.current) {
-      observer.observe(labelRef.current);
+    const labelEl = labelRef.current;
+
+    if (labelEl) {
+      observer.observe(labelEl);
     }
 
     return () => {
-      if (labelRef.current) {
-        observer.unobserve(labelRef.current);
+      if (labelEl) {
+        observer.unobserve(labelEl);
       }
     };
   }, []);
@@ -92,7 +95,12 @@ const Label: FC<{ totalCount: number; currentCount: number }> = ({
   );
 };
 
-const BarrelsSectionDeskContent: FC = () => {
+const BarrelsSectionDeskContent: FC<{
+  knockdhu?: IBarrelSetting;
+  breival?: IBarrelSetting;
+  williamson?: IBarrelSetting;
+  balblair?: IBarrelSetting;
+}> = ({ knockdhu, breival, williamson, balblair }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const leftLightRef = useRef<HTMLDivElement>(null);
   const rightLightRef = useRef<HTMLDivElement>(null);
@@ -113,13 +121,15 @@ const BarrelsSectionDeskContent: FC = () => {
       { threshold: 0.2 }
     );
 
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+    const containerEl = containerRef.current;
+
+    if (containerEl) {
+      observer.observe(containerEl);
     }
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (containerEl) {
+        observer.unobserve(containerEl);
       }
     };
   }, []);
@@ -184,7 +194,12 @@ const BarrelsSectionDeskContent: FC = () => {
         <BarrelCardLeft>
           <BarrelImgLeftWrap>
             <BarrelLeftImg src={barrelLeft} alt='МЕЙЗІ' />
-            <Label totalCount={99} currentCount={85} />
+            <Label
+              totalCount={Number(knockdhu?.amount ?? 0)}
+              currentCount={
+                Number(knockdhu?.amount ?? 0) - Number(knockdhu?.orders ?? 0)
+              }
+            />
           </BarrelImgLeftWrap>
           <BarrelTextWrap>
             <BarrelTitle>Мейзі Еддертон</BarrelTitle>
@@ -199,7 +214,12 @@ const BarrelsSectionDeskContent: FC = () => {
       <BarrelLinkBottom to={PagePaths.rory}>
         <BarrelImgBottomWrap>
           <BarrelBottomImg src={barrelBottom} alt='МЕЙЗІ' />
-          <Label totalCount={95} currentCount={93} />
+          <Label
+            totalCount={Number(breival?.amount ?? 0)}
+            currentCount={
+              Number(breival?.amount ?? 0) - Number(breival?.orders ?? 0)
+            }
+          />
         </BarrelImgBottomWrap>
         <BarrelTextWrap>
           <BarrelTitle>Рорі Нок</BarrelTitle>
@@ -213,7 +233,12 @@ const BarrelsSectionDeskContent: FC = () => {
       <BarrelLinkTop to={PagePaths.lochan}>
         <BarrelImgTopWrap>
           <BarrelTopImg src={barrelTop} alt='МЕЙЗІ' />
-          <Label totalCount={30} currentCount={25} />
+          <Label
+            totalCount={Number(williamson?.amount ?? 0)}
+            currentCount={
+              Number(williamson?.amount ?? 0) - Number(williamson?.orders ?? 0)
+            }
+          />
         </BarrelImgTopWrap>
         <BarrelTopTextWrap>
           <BarrelTitle>Лохан Чепелтон</BarrelTitle>
@@ -227,7 +252,12 @@ const BarrelsSectionDeskContent: FC = () => {
       <BarrelLinkRight to={PagePaths.campbell}>
         <BarrelImgRightWrap>
           <BarrelRightImg src={barrelRight} alt='МЕЙЗІ' />
-          <Label totalCount={80} currentCount={71} />
+          <Label
+            totalCount={Number(balblair?.amount ?? 0)}
+            currentCount={
+              Number(balblair?.amount ?? 0) - Number(balblair?.orders ?? 0)
+            }
+          />
         </BarrelImgRightWrap>
         <BarrelTextWrap>
           <BarrelTitle>Містер Кемпбел</BarrelTitle>

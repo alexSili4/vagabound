@@ -134,16 +134,16 @@ const TravelSection: FC = () => {
 
       <FirstScreen></FirstScreen>
 
-      <Screen data-header-theme='light'>
+      <Screen>
         <Image src={screen2} alt='Банер' />
       </Screen>
-      <Screen data-header-theme='light'>
+      <Screen>
         <Image src={screen5} alt='Банер' />
       </Screen>
-      <Screen data-header-theme='dark'>
+      <Screen>
         <Image src={screen3} alt='Банер' />
       </Screen>
-      <Screen data-header-theme='light'>
+      <Screen>
         <Image src={screen4} alt='Банер' />
       </Screen>
 

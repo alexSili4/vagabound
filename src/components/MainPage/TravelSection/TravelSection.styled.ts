@@ -39,6 +39,7 @@ export const Screen = styled.div`
   left: 0;
   width: 100%;
   height: 100dvh;
+  transition: height ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
 export const Image = styled.img`

@@ -8,6 +8,7 @@ export const Container = styled.div`
   background-image: url(${bg});
   background-size: cover;
   background-position: top center;
+  transition: height ${({ theme }) => theme.transitionDurationAndFunc};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
     display: none;

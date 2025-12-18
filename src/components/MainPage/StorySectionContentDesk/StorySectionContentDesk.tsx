@@ -49,7 +49,7 @@ import {
 
 const Card1Component: FC<{ isActive: boolean }> = ({ isActive }) => {
   return (
-    <Card1Container isActive={isActive} data-header-theme='light'>
+    <Card1Container isActive={isActive} >
       <Card1TextWrap>
         <Card1Title>vagabound</Card1Title>
         <Card1Date>11/24/25’</Card1Date>
@@ -123,7 +123,7 @@ const StorySectionContentDesk: FC = () => {
 
           <Card2Container
             isActive={activeIndex === 1}
-            data-header-theme='light'
+         
           >
             <Card3 src={card3} alt='Фото' />
             <Card4 src={card4} alt='Фото' />
@@ -168,7 +168,7 @@ const StorySectionContentDesk: FC = () => {
 
           <Card3Container
             isActive={activeIndex === 2}
-            data-header-theme='light'
+          
           >
             <Card5 src={card5} alt='Фото' />
             <Card6 src={card6} alt='Фото' />

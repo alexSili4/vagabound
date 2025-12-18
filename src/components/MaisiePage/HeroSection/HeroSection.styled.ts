@@ -12,6 +12,7 @@ export const Container = styled.div`
   padding-bottom: ${({ theme }) => theme.spacing(44)}px;
   margin-left: auto;
   margin-right: auto;
+  transition: height ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
 export const TitleWrap = styled.div`

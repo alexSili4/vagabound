@@ -48,10 +48,11 @@ import { IContactsForm } from '@/types/order';
 import { useForm } from 'react-hook-form';
 import { contacts, SectionId } from '@/constants';
 import successMsgBg from '@/images/order/success-msg.webp';
+import { IBarrelOption } from '@/constants/contacts';
 
 interface IInputProps {
   placeholder: string;
-  options?: string[];
+  options?: IBarrelOption[];
   isSelect?: boolean;
   onOptionChange?: (option: string) => void;
   type?: HTMLInputTypeAttribute;
@@ -108,14 +109,14 @@ const Input: FC<IInputProps> = ({
                   const onBtnClick = (e: MouseEvent<HTMLButtonElement>) => {
                     e.currentTarget.blur();
 
-                    onOptionChange(option);
+                    onOptionChange(option.value);
                     toggleIsOpen();
                   };
 
                   return (
-                    <ListItem key={option}>
+                    <ListItem key={option.value}>
                       <OptionBtn type='button' onClick={onBtnClick}>
-                        {option}
+                        {option.label}
                       </OptionBtn>
                     </ListItem>
                   );
@@ -139,13 +140,26 @@ const OrderForm: FC<IOrderFormProps> = ({ updateIsSuccess, isSuccess }) => {
   } = useForm<IContactsForm>({ mode: 'onBlur' });
 
   const onOptionChange = (option: string) => {
-    setValue('barrel', option, { shouldValidate: true });
+    setValue('bottle_alias', option, { shouldValidate: true });
   };
 
-  const onSubmit = (data: IContactsForm) => {
-    console.log(data);
-    updateIsSuccess(true);
-    reset();
+  const onSubmit = async (data: IContactsForm) => {
+    try {
+      const response = await fetch('/api/order/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        updateIsSuccess(true);
+        reset();
+      }
+    } catch (error) {
+      console.error('Failed to submit order:', error);
+    }
   };
 
   const onPhoneChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -203,8 +217,10 @@ const OrderForm: FC<IOrderFormProps> = ({ updateIsSuccess, isSuccess }) => {
             placeholder='Оберіть бочку'
             options={contacts.barrels}
             onOptionChange={onOptionChange}
-            settings={register('barrel', { required: 'Оберіть бажану бочку' })}
-            error={errors.barrel?.message}
+            settings={register('bottle_alias', {
+              required: 'Оберіть бажану бочку',
+            })}
+            error={errors.bottle_alias?.message}
             isSelect
           />
         </InputsWrap>

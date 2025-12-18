@@ -5,7 +5,7 @@ import cut from '@/images/barrels/cut.webp';
 
 const AboutSection: FC = () => {
   return (
-    <Section id={SectionId.about}>
+    <Section id={SectionId.about} data-header-theme='dark'>
       <CutImg src={cut} alt='Декоративний обрив' />
 
       <Container>

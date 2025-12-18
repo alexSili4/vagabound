@@ -32,6 +32,7 @@ import bottle3 from '@/images/bottles/bottle-3.webp';
 import bottle4 from '@/images/bottles/bottle-4.webp';
 import { useAccordionElement } from '@/hooks';
 import { LuChevronUp } from 'react-icons/lu';
+import { SectionId } from '@/constants';
 
 const Card1Characteristics: FC = () => {
   return (
@@ -591,28 +592,36 @@ const BottlesSection: FC = () => {
           <Card1>
             <Name>Рорі</Name>
             <Card1Content />
-            <CardLink href='/'>ЗАМОВИТИ | ₴10'000</CardLink>
+            <CardLink href={`#${SectionId.contacts}`}>
+              ЗАМОВИТИ | ₴10'000
+            </CardLink>
           </Card1>
         </ListItem>
         <ListItem>
           <Card2>
             <Name>Лохан</Name>
             <Card2Content />
-            <CardLink href='/'>ЗАМОВИТИ | ₴10'000</CardLink>
+            <CardLink href={`#${SectionId.contacts}`}>
+              ЗАМОВИТИ | ₴10'000
+            </CardLink>
           </Card2>
         </ListItem>
         <ListItem>
           <Card3>
             <Name>Кемпбел</Name>
             <Card3Content />
-            <CardLink href='/'>ЗАМОВИТИ | ₴10'000</CardLink>
+            <CardLink href={`#${SectionId.contacts}`}>
+              ЗАМОВИТИ | ₴10'000
+            </CardLink>
           </Card3>
         </ListItem>
         <ListItem>
           <Card4>
             <Name>Мейзі</Name>
             <Card4Content />
-            <CardLink href='/'>ЗАМОВИТИ | ₴10'000</CardLink>
+            <CardLink href={`#${SectionId.contacts}`}>
+              ЗАМОВИТИ | ₴10'000
+            </CardLink>
           </Card4>
         </ListItem>
       </List>

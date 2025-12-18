@@ -1,12 +1,19 @@
 import styled from '@emotion/styled';
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(4)}px;
+  width: 100%;
+
+   @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: none;
+  }
+`;
+
 export const Slider = styled.div`
   width: 100%;
   overflow: hidden;
-
-  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
-    display: none;
-  }
 `;
 
 export const SlidesWrap = styled.div`
@@ -20,13 +27,6 @@ export const SlidesWrap = styled.div`
 
 export const Slide = styled.div`
   flex: 0 0 100%;
-`;
-
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)}px;
-  width: 100%;
 `;
 
 export const SliderControls = styled.div`

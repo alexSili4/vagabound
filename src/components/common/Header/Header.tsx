@@ -25,7 +25,7 @@ import {
   SilpoSocialLogo,
   MobControls,
 } from './Header.styled';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { PagePaths, SectionId } from '@/constants';
 import { AnimatePresence, Transition, Variants } from 'framer-motion';
 import { IoClose } from 'react-icons/io5';
@@ -86,7 +86,11 @@ export const OrderLinkComponent: FC<IOrderLinkComponentProps> = ({
   isDesk = false,
 }) => {
   return (
-    <OrderLink href='/' isMobMenu={isMobMenu} isDesk={isDesk}>
+    <OrderLink
+      href={`#${SectionId.contacts}`}
+      isMobMenu={isMobMenu}
+      isDesk={isDesk}
+    >
       <OrderLinkBg></OrderLinkBg>
       <OrderLinkActiveBg></OrderLinkActiveBg>
       <OrderLinkTitle>ЗАМОВИТИ</OrderLinkTitle>
@@ -137,26 +141,26 @@ const MobileMenu: FC<IMobileMenuProps> = ({ isOpen }) => {
         >
           <MobMenuLinks>
             <ListItem>
-              <MobAnchor href='/'>Про проєкт</MobAnchor>
+              <MobAnchor href={`#${SectionId.about}`}>Про проєкт</MobAnchor>
             </ListItem>
             <ListItem>
-              <MobAnchor href='/'>БОЧКИ</MobAnchor>
+              <MobAnchor href={`#${SectionId.barrels}`}>БОЧКИ</MobAnchor>
             </ListItem>
             <ListItem>
-              <MobAnchor href='/'>КОНТАКТИ</MobAnchor>
+              <MobAnchor href={`#${SectionId.contacts}`}>КОНТАКТИ</MobAnchor>
             </ListItem>
             <ListItem>
-              <MobAnchor href='/'>Часті питання</MobAnchor>
+              <MobAnchor href={`#${SectionId.faq}`}>Часті питання</MobAnchor>
             </ListItem>
             <ListItem>
-              <MobAnchor href='/'>СОЦМЕРЕЖІ</MobAnchor>
+              <MobAnchor href={`#${SectionId.social}`}>СОЦМЕРЕЖІ</MobAnchor>
             </ListItem>
           </MobMenuLinks>
           <MobControls>
             <MobSocialLinks>
               <ListItem>
                 <ExternalLink
-                  href='http://'
+                  href='https://drinksetter.bzh.life/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -165,7 +169,7 @@ const MobileMenu: FC<IMobileMenuProps> = ({ isOpen }) => {
               </ListItem>
               <ListItem>
                 <ExternalLink
-                  href='http://'
+                  href='https://silpo.ua/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -174,7 +178,7 @@ const MobileMenu: FC<IMobileMenuProps> = ({ isOpen }) => {
               </ListItem>
               <ListItem>
                 <ExternalLink
-                  href='http://'
+                  href='https://www.instagram.com/drinksetterua/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -183,7 +187,7 @@ const MobileMenu: FC<IMobileMenuProps> = ({ isOpen }) => {
               </ListItem>
               <ListItem>
                 <ExternalLink
-                  href='http://'
+                  href='https://www.facebook.com/drinksetterua/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -216,111 +220,108 @@ const MobileMenuContainer: FC<IMobileMenuContainerProps> = ({
 };
 
 const Header: FC = () => {
-  const [
-    isDark,
-    // setIsDark
-  ] = useState<boolean>(true);
+  const [isDark, setIsDark] = useState<boolean>(true);
   const [isMobMenuOpen, setIsMobMenuOpen] = useState<boolean>(false);
   const headerRef = useRef<HTMLElement>(null);
-  // const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
   const toggleMobMenu = () => {
     setIsMobMenuOpen((prevState) => !prevState);
   };
 
-  // useEffect(() => {
-  //   setIsDark(false);
-  // }, [pathname]);
+  useEffect(() => {
+    setIsDark(false);
+  }, [pathname]);
 
-  // useEffect(() => {
-  //   const checkBackgroundColor = () => {
-  //     if (!headerRef.current) return;
+  useEffect(() => {
+    const checkBackgroundColor = () => {
+      if (!headerRef.current) return;
 
-  //     const { left, top, width, height } =
-  //       headerRef.current.getBoundingClientRect();
-  //     const x = left + width / 2;
-  //     const y = top + height / 2;
+      const { left, top, width, height } =
+        headerRef.current.getBoundingClientRect();
+      const x = left + width / 2;
+      const y = top + height / 2;
 
-  //     const elements = document.elementsFromPoint(x, y);
+      const elements = document.elementsFromPoint(x, y);
 
-  //     // Find the first element that is not the header itself and has a background color
-  //     let foundColor = null;
+      // Find the first element that is not the header itself and has a background color
+      let foundColor = null;
 
-  //     for (const el of elements) {
-  //       if (headerRef.current.contains(el)) continue;
+      for (const el of elements) {
+        if (headerRef.current.contains(el)) continue;
 
-  //       // First, check for explicit theme override on element or ancestors
-  //       const themeEl = el.closest('[data-header-theme]');
-  //       if (themeEl) {
-  //         const theme = themeEl.getAttribute('data-header-theme');
-  //         if (theme === 'light') {
-  //           foundColor = 'light';
-  //           break;
-  //         }
-  //         if (theme === 'dark') {
-  //           foundColor = 'dark';
-  //           break;
-  //         }
-  //       }
+        // First, check for explicit theme override on element or ancestors
+        const themeEl = el.closest('[data-header-theme]');
+        if (themeEl) {
+          const theme = themeEl.getAttribute('data-header-theme');
+          if (theme === 'light') {
+            foundColor = 'light';
+            break;
+          }
+          if (theme === 'dark') {
+            foundColor = 'dark';
+            break;
+          }
+        }
 
-  //       // If no theme found, check background color
-  //       const style = window.getComputedStyle(el);
-  //       const bgColor = style.backgroundColor;
+        // If no theme found, check background color
+        const style = window.getComputedStyle(el);
+        const bgColor = style.backgroundColor;
 
-  //       if (
-  //         bgColor &&
-  //         bgColor !== 'rgba(0, 0, 0, 0)' &&
-  //         bgColor !== 'transparent'
-  //       ) {
-  //         const match = bgColor.match(
-  //           /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/
-  //         );
-  //         if (match) {
-  //           const a = match[4] ? parseFloat(match[4]) : 1;
-  //           if (a >= 0.05) {
-  //             foundColor = bgColor;
-  //             break;
-  //           }
-  //         }
-  //       }
-  //     }
+        if (
+          bgColor &&
+          bgColor !== 'rgba(0, 0, 0, 0)' &&
+          bgColor !== 'transparent'
+        ) {
+          const match = bgColor.match(
+            /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/
+          );
+          if (match) {
+            const a = match[4] ? parseFloat(match[4]) : 1;
+            if (a >= 0.05) {
+              foundColor = bgColor;
+              break;
+            }
+          }
+        }
+      }
 
-  //     if (foundColor) {
-  //       if (foundColor === 'light') {
-  //         setIsDark(false);
-  //       } else if (foundColor === 'dark') {
-  //         setIsDark(true);
-  //       } else {
-  //         const match = foundColor.match(
-  //           /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/
-  //         );
-  //         if (match) {
-  //           const r = parseInt(match[1], 10);
-  //           const g = parseInt(match[2], 10);
-  //           const b = parseInt(match[3], 10);
+      if (foundColor) {
+        if (foundColor === 'light') {
+          setIsDark(false);
+        } else if (foundColor === 'dark') {
+          setIsDark(true);
+        } else {
+          const match = foundColor.match(
+            /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/
+          );
+          if (match) {
+            const r = parseInt(match[1], 10);
+            const g = parseInt(match[2], 10);
+            const b = parseInt(match[3], 10);
 
-  //           // Calculate brightness
-  //           const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-  //           setIsDark(brightness < 128);
-  //         } else {
-  //           setIsDark(false);
-  //         }
-  //       }
-  //     } else {
-  //       setIsDark(false);
-  //     }
-  //   };
+            // Calculate brightness
+            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+            setIsDark(brightness < 128);
+          } else {
+            setIsDark(false);
+          }
+        }
+      } else {
+        setIsDark(false);
+      }
+    };
 
-  //   const handleScroll = () => {
-  //     checkBackgroundColor();
-  //   };
+    const handleScroll = () => {
+      checkBackgroundColor();
+    };
 
-  //   window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <StyledHeader ref={headerRef}>
@@ -331,7 +332,7 @@ const Header: FC = () => {
           toggleIsOpen={toggleMobMenu}
         />
         <DSLink
-          href='https://www.instagram.com/drinksetterua/'
+          href='https://drinksetter.bzh.life/'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -339,7 +340,7 @@ const Header: FC = () => {
         </DSLink>
         <Navigation isDark={isDark} />
         <OrderLinkComponent isDesk />
-        <MobOrderLink href='/'>
+        <MobOrderLink href={`#${SectionId.contacts}`}>
           <Cart />
         </MobOrderLink>
       </Container>

@@ -28,7 +28,13 @@ export const Container = styled.div`
   }
 `;
 
-export const DSLink = styled.a``;
+export const DSLink = styled.a`
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: block;
+  }
+`;
 
 export const DSLogo = styled(DSLogoIcon)<{ isDark: boolean }>`
   width: 125px;
@@ -183,6 +189,7 @@ export const Backdrop = styled(motion.div)`
   padding-bottom: ${({ theme }) => theme.spacing(8)}px;
   padding-left: ${({ theme }) => theme.spacing(4)}px;
   padding-right: ${({ theme }) => theme.spacing(4)}px;
+  transition: height ${({ theme }) => theme.transitionDurationAndFunc};
 `;
 
 export const MobMenuLinks = styled.ul`
