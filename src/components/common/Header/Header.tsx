@@ -265,25 +265,25 @@ const Header: FC = () => {
         }
 
         // If no theme found, check background color
-        const style = window.getComputedStyle(el);
-        const bgColor = style.backgroundColor;
+        // const style = window.getComputedStyle(el);
+        // const bgColor = style.backgroundColor;
 
-        if (
-          bgColor &&
-          bgColor !== 'rgba(0, 0, 0, 0)' &&
-          bgColor !== 'transparent'
-        ) {
-          const match = bgColor.match(
-            /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/
-          );
-          if (match) {
-            const a = match[4] ? parseFloat(match[4]) : 1;
-            if (a >= 0.05) {
-              foundColor = bgColor;
-              break;
-            }
-          }
-        }
+        // if (
+        //   bgColor &&
+        //   bgColor !== 'rgba(0, 0, 0, 0)' &&
+        //   bgColor !== 'transparent'
+        // ) {
+        //   const match = bgColor.match(
+        //     /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/
+        //   );
+        //   if (match) {
+        //     const a = match[4] ? parseFloat(match[4]) : 1;
+        //     if (a >= 0.05) {
+        //       foundColor = bgColor;
+        //       break;
+        //     }
+        //   }
+        // }
       }
 
       if (foundColor) {
@@ -291,24 +291,25 @@ const Header: FC = () => {
           setIsDark(false);
         } else if (foundColor === 'dark') {
           setIsDark(true);
-        } else {
-          const match = foundColor.match(
-            /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/
-          );
-          if (match) {
-            const r = parseInt(match[1], 10);
-            const g = parseInt(match[2], 10);
-            const b = parseInt(match[3], 10);
-
-            // Calculate brightness
-            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-            setIsDark(brightness < 128);
-          } else {
-            setIsDark(false);
-          }
         }
-      } else {
-        setIsDark(false);
+        //  else {
+        //     const match = foundColor.match(
+        //       /^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)$/
+        //     );
+        //     if (match) {
+        //       const r = parseInt(match[1], 10);
+        //       const g = parseInt(match[2], 10);
+        //       const b = parseInt(match[3], 10);
+
+        //       // Calculate brightness
+        //       const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        //       setIsDark(brightness < 128);
+        //     } else {
+        //       setIsDark(false);
+        //     }
+        //   }
+        // } else {
+        //   setIsDark(false);
       }
     };
 

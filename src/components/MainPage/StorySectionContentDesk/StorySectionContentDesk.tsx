@@ -13,6 +13,7 @@ import background from '@/images/story/bg.webp';
 import napkin from '@/images/story/napkin.webp';
 import napkin2 from '@/images/story/napkin-2.webp';
 import napkin3 from '@/images/story/napkin-3.webp';
+import napkin4 from '@/images/story/napkin-4.webp';
 import {
   Card1Container,
   Background,
@@ -26,9 +27,6 @@ import {
   Card1Title,
   Card2,
   Card2Container,
-  Card2Desc,
-  Card2Text,
-  Card2Title,
   Card3,
   Card3Container,
   Card3Text,
@@ -45,11 +43,43 @@ import {
   Napkin,
   Signature,
   SliderBtn,
+  Card2TextWrap,
+  Card2TextColumn1,
+  Card2TextColumn2,
+  Card2Text1,
+  Card2Photo,
+  Card2TextContainer,
+  Card2Text1Accent,
+  Accent1,
+  Card2Text2Wrap,
+  Card2Text2,
+  Accent2,
+  Accent3,
+  Spirit,
+  Card2Title,
+  Card2TitleWrap,
+  Card2TextContainer2,
+  Card2Text1Wrap,
+  Card2Text3,
+  Candies,
+  Accent4,
+  Accent5,
+  Card2Text4,
+  Card2Text4Alt,
+  Card2Text4Wrap,
 } from './StorySectionContentDesk.styled';
+import card2Photo from '@/images/story/card-2-photo.webp';
+import spirit from '@/images/story/spirit.webp';
+import candies from '@/images/story/candies.webp';
+import accent1 from '@/images/story/accent-1.webp';
+import accent2 from '@/images/story/accent-2.webp';
+import accent3 from '@/images/story/accent-3.webp';
+import accent4 from '@/images/story/accent-4.webp';
+import accent5 from '@/images/story/accent-5.webp';
 
 const Card1Component: FC<{ isActive: boolean }> = ({ isActive }) => {
   return (
-    <Card1Container isActive={isActive} >
+    <Card1Container isActive={isActive}>
       <Card1TextWrap>
         <Card1Title>vagabound</Card1Title>
         <Card1Date>11/24/25’</Card1Date>
@@ -84,6 +114,77 @@ const Card1Component: FC<{ isActive: boolean }> = ({ isActive }) => {
   );
 };
 
+const Card2Component: FC<{ isActive: boolean }> = ({ isActive }) => {
+  return (
+    <Card2Container isActive={isActive}>
+      <Card2TextWrap>
+        <Card2TextColumn1>
+          <Card2TextContainer>
+            <Card2Text1>
+              Ми віримо: ми всі —
+              <br />
+              Усе, що ми відчуваємо, не зникає безслідно. Воно відкладається в
+              нас, змінюючи нашу внутрішню структуру.
+            </Card2Text1>
+            <Accent1 src={accent1} alt='' />
+            <Card2Text1Accent>резонатори</Card2Text1Accent>
+            <Card2Photo src={card2Photo} alt='' />
+          </Card2TextContainer>
+          <Card2Text2Wrap>
+            <Accent2 src={accent2} alt='' />
+            <Accent3 src={accent3} alt='' />
+            <Card2Text2>
+              Ритм танців, музична терапія, дубова гімнастика, читання вголос —
+              ніщо не проходить повз.
+              <br />
+              Кожна вібрація занотовується в дубовій пам’яті. Не з кожним віскі
+              поводяться так шанобливо, дозволяючи розкрити відмінності та риси
+              особистості.
+            </Card2Text2>
+          </Card2Text2Wrap>
+        </Card2TextColumn1>
+        <Card2TextColumn2>
+          <Card2TextContainer2>
+            <Card2TitleWrap>
+              <Spirit src={spirit} alt='' />
+              <Card2Title>the spirit</Card2Title>
+            </Card2TitleWrap>
+            <Card2Text1Wrap>
+              <Accent4 src={accent4} alt='' />
+              <Accent5 src={accent5} alt='' />
+              <Card2Text3>
+                Ми спостерігаємо, як народжується смак.
+                <br />
+                Це не уява, а фізичний досвід: світло, звук,
+                <br />
+                запахи, вібрації, дотик, простір.
+                <br />
+                Це ланцюгова реакція:
+                <br />
+                Від відчуттів — до дерева.
+                <br />
+                Від дерева — до віскі.
+                <br />
+                Від віскі — до вас.
+              </Card2Text3>
+              <Candies src={candies} alt='' />
+            </Card2Text1Wrap>
+          </Card2TextContainer2>
+          <Card2Text4Wrap>
+            <Card2Text4>
+              Згодом цей досвід опиниться у пляшках. І коли ви зробите ковток,
+              пам’ятайте:
+            </Card2Text4>
+            <Card2Text4Alt>
+              Усе, до чого ми торкаємось, торкається нас у відповідь.
+            </Card2Text4Alt>
+          </Card2Text4Wrap>
+        </Card2TextColumn2>
+      </Card2TextWrap>
+    </Card2Container>
+  );
+};
+
 const StorySectionContentDesk: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -107,69 +208,26 @@ const StorySectionContentDesk: FC = () => {
     decrementActiveIndex();
   };
 
+  const isFirstIndex = activeIndex === 0;
+  const isLastIndex = activeIndex === 4;
+
   return (
     <Container>
       <Background src={background} alt='Фон' />
 
       <Content>
         <BookWrap>
-          <Napkin src={napkin} alt='Папірець' isActive={activeIndex === 0} />
-          <Napkin src={napkin2} alt='Папірець' isActive={activeIndex === 1} />
-          <Napkin src={napkin3} alt='Папірець' isActive={activeIndex === 2} />
+          <Napkin src={napkin} alt='Папірець' isActive={isFirstIndex} />
+          <Napkin src={napkin2} alt='Папірець' isActive={activeIndex === 2} />
+          <Napkin src={napkin3} alt='Папірець' isActive={activeIndex === 3} />
+          <Napkin src={napkin4} alt='Папірець' isActive={isLastIndex} />
 
           <Book src={book} alt='Книга' />
 
           <Card1Component isActive={activeIndex === 0} />
+          <Card2Component isActive={activeIndex === 1} />
 
-          <Card2Container
-            isActive={activeIndex === 1}
-         
-          >
-            <Card3 src={card3} alt='Фото' />
-            <Card4 src={card4} alt='Фото' />
-            <Card2Text>
-              Все починається тут. Ми віримо: ми всі — резонатори. Усе, що ми
-              відчуваємо, не зникає безслідно. Воно відкладається в нас,
-              змінюючи нашу внутрішню структуру. Ритм танців, музична терапія,
-              дубова гімнастика, читання вголос — ніщо не проходить повз. Кожна
-              вібрація занотовується в дубовій пам’яті. Не з кожним віскі
-              поводяться так шанобливо, дозволяючи розкрити відмінності та риси
-              особистості. Ми спостерігаємо, як народжується смак. Це не уява, а
-              фізичний досвід: світло, звук, запахи, вібрації, дотик, простір.
-              Це ланцюгова реакція: Від відчуттів — до дерева. Від дерева — до
-              віскі.
-              <br />
-              Від віскі — до вас. Згодом цей
-              <br />
-              досвід опиниться у пляшках.
-              <br />І коли ви зробите ковток,
-              <br />
-              пам’ятайте: Усе, до чого ми
-              <br />
-              торкаємось, торкається
-              <br />
-              нас у відповідь.
-            </Card2Text>
-
-            <Card2Title>Бортовий Журнал</Card2Title>
-
-            <Card2Desc>
-              Суб’єкт: Лохан
-              <br />
-              Експеримент: участь у зйомках авангардного римейку «Гуллівера».
-              Деталі: Лохана помістили в макет міста ліліпутів. Оскільки інші
-              актори були надто малі, Лохан нарешті відчув себе Великою Зіркою.
-              Він грав Гуллівера, який мовчки споглядає метушню дрібних людей.
-              Спостереження: деревина роздулася від гордості; тиск усередині
-              бочки зріс на 15%. Вплив на смак: у віскі з’явилися нотки величі
-              та ледь помітний присмак зіркової хвороби.
-            </Card2Desc>
-          </Card2Container>
-
-          <Card3Container
-            isActive={activeIndex === 2}
-          
-          >
+          {/* <Card3Container isActive={activeIndex === 2}>
             <Card5 src={card5} alt='Фото' />
             <Card6 src={card6} alt='Фото' />
             <Card3Text>
@@ -199,21 +257,21 @@ const StorySectionContentDesk: FC = () => {
             </Card5Text>
 
             <Signature>підпис</Signature>
-          </Card3Container>
+          </Card3Container> */}
         </BookWrap>
 
         <Controls>
           <SliderBtn
             type='button'
             onClick={onPrevSlideBtnClick}
-            disabled={activeIndex === 0}
+            disabled={isFirstIndex}
           >
             <IoIosArrowRoundBack size={28} />
           </SliderBtn>
           <SliderBtn
             type='button'
             onClick={onNextSlideBtnClick}
-            disabled={activeIndex === 2}
+            disabled={isLastIndex}
           >
             <IoIosArrowRoundForward size={28} />
           </SliderBtn>

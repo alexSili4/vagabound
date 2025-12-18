@@ -88,6 +88,7 @@ export const Card1Container = styled.div<{ isActive: boolean }>`
   width: 100%;
   height: 100%;
   opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+  pointer-events: ${({ isActive }) => (isActive ? 'auto' : 'none')};
   transition: opacity ${({ theme }) => theme.transition800};
 `;
 
@@ -171,16 +172,6 @@ export const Card1Date = styled.p`
   rotate: -14deg;
 `;
 
-export const Card2Container = styled.div<{ isActive: boolean }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  transition: opacity ${({ theme }) => theme.transition800};
-`;
-
 export const Card3 = styled.img`
   position: absolute;
   bottom: 20.7%;
@@ -193,40 +184,6 @@ export const Card4 = styled.img`
   top: 14%;
   right: 16%;
   width: 32%;
-`;
-
-export const Card2Text = styled.p`
-  position: absolute;
-  top: 7%;
-  left: 15%;
-  width: 35%;
-  color: #252525;
-  font-family: ${({ theme }) => theme.fontFamily.rubik};
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.4;
-`;
-
-export const Card2Title = styled.p`
-  position: absolute;
-  top: 8%;
-  right: 14%;
-  color: #252525;
-  font-family: ${({ theme }) => theme.fontFamily.pica};
-  font-weight: 400;
-  font-size: 56px;
-  line-height: 0.6;
-`;
-
-export const Card2Desc = styled.p`
-  position: absolute;
-  right: 15%;
-  bottom: 20%;
-  width: 32%;
-  font-family: ${({ theme }) => theme.fontFamily.rubik};
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.4;
 `;
 
 export const Card3Container = styled.div<{ isActive: boolean }>`
@@ -303,4 +260,205 @@ export const Signature = styled.p`
   letter-spacing: 2%;
   text-align: center;
   rotate: 6.87deg;
+`;
+
+export const Card2Container = styled.div<{ isActive: boolean }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
+  pointer-events: ${({ isActive }) => (isActive ? 'auto' : 'none')};
+  transition: opacity ${({ theme }) => theme.transition800};
+`;
+
+export const Card2TextWrap = styled.div`
+  display: flex;
+  height: 100%;
+`;
+
+export const Card2TextColumn1 = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  padding-top: 6%;
+  padding-left: 16%;
+  padding-right: 4%;
+  padding-bottom: 14%;
+`;
+
+export const Card2TextContainer = styled.div`
+  position: relative;
+`;
+
+export const Card2Text1 = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  rotate: -4deg;
+`;
+
+export const Card2Text1Accent = styled.p`
+  position: absolute;
+  top: -4%;
+  left: 43%;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-size: 76px;
+  line-height: 0.3;
+  rotate: -4deg;
+`;
+
+export const Accent1 = styled.img`
+  position: absolute;
+  top: -6%;
+  left: 38%;
+  width: 135px;
+`;
+
+export const Card2Photo = styled.img`
+  width: 100%;
+`;
+
+export const Card2Text2Wrap = styled.div`
+  position: relative;
+  padding-right: 5%;
+`;
+
+export const Card2Text2 = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Accent2 = styled.img`
+  position: absolute;
+  top: 43%;
+  left: -4%;
+  width: 90%;
+  height: 15%;
+`;
+
+export const Accent3 = styled.img`
+  position: absolute;
+  top: 58%;
+  left: -2%;
+  width: 18%;
+  height: 15%;
+`;
+
+export const Card2TextColumn2 = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+`;
+
+export const Card2TextContainer2 = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(4)}px;
+`;
+
+export const Card2TitleWrap = styled.div`
+  position: relative;
+  padding-top: 15%;
+  padding-left: 50%;
+`;
+
+export const Spirit = styled.img`
+  position: absolute;
+  top: -45%;
+  left: 7%;
+  width: 309px;
+`;
+
+export const Card2Title = styled.p`
+  width: 100px;
+  color: #1a3e2f;
+  font-family: ${({ theme }) => theme.fontFamily.pica};
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 0.7;
+`;
+
+export const Card2Text1Wrap = styled.div`
+  position: relative;
+  padding-left: 6%;
+`;
+
+export const Card2Text3 = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Candies = styled.img`
+  position: absolute;
+  top: 13%;
+  left: 14%;
+  width: 340px;
+`;
+
+export const Accent4 = styled.img`
+  position: absolute;
+  top: 15%;
+  left: 43%;
+  width: 17%;
+  height: 15%;
+`;
+
+export const Accent5 = styled.img`
+  position: absolute;
+  top: 30%;
+  left: 4%;
+  width: 42%;
+  height: 15%;
+`;
+
+export const Card2Text4Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(3)}px;
+  padding-bottom: 28%;
+  padding-left: 5%;
+  padding-right: 19%;
+`;
+
+export const Card2Text4 = styled.p`
+  width: 370px;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Card2Text4Alt = styled.p`
+  align-self: flex-end;
+  width: 340px;
+  color: #1a3e2f;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 0.4;
 `;

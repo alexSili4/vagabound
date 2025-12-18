@@ -13,12 +13,12 @@ import BagSection from '@MainPageComponents/BagSection';
 const Main: FC = () => {
   return (
     <>
-      <div style={{ overflow: 'hidden' }}>
+      {/* <div style={{ overflow: 'hidden' }}>
         <HeroSection />
         <AboutSection />
         <BarrelsSection />
-      </div>
-      <TravelSection />
+      </div> */}
+      {/* <TravelSection /> */}
       <StorySection />
       {/* <MediaSection /> */}
       <BottlesSection />
