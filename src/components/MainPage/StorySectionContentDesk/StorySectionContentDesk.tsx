@@ -67,6 +67,17 @@ import {
   Card2Text4,
   Card2Text4Alt,
   Card2Text4Wrap,
+  Card3TextWrap,
+  Card3TextColumn1,
+  Card3TextContainer,
+  Card3Text1,
+  Card3Photo,
+  Card3Text2Accent,
+  Card3Text2,
+  Card3TextColumn2,
+  Card3Text3Container,
+  Card3Text3,
+  Card4Photo,
 } from './StorySectionContentDesk.styled';
 import card2Photo from '@/images/story/card-2-photo.webp';
 import spirit from '@/images/story/spirit.webp';
@@ -76,6 +87,8 @@ import accent2 from '@/images/story/accent-2.webp';
 import accent3 from '@/images/story/accent-3.webp';
 import accent4 from '@/images/story/accent-4.webp';
 import accent5 from '@/images/story/accent-5.webp';
+import card3Photo from '@/images/story/card-3-photo.webp';
+import card4Photo from '@/images/story/card-4-photo.webp';
 
 const Card1Component: FC<{ isActive: boolean }> = ({ isActive }) => {
   return (
@@ -185,6 +198,47 @@ const Card2Component: FC<{ isActive: boolean }> = ({ isActive }) => {
   );
 };
 
+const Card3Component: FC<{ isActive: boolean }> = ({ isActive }) => {
+  return (
+    <Card3Container isActive={isActive}>
+      <Card3TextWrap>
+        <Card3TextColumn1>
+          <Card3TextContainer>
+            <Card3Text1>Запис №7</Card3Text1>
+            <Card3Photo src={card3Photo} alt='' />
+          </Card3TextContainer>
+          <Card3Text2>
+            <Card3Text2Accent>Суб’єкт:</Card3Text2Accent> Лохан
+            <br />
+            <br />
+            <Card3Text2Accent>Експеримент:</Card3Text2Accent> участь у зйомках
+            авангардного римейку «Гуллівера»
+            <br />
+            <br />
+            <Card3Text2Accent>Деталі:</Card3Text2Accent> Лохана помістили в
+            макет міста ліліпутів. Оскільки інші актори були надто малі, Лохан
+            нарешті відчув себе Великою Зіркою. Він грав Гуллівера, який мовчки
+            споглядає метушню дрібних людей
+          </Card3Text2>
+        </Card3TextColumn1>
+        <Card3TextColumn2>
+          <Card3Text3Container>
+            <Card3Text3>
+              <Card3Text2Accent>Спостереження:</Card3Text2Accent> деревина
+              роздулася від гордості; тиск усередині бочки зріс на 15%
+              <br />
+              <br />
+              <Card3Text2Accent>Вплив на смак:</Card3Text2Accent> у віскі
+              з’явилися нотки величі та ледь помітний присмак зіркової хвороби
+            </Card3Text3>
+            <Card4Photo src={card4Photo} alt='' />
+          </Card3Text3Container>
+        </Card3TextColumn2>
+      </Card3TextWrap>
+    </Card3Container>
+  );
+};
+
 const StorySectionContentDesk: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -217,7 +271,11 @@ const StorySectionContentDesk: FC = () => {
 
       <Content>
         <BookWrap>
-          <Napkin src={napkin} alt='Папірець' isActive={isFirstIndex} />
+          <Napkin
+            src={napkin}
+            alt='Папірець'
+            isActive={isFirstIndex || activeIndex === 1}
+          />
           <Napkin src={napkin2} alt='Папірець' isActive={activeIndex === 2} />
           <Napkin src={napkin3} alt='Папірець' isActive={activeIndex === 3} />
           <Napkin src={napkin4} alt='Папірець' isActive={isLastIndex} />
@@ -226,38 +284,7 @@ const StorySectionContentDesk: FC = () => {
 
           <Card1Component isActive={activeIndex === 0} />
           <Card2Component isActive={activeIndex === 1} />
-
-          {/* <Card3Container isActive={activeIndex === 2}>
-            <Card5 src={card5} alt='Фото' />
-            <Card6 src={card6} alt='Фото' />
-            <Card3Text>
-              Експеримент: сеанс вінілової терапії.
-              <br />
-              Деталі: з програвача 24 години лунав джаз 30-х років із
-              характерним потріскуванням голки. Спостереження: Мейзі занурилася
-              в стан глибокої ностальгії.
-            </Card3Text>
-
-            <Card4Text>
-              Вплив на смак: напій набув «теплого лампового» характеру;
-              дегустатори відзначають, що після ковтка хочеться вдягнути
-              твідовий піджак.
-            </Card4Text>
-
-            <Card5Text>
-              Суб’єкт: Рорі
-              <br />
-              Експеримент: аудіосимуляція трансконтинентального експресу.
-              Деталі: для Рорі увімкнули зациклений запис: «чух-чух… чух-чух…»
-              та звук перонного дзвона. Спостереження: уперше за весь час
-              експерименту Рорі заспокоївся. Він увійшов у медитативний транс,
-              ритмічно погойдуючись (або це нам здалося). Вплив на смак: смак
-              став стрімким і прямим, мов рельси; з’явився довгий фініш, що
-              нагадує нескінченну дорогу додому.
-            </Card5Text>
-
-            <Signature>підпис</Signature>
-          </Card3Container> */}
+          <Card3Component isActive={activeIndex === 2} />
         </BookWrap>
 
         <Controls>

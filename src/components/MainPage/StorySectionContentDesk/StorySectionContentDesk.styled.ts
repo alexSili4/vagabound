@@ -462,3 +462,93 @@ export const Card2Text4Alt = styled.p`
   font-size: 72px;
   line-height: 0.4;
 `;
+
+export const Card3TextWrap = styled.div`
+  display: flex;
+  height: 100%;
+`;
+
+export const Card3TextColumn1 = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  padding-top: 5%;
+  padding-left: 14%;
+  padding-right: 4%;
+  padding-bottom: 14%;
+`;
+
+export const Card3TextContainer = styled.div`
+  position: relative;
+  width: 100%;
+`;
+
+export const Card3Text1 = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 72px;
+  line-height: 0.3;
+  letter-spacing: 2%;
+`;
+
+export const Card3Photo = styled.img`
+  position: absolute;
+  top: 40%;
+  left: 12%;
+  width: 358px;
+`;
+
+export const Card3Text2 = styled.p`
+  width: 362px;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Card3Text2Accent = styled.span`
+  font-weight: 700;
+`;
+
+export const Card3TextColumn2 = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  padding-top: 8%;
+  padding-left: 3%;
+  padding-right: 4%;
+  padding-bottom: 14%;
+`;
+
+export const Card3Text3Container = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(8)}px;
+  width: 100%;
+`;
+
+export const Card3Text3 = styled.p`
+  width: 336px;
+  color: #252525;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Card4Photo = styled.img`
+  width: 340px;
+`;
