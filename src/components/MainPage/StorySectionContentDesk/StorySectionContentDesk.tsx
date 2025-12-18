@@ -78,6 +78,34 @@ import {
   Card3Text3Container,
   Card3Text3,
   Card4Photo,
+  Card4TextWrap,
+  Card4TextColumn1,
+  Card4Container,
+  Card4TextContainer,
+  Card4Text1,
+  Card4Photo1,
+  Card4Text2,
+  Card4TextColumn2,
+  Card4TextContainer2,
+  Card4Photo2,
+  Card4Text3,
+  Accent6,
+  Card4Text3Wrap,
+  Card5TextWrap,
+  Card5TextColumn1,
+  Card5TextContainer,
+  Card5Text1,
+  Card5Container,
+  Card5Text2,
+  Card5Photo1,
+  Card5TextColumn2,
+  Card5TextContainer2,
+  Card5Photo2,
+  Card5Text4,
+  Card5Text4Wrap,
+  Accent8,
+  Accent7,
+  Card5Text2Wrap,
 } from './StorySectionContentDesk.styled';
 import card2Photo from '@/images/story/card-2-photo.webp';
 import spirit from '@/images/story/spirit.webp';
@@ -87,8 +115,15 @@ import accent2 from '@/images/story/accent-2.webp';
 import accent3 from '@/images/story/accent-3.webp';
 import accent4 from '@/images/story/accent-4.webp';
 import accent5 from '@/images/story/accent-5.webp';
+import accent6 from '@/images/story/accent-6.webp';
+import accent7 from '@/images/story/accent-7.webp';
+import accent8 from '@/images/story/accent-8.webp';
 import card3Photo from '@/images/story/card-3-photo.webp';
 import card4Photo from '@/images/story/card-4-photo.webp';
+import card4Photo1 from '@/images/story/card-4-photo-1.webp';
+import card4Photo2 from '@/images/story/card-4-photo-2.webp';
+import card5Photo1 from '@/images/story/card-5-photo-1.webp';
+import card5Photo2 from '@/images/story/card-5-photo-2.webp';
 
 const Card1Component: FC<{ isActive: boolean }> = ({ isActive }) => {
   return (
@@ -239,6 +274,92 @@ const Card3Component: FC<{ isActive: boolean }> = ({ isActive }) => {
   );
 };
 
+const Card4Component: FC<{ isActive: boolean }> = ({ isActive }) => {
+  return (
+    <Card4Container isActive={isActive}>
+      <Card4TextWrap>
+        <Card4TextColumn1>
+          <Card4TextContainer>
+            <Card4Text1>Запис №14</Card4Text1>
+            <Card4Photo1 src={card4Photo1} alt='' />
+          </Card4TextContainer>
+          <Card4Text2>
+            <Card3Text2Accent>Експеримент:</Card3Text2Accent> сеанс вінілової
+            терапії
+            <br />
+            <br />
+            <Card3Text2Accent>Деталі:</Card3Text2Accent> з програвача 24 години
+            лунав джаз 30-х років із характерним потріскуванням голки
+          </Card4Text2>
+        </Card4TextColumn1>
+        <Card4TextColumn2>
+          <Card4TextContainer2>
+            <Card4Photo2 src={card4Photo2} alt='' />
+          </Card4TextContainer2>
+          <Card4Text3Wrap>
+            <Accent6 src={accent6} alt='' />
+            <Card4Text3>
+              <Card3Text2Accent>Спостереження:</Card3Text2Accent> Мейзі
+              занурилася в стан глибокої ностальгії
+              <br />
+              <br />
+              <Card3Text2Accent>Вплив на смак:</Card3Text2Accent> напій набув
+              «теплого лампового» характеру; дегустатори відзначають, що після
+              ковтка хочеться вдягнути твідовий піджак...
+            </Card4Text3>
+          </Card4Text3Wrap>
+        </Card4TextColumn2>
+      </Card4TextWrap>
+    </Card4Container>
+  );
+};
+
+const Card5Component: FC<{ isActive: boolean }> = ({ isActive }) => {
+  return (
+    <Card5Container isActive={isActive}>
+      <Card5TextWrap>
+        <Card5TextColumn1>
+          <Card5TextContainer>
+            <Card5Text1>Запис №42</Card5Text1>
+            <Card5Text2Wrap>
+              <Card5Text2>
+                <Card3Text2Accent>Суб’єкт:</Card3Text2Accent> Рорі
+                <br />
+                <br />
+                <Card3Text2Accent>Експеримент:</Card3Text2Accent> аудіосимуляція
+                трансівьафбьфіватьного експресу
+                <br />
+                <Card3Text2Accent>Деталі:</Card3Text2Accent> для Рорі увімкнули
+                зациклений запис: «чух-чух… чух-чух…» та звук перонного дзвона
+              </Card5Text2>
+              <Accent7 src={accent7} alt='' />
+            </Card5Text2Wrap>
+          </Card5TextContainer>
+          <Card5Photo1 src={card5Photo1} alt='' />
+        </Card5TextColumn1>
+        <Card5TextColumn2>
+          <Card5TextContainer2>
+            <Card5Photo2 src={card5Photo2} alt='' />
+            <Card5Text4Wrap>
+              <Accent8 src={accent8} alt='' />
+              <Card5Text4>
+                <Card3Text2Accent>Спостереження:</Card3Text2Accent> уперше за
+                весь час експерименту Рорі заспокоївся. Він увійшов у
+                медитативний транс, ритмічно погойдуючись (або це нам здалося)
+                <br />
+                <br />
+                <Card3Text2Accent>Вплив на смак:</Card3Text2Accent> смак став
+                стрімким і прямим, мов рельси; з’явився довгий фініш, що нагадує
+                нескінченну дорогу додому...
+              </Card5Text4>
+            </Card5Text4Wrap>
+          </Card5TextContainer2>
+        </Card5TextColumn2>
+      </Card5TextWrap>
+    </Card5Container>
+  );
+};
+
 const StorySectionContentDesk: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -285,6 +406,8 @@ const StorySectionContentDesk: FC = () => {
           <Card1Component isActive={activeIndex === 0} />
           <Card2Component isActive={activeIndex === 1} />
           <Card3Component isActive={activeIndex === 2} />
+          <Card4Component isActive={activeIndex === 3} />
+          <Card5Component isActive={activeIndex === 4} />
         </BookWrap>
 
         <Controls>
