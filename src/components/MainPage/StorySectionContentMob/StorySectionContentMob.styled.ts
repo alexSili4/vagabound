@@ -116,96 +116,6 @@ export const Slide2Container = styled.div`
   padding-left: 9%;
 `;
 
-export const Slide3Container = styled.div`
-  aspect-ratio: 756/1135;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 12%;
-  padding-bottom: 32%;
-  padding-left: 9%;
-  padding-right: 12%;
-`;
-
-export const Slide3TitleWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(5)}px;
-`;
-
-export const Slide3Title = styled.p`
-  color: #252525;
-  font-family: ${({ theme }) => theme.fontFamily.pica};
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 0.6;
-  letter-spacing: 0%;
-`;
-
-export const Slide3Text = styled.p`
-  color: #252525;
-  font-family: ${({ theme }) => theme.fontFamily.rubik};
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.4;
-  letter-spacing: 0%;
-`;
-
-export const Slide4Container = styled.div`
-  aspect-ratio: 756/1135;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 12%;
-  padding-bottom: 32%;
-  padding-left: 9%;
-  padding-right: 12%;
-`;
-
-export const Slide4Title = styled.p`
-  width: 90%;
-  color: #000000;
-  font-family: ${({ theme }) => theme.fontFamily.rubik};
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 1.4;
-  letter-spacing: 0%;
-`;
-
-export const Slide4TextWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-export const Slide4Text = styled.p`
-  width: 80%;
-  color: #000000;
-  font-family: ${({ theme }) => theme.fontFamily.rubik};
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 1.4;
-  letter-spacing: 0%;
-`;
-
-export const Slide5Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(4)}px;
-  padding-top: 9%;
-  padding-bottom: 32%;
-  padding-left: 9%;
-  padding-right: 12%;
-`;
-
-export const Slide5Text = styled.p`
-  color: #000000;
-  font-family: ${({ theme }) => theme.fontFamily.rubik};
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 1.4;
-  letter-spacing: 0%;
-`;
-
 export const Napkin = styled.img<{ isActive: boolean }>`
   position: absolute;
   top: -22%;
@@ -264,14 +174,14 @@ export const Card1 = styled.img`
 
 export const Lines1 = styled.img`
   position: absolute;
-  top: 240px;
+  top: 235px;
   left: 170px;
   width: 150px;
 `;
 
 export const Lines2 = styled.img`
   position: absolute;
-  top: 260px;
+  top: 255px;
   left: 30px;
   width: 155px;
 `;
@@ -295,3 +205,437 @@ export const Card1TextAlt = styled.p`
   line-height: 1.4;
   white-space: pre-wrap;
 `;
+
+export const Slide3Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 100%;
+  padding-left: 20px;
+  padding-top: 25px;
+`;
+
+export const Card3Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing()}px;
+`;
+
+export const Card3TextWrap = styled.div`
+  position: relative;
+  rotate: -4deg;
+`;
+
+export const Card3Text = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+`;
+
+export const Card3TextAccentWrap = styled.div`
+  position: absolute;
+  top: -5px;
+  left: 145px;
+`;
+
+export const Card3TextAccent = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 52px;
+  line-height: 0.3;
+  letter-spacing: 0%;
+`;
+
+export const Accent1 = styled.img`
+  position: absolute;
+  top: -10px;
+  left: -15px;
+  max-width: none;
+  width: 100px;
+`;
+
+export const Card3Photo = styled.img``;
+
+export const Card3Text2Wrap = styled.div`
+  position: relative;
+  padding-bottom: ${({ theme }) => theme.spacing(27)}px;
+`;
+
+export const Accent2 = styled.img`
+  position: absolute;
+  top: 60px;
+  left: -20px;
+  max-width: none;
+  width: 320px;
+`;
+
+export const Accent3 = styled.img`
+  position: absolute;
+  top: 80px;
+  left: -20px;
+  width: 80px;
+`;
+
+export const Card3Text2 = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+`;
+
+export const Slide4Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 310px;
+  height: 100%;
+  padding-left: 20px;
+  padding-top: 25px;
+`;
+
+export const Card4Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)}px;
+`;
+
+export const Card4TitleWrap = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 250px;
+`;
+
+export const Spirit = styled.img`
+  position: absolute;
+  top: -110px;
+  right: 20px;
+  width: 200px;
+`;
+
+export const Card4Title = styled.p`
+  width: 50px;
+  color: #1a3e2f;
+  font-family: ${({ theme }) => theme.fontFamily.pica};
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 0.7;
+  letter-spacing: 0%;
+`;
+
+export const Card4TextWrap = styled.div`
+  position: relative;
+`;
+
+export const Accent4 = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 200px;
+  width: 110px;
+`;
+
+export const Accent5 = styled.img`
+  position: absolute;
+  top: 42px;
+  left: -15px;
+  width: 240px;
+`;
+
+export const Candies = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  width: 280px;
+  max-width: none;
+`;
+
+export const Card4Text = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+`;
+
+export const Card4Text2Wrap = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(27)}px;
+`;
+
+export const Card4Text2 = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+`;
+
+export const Card4Desc = styled.p`
+  align-self: flex-end;
+  width: 206px;
+  color: #1a3e2f;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 52px;
+  line-height: 0.4;
+  letter-spacing: 2%;
+`;
+
+export const Slide5Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 310px;
+  height: 100%;
+  padding-left: 40px;
+  padding-top: 50px;
+`;
+
+export const Card5TitleWrap = styled.div`
+  position: relative;
+`;
+
+export const Card5Title = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 52px;
+  line-height: 0.3;
+  letter-spacing: 2%;
+`;
+
+export const Slide5Photo = styled.img`
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 280px;
+`;
+
+export const Card5TextWrap = styled.div`
+  padding-bottom: ${({ theme }) => theme.spacing(27)}px;
+`;
+
+export const Card5Text = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const TextAccent = styled.span`
+  font-weight: 700;
+`;
+
+export const Slide6Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(4)}px;
+  width: 310px;
+  height: 100%;
+  padding-left: 40px;
+  padding-top: 50px;
+`;
+
+export const Card6Text = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Slide6Photo = styled.img``;
+
+export const Slide7Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 310px;
+  height: 100%;
+  padding-left: 40px;
+  padding-top: 50px;
+`;
+
+export const Card7Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)}px;
+`;
+
+export const Card7TitleWrap = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)}px;
+`;
+
+export const Card7Title = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 52px;
+  line-height: 0.3;
+  letter-spacing: 2%;
+`;
+
+export const Slide7Photo = styled.img``;
+
+export const Card7TextWrap = styled.div`
+  padding-bottom: ${({ theme }) => theme.spacing(27)}px;
+`;
+
+export const Card7Text = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Slide8Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 310px;
+  height: 100%;
+  padding-left: 40px;
+  padding-top: 50px;
+`;
+
+export const Card8TextWrap = styled.div`
+  position: relative;
+  padding-bottom: ${({ theme }) => theme.spacing(27)}px;
+`;
+
+export const Accent6 = styled.img`
+  position: absolute;
+  top: 120px;
+  left: 62px;
+  width: 130px;
+`;
+
+export const Card8Text = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Slide8Photo = styled.img`
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+export const Slide9Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 310px;
+  height: 100%;
+  padding-left: 40px;
+  padding-top: 50px;
+`;
+
+export const Card9TitleWrap = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(6)}px;
+`;
+
+export const Card9Title = styled.p`
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.soul};
+  font-weight: 400;
+  font-style: Script;
+  font-size: 52px;
+  line-height: 0.3;
+  letter-spacing: 2%;
+`;
+
+export const Card9TextWrap = styled.div`
+  position: relative;
+`;
+
+export const Accent7 = styled.img`
+  position: absolute;
+  top: 65px;
+  left: 0;
+  width: 165px;
+`;
+
+export const Card9Text = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Slide9PhotoWrap = styled.div`
+  padding-bottom: ${({ theme }) => theme.spacing(20)}px;
+`;
+
+export const Slide9Photo = styled.img``;
+
+export const Slide10Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 310px;
+  height: 100%;
+  padding-left: 40px;
+  padding-top: 50px;
+`;
+
+export const Card10TextWrap = styled.div`
+  position: relative;
+  padding-bottom: ${({ theme }) => theme.spacing(27)}px;
+`;
+
+export const Accent8 = styled.img`
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 190px;
+`;
+
+export const Card10Text = styled.p`
+  position: relative;
+  color: #252525;
+  font-family: ${({ theme }) => theme.fontFamily.rubik};
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0%;
+`;
+
+export const Slide10Photo = styled.img``;

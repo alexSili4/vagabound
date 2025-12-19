@@ -2,10 +2,6 @@ import { FC, MouseEvent, useState } from 'react';
 import book from '@/images/story/book.webp';
 import card1 from '@/images/story/card-1.webp';
 import card2 from '@/images/story/card-2.webp';
-import card3 from '@/images/story/card-3.webp';
-import card4 from '@/images/story/card-4.webp';
-import card5 from '@/images/story/card-5.webp';
-import card6 from '@/images/story/card-6.webp';
 import lines1 from '@/images/story/lines-1.webp';
 import lines2 from '@/images/story/lines-2.webp';
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
@@ -27,21 +23,13 @@ import {
   Card1Title,
   Card2,
   Card2Container,
-  Card3,
   Card3Container,
-  Card3Text,
-  Card4,
-  Card4Text,
-  Card5,
-  Card5Text,
-  Card6,
   Container,
   Content,
   Controls,
   Lines1,
   Lines2,
   Napkin,
-  Signature,
   SliderBtn,
   Card2TextWrap,
   Card2TextColumn1,

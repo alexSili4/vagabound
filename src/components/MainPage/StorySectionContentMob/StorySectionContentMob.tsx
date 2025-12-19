@@ -13,16 +13,6 @@ import {
   Slide1Container,
   Slide1TitleWrap,
   Slide2Container,
-  Slide3Container,
-  Slide3Text,
-  Slide3Title,
-  Slide3TitleWrap,
-  Slide4Container,
-  Slide4Text,
-  Slide4TextWrap,
-  Slide4Title,
-  Slide5Container,
-  Slide5Text,
   Napkin1,
   Napkin2,
   Napkin3,
@@ -34,14 +24,70 @@ import {
   Lines2,
   Card2,
   Card1TextAlt,
+  Slide3Container,
+  Card3Content,
+  Card3TextWrap,
+  Card3Text,
+  Card3TextAccentWrap,
+  Card3TextAccent,
+  Accent1,
+  Card3Photo,
+  Card3Text2Wrap,
+  Accent2,
+  Card3Text2,
+  Accent3,
+  Slide4Container,
+  Card4Content,
+  Card4TextWrap,
+  Card4Text,
+  Card4TitleWrap,
+  Spirit,
+  Card4Title,
+  Accent4,
+  Accent5,
+  Candies,
+  Card4Text2Wrap,
+  Card4Text2,
+  Card4Desc,
+  Slide5Container,
+  Card5TitleWrap,
+  Card5Title,
+  Slide5Photo,
+  Card5Text,
+  TextAccent,
+  Card6Text,
+  Slide6Photo,
+  Slide6Container,
+  Slide7Container,
+  Card7TitleWrap,
+  Card7Title,
+  Slide7Photo,
+  Card7Text,
+  Slide8Container,
+  Card8Text,
+  Slide8Photo,
+  Card5TextWrap,
+  Card7TextWrap,
+  Card8TextWrap,
+  Slide9Container,
+  Slide9PhotoWrap,
+  Card9TitleWrap,
+  Card9Title,
+  Card9Text,
+  Slide9Photo,
+  Accent6,
+  Card9TextWrap,
+  Accent7,
+  Slide10Container,
+  Card10TextWrap,
+  Accent8,
+  Card10Text,
+  Slide10Photo,
 } from './StorySectionContentMob.styled';
 import book from '@/images/story/book-mob.webp';
 import useEmblaCarousel, { EmblaViewportRefType } from 'embla-carousel-react';
 import { GoArrowRight, GoArrowLeft } from 'react-icons/go';
 import Fade from 'embla-carousel-fade';
-import slide3Img from '@/images/story/card-4.webp';
-import slide4Img from '@/images/story/card-5.webp';
-import slide5Img from '@/images/story/card-6.webp';
 import napkin from '@/images/story/napkin-mob.webp';
 import napkin2 from '@/images/story/napkin-2-mob.webp';
 import napkin3 from '@/images/story/napkin-3-mob.webp';
@@ -49,6 +95,23 @@ import card1 from '@/images/story/card-1.webp';
 import lines1 from '@/images/story/lines-1.webp';
 import lines2 from '@/images/story/lines-2.webp';
 import card2 from '@/images/story/card-2.webp';
+import accent1 from '@/images/story/accent-1.webp';
+import accent2 from '@/images/story/accent-2.webp';
+import accent3 from '@/images/story/accent-3.webp';
+import accent4 from '@/images/story/accent-4.webp';
+import accent5 from '@/images/story/accent-5.webp';
+import accent6 from '@/images/story/accent-6.webp';
+import accent7 from '@/images/story/accent-7.webp';
+import accent8 from '@/images/story/accent-8.webp';
+import card2Photo from '@/images/story/card-2-photo.webp';
+import card3Photo from '@/images/story/card-3-photo.webp';
+import card4Photo from '@/images/story/card-4-photo.webp';
+import card4Photo1 from '@/images/story/card-4-photo-1.webp';
+import card4Photo2 from '@/images/story/card-4-photo-2-mob.webp';
+import card5Photo1 from '@/images/story/card-5-photo-1.webp';
+import card5Photo2 from '@/images/story/card-5-photo-2.webp';
+import spirit from '@/images/story/spirit.webp';
+import candies from '@/images/story/candies.webp';
 
 interface IStorySliderProps {
   emblaRef: EmblaViewportRefType;
@@ -111,22 +174,33 @@ const Slide2: FC = () => {
 const Slide3: FC = () => {
   return (
     <Slide3Container>
-      <Slide3TitleWrap>
-        <Slide3Title>Бортовий Журнал</Slide3Title>
-        <img src={slide3Img} alt='' />
-      </Slide3TitleWrap>
-
-      <Slide3Text>
-        Суб’єкт: Лохан
-        <br />
-        Експеримент: участь у зйомках авангардного римейку «Гуллівера». Деталі:
-        Лохана помістили в макет міста ліліпутів. Оскільки інші актори були
-        надто малі, Лохан нарешті відчув себе Великою Зіркою. Він грав
-        Гуллівера, який мовчки споглядає метушню дрібних людей. Спостереження:
-        деревина роздулася від гордості; тиск усередині бочки зріс на 15%. Вплив
-        на смак: у віскі з’явилися нотки величі та ледь помітний присмак
-        зіркової хвороби.
-      </Slide3Text>
+      <Card3Content>
+        <Card3TextWrap>
+          <Card3Text>
+            Ми віримо: ми всі —
+            <br />
+            Усе, що ми відчуваємо, не зникає безслідно. Воно відкладається в
+            нас, змінюючи нашу внутрішню структуру.
+          </Card3Text>
+          <Card3TextAccentWrap>
+            <Accent1 src={accent1} alt='' />
+            <Card3TextAccent>резонатори</Card3TextAccent>
+          </Card3TextAccentWrap>
+        </Card3TextWrap>
+        <Card3Photo src={card2Photo} alt='' />
+      </Card3Content>
+      <Card3Text2Wrap>
+        <Accent2 src={accent2} alt='' />
+        <Accent3 src={accent3} alt='' />
+        <Card3Text2>
+          Ритм танців, музична терапія, дубова гімнастика, читання вголос — ніщо
+          не проходить повз.
+          <br />
+          Кожна вібрація занотовується в дубовій пам’яті. Не з кожним віскі
+          поводяться так шанобливо, дозволяючи розкрити відмінності та риси
+          особистості.
+        </Card3Text2>
+      </Card3Text2Wrap>
     </Slide3Container>
   );
 };
@@ -134,21 +208,39 @@ const Slide3: FC = () => {
 const Slide4: FC = () => {
   return (
     <Slide4Container>
-      <Slide4Title>
-        Експеримент: сеанс вінілової терапії.
-        <br />
-        Деталі: з програвача 24 години лунав джаз 30-х років із характерним
-        потріскуванням голки. Спостереження: Мейзі занурилася в стан глибокої
-        ностальгії.
-      </Slide4Title>
+      <Card4Content>
+        <Card4TitleWrap>
+          <Spirit src={spirit} alt='' />
+          <Card4Title>the spirit</Card4Title>
+        </Card4TitleWrap>
 
-      <Slide4TextWrap>
-        <img src={slide4Img} alt='' />
-        <Slide4Text>
-          Вплив на смак: напій набув «теплого лампового» характеру; дегустатори
-          відзначають, що після ковтка хочеться вдягнути твідовий піджак.
-        </Slide4Text>
-      </Slide4TextWrap>
+        <Card4TextWrap>
+          <Accent4 src={accent4} alt='' />
+          <Accent5 src={accent5} alt='' />
+          <Card4Text>
+            Ми спостерігаємо, як народжується смак. Це не уява, а фізичний
+            досвід: світло, звук, запахи, вібрації, дотик, простір.
+            <br />
+            Це ланцюгова реакція:
+            <br />
+            Від відчуттів — до дерева.
+            <br />
+            Від дерева — до віскі.
+            <br />
+            Від віскі — до вас.
+          </Card4Text>
+          <Candies src={candies} alt='' />
+        </Card4TextWrap>
+      </Card4Content>
+      <Card4Text2Wrap>
+        <Card4Text2>
+          Згодом цей досвід опиниться у пляшках. І коли ви зробите ковток,
+          пам’ятайте:
+        </Card4Text2>
+        <Card4Desc>
+          Усе, до чого ми торкаємось, торкається нас у відповідь.
+        </Card4Desc>
+      </Card4Text2Wrap>
     </Slide4Container>
   );
 };
@@ -156,19 +248,138 @@ const Slide4: FC = () => {
 const Slide5: FC = () => {
   return (
     <Slide5Container>
-      <img src={slide5Img} alt='' />
+      <Card5TitleWrap>
+        <Card5Title>Запис №7</Card5Title>
+        <Slide5Photo src={card3Photo} alt='' />
+      </Card5TitleWrap>
 
-      <Slide5Text>
-        Суб’єкт: Рорі
-        <br />
-        Експеримент: аудіосимуляція трансконтинентального експресу. Деталі: для
-        Рорі увімкнули зациклений запис: «чух-чух… чух-чух…» та звук перонного
-        дзвона. Спостереження: уперше за весь час експерименту Рорі заспокоївся.
-        Він увійшов у медитативний транс, ритмічно погойдуючись (або це нам
-        здалося). Вплив на смак: смак став стрімким і прямим, мов рельси;
-        з’явився довгий фініш, що нагадує нескінченну дорогу додому.
-      </Slide5Text>
+      <Card5TextWrap>
+        <Card5Text>
+          <TextAccent>Суб’єкт:</TextAccent> Лохан
+          <br />
+          <br />
+          <TextAccent>Експеримент:</TextAccent> участь у зйомках авангардного
+          римейку «Гуллівера»
+          <br />
+          <br />
+          <TextAccent>Деталі:</TextAccent> Лохана помістили в макет міста
+          ліліпутів. Оскільки інші актори були надто малі, Лохан нарешті відчув
+          себе Великою Зіркою. Він грав Гуллівера, який мовчки споглядає метушню
+          дрібних людей
+        </Card5Text>
+      </Card5TextWrap>
     </Slide5Container>
+  );
+};
+
+const Slide6: FC = () => {
+  return (
+    <Slide6Container>
+      <Card6Text>
+        <TextAccent>Спостереження:</TextAccent> деревина роздулася від гордості;
+        тиск усередині бочки зріс на 15%
+        <br />
+        <br />
+        <TextAccent>Вплив на смак:</TextAccent> у віскі з’явилися нотки величі
+        та ледь помітний присмак зіркової хвороби
+      </Card6Text>
+
+      <Slide6Photo src={card4Photo} alt='' />
+    </Slide6Container>
+  );
+};
+
+const Slide7: FC = () => {
+  return (
+    <Slide7Container>
+      <Card7TitleWrap>
+        <Card7Title>Запис №14</Card7Title>
+        <Slide7Photo src={card4Photo1} alt='' />
+      </Card7TitleWrap>
+
+      <Card7TextWrap>
+        <Card7Text>
+          <TextAccent>Експеримент:</TextAccent> сеанс вінілової терапії
+          <br />
+          <br />
+          <TextAccent>Деталі:</TextAccent> з програвача 24 години лунав джаз
+          30-х років із характерним потріскуванням голки
+        </Card7Text>
+      </Card7TextWrap>
+    </Slide7Container>
+  );
+};
+
+const Slide8: FC = () => {
+  return (
+    <Slide8Container>
+      <Slide8Photo src={card4Photo2} alt='' />
+
+      <Card8TextWrap>
+        <Accent6 src={accent6} alt='' />
+        <Card8Text>
+          <TextAccent>Спостереження:</TextAccent> Мейзі занурилася в стан
+          глибокої ностальгії
+          <br />
+          <br />
+          <TextAccent>Вплив на смак:</TextAccent> напій набув «теплого
+          лампового» характеру; дегустатори відзначають, що після ковтка
+          хочеться вдягнути твідовий піджак...
+        </Card8Text>
+      </Card8TextWrap>
+    </Slide8Container>
+  );
+};
+
+const Slide9: FC = () => {
+  return (
+    <Slide9Container>
+      <Card9TitleWrap>
+        <Card9Title>Запис №42</Card9Title>
+        <Card9TextWrap>
+          <Accent7 src={accent7} alt='' />
+          <Card9Text>
+            <TextAccent>Суб’єкт:</TextAccent> Рорі
+            <br />
+            <br />
+            <TextAccent>Експеримент:</TextAccent> аудіосимуляція
+            трансівьафбьфіватьного експресу
+            <br />
+            <br />
+            <TextAccent>Деталі:</TextAccent> для Рорі увімкнули зациклений
+            запис: «чух-чух… чух-чух…» та звук перонного дзвона
+          </Card9Text>
+        </Card9TextWrap>
+
+        <Slide9PhotoWrap>
+          <Slide9Photo src={card5Photo1} alt='' />
+        </Slide9PhotoWrap>
+      </Card9TitleWrap>
+    </Slide9Container>
+  );
+};
+
+const Slide10: FC = () => {
+  return (
+    <Slide10Container>
+      <Slide10Photo src={card5Photo2} alt='' />
+
+      <Card10TextWrap>
+        <Accent8 src={accent8} alt='' />
+        <Card10Text>
+          <TextAccent>Спостереження:</TextAccent> уперше за весь час
+          експерименту Рорі заспокоївся. Він увійшов у медитативний транс,
+          ритмічно погойдуючись
+          <br />
+          (або це нам здалося)
+          <br />
+          <br />
+          <TextAccent>Вплив на смак:</TextAccent> смак став стрімким і прямим,
+          мов рельси; з’явився довгий фініш, що нагадує нескінченну дорогу
+          додому...
+        </Card10Text>
+      </Card10TextWrap>
+    </Slide10Container>
   );
 };
 
@@ -200,6 +411,21 @@ const StorySlider: FC<IStorySliderProps> = ({
           </Slide>
           <Slide>
             <Slide5 />
+          </Slide>
+          <Slide>
+            <Slide6 />
+          </Slide>
+          <Slide>
+            <Slide7 />
+          </Slide>
+          <Slide>
+            <Slide8 />
+          </Slide>
+          <Slide>
+            <Slide9 />
+          </Slide>
+          <Slide>
+            <Slide10 />
           </Slide>
         </SlidesWrap>
       </Slider>
