@@ -16,12 +16,12 @@ import {
   SlideContainer,
   SlideImg,
   SlideTextWrap,
+  StyledLink,
 } from './BarrelsSectionMobContent.styled';
 import barrel1 from '@/images/barrels/barrel-1.webp';
 import barrel2 from '@/images/barrels/barrel-2.webp';
 import barrel3 from '@/images/barrels/barrel-3.webp';
 import barrel4 from '@/images/barrels/barrel-4.webp';
-import { Link } from 'react-router-dom';
 import { PagePaths } from '@/constants';
 import { IBarrelSetting } from '@/types/order';
 import { Label } from '@MainPageComponents/BarrelsSectionDeskContent/BarrelsSectionDeskContent';
@@ -29,7 +29,7 @@ import { Label } from '@MainPageComponents/BarrelsSectionDeskContent/BarrelsSect
 const Slide1: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
   return (
     <SlideContainer>
-      <Link to={PagePaths.maisie}>
+      <StyledLink to={PagePaths.maisie}>
         <SlideImg src={barrel1} alt='' />
         <Label
           totalCount={Number(barrel?.amount ?? 0)}
@@ -37,7 +37,7 @@ const Slide1: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
             Number(barrel?.amount ?? 0) - Number(barrel?.orders ?? 0)
           }
         />
-      </Link>
+      </StyledLink>
 
       <SlideTextWrap>
         <BarrelTitle>МЕЙЗІ ЕДЕРТОН</BarrelTitle>
@@ -54,7 +54,7 @@ const Slide1: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
 const Slide2: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
   return (
     <SlideContainer>
-      <Link to={PagePaths.lochan}>
+      <StyledLink to={PagePaths.lochan}>
         <SlideImg src={barrel2} alt='' />
         <Label
           totalCount={Number(barrel?.amount ?? 0)}
@@ -62,7 +62,7 @@ const Slide2: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
             Number(barrel?.amount ?? 0) - Number(barrel?.orders ?? 0)
           }
         />
-      </Link>
+      </StyledLink>
 
       <SlideTextWrap>
         <BarrelTitle>Лохан Чепелтон</BarrelTitle>
@@ -79,7 +79,7 @@ const Slide2: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
 const Slide3: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
   return (
     <SlideContainer>
-      <Link to={PagePaths.rory}>
+      <StyledLink to={PagePaths.rory}>
         <SlideImg src={barrel3} alt='' />
         <Label
           totalCount={Number(barrel?.amount ?? 0)}
@@ -87,7 +87,7 @@ const Slide3: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
             Number(barrel?.amount ?? 0) - Number(barrel?.orders ?? 0)
           }
         />
-      </Link>
+      </StyledLink>
 
       <SlideTextWrap>
         <BarrelTitle>Рорі Нок</BarrelTitle>
@@ -104,7 +104,7 @@ const Slide3: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
 const Slide4: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
   return (
     <SlideContainer>
-      <Link to={PagePaths.campbell}>
+      <StyledLink to={PagePaths.campbell}>
         <SlideImg src={barrel4} alt='' />
         <Label
           totalCount={Number(barrel?.amount ?? 0)}
@@ -112,7 +112,7 @@ const Slide4: FC<{ barrel: IBarrelSetting | undefined }> = ({ barrel }) => {
             Number(barrel?.amount ?? 0) - Number(barrel?.orders ?? 0)
           }
         />
-      </Link>
+      </StyledLink>
 
       <SlideTextWrap>
         <BarrelTitle>Містер Кемпбел</BarrelTitle>

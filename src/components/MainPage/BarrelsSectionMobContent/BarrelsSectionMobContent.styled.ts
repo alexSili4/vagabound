@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -6,7 +7,7 @@ export const Container = styled.div`
   gap: ${({ theme }) => theme.spacing(4)}px;
   width: 100%;
 
-   @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
     display: none;
   }
 `;
@@ -80,6 +81,10 @@ export const SlideContainer = styled.div`
   gap: ${({ theme }) => theme.spacing(2)}px;
   padding-left: ${({ theme }) => theme.spacing(4)}px;
   padding-right: ${({ theme }) => theme.spacing(4)}px;
+`;
+
+export const StyledLink = styled(Link)`
+  position: relative;
 `;
 
 export const SlideImg = styled.img``;

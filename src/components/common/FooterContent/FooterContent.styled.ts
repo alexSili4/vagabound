@@ -108,7 +108,7 @@ export const Copy = styled.p`
 
 export const Warning = styled.p`
   margin-top: ${({ theme }) => theme.spacing(12)}px;
-  color: rgba(232, 232, 232, 0.08);
+  color: rgba(232, 232, 232, 0.2);
   font-family: ${({ theme }) => theme.fontFamily.cormorantGaramond};
   font-weight: 300;
   font-style: Light;
