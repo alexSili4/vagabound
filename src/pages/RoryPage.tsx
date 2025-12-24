@@ -10,14 +10,15 @@ import { PagePaths } from '@/constants';
 const RoryPage: FC = () => {
   return (
     <>
-      <main>
+      <main style={{ overflow: 'hidden' }}>
         <HeroSection />
-        <SocialLinksSection />
         <AboutSection />
-        <OrderSection />
-        <div style={{ backgroundColor: '#1A3E2F' }}>
+        {/* <OrderSection /> */}
+        {/* <PreferencesSection /> */}
+        {/* <RecordSection /> */}
+        {/* <div style={{ backgroundColor: '#1A3E2F' }}>
           <BarrelPageControls href={PagePaths.maisie} />
-        </div>
+        </div> */}
       </main>
       <Footer />
     </>

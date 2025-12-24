@@ -8,9 +8,11 @@ import {
   Text,
   Title,
   TitleWrap,
+  PhotoWrap,
+  Accent,
 } from './OrderSection.styled';
-import logo from '@/images/barrel-page/maisie/logo.webp';
-import photo from '@/images/barrel-page/maisie/photo.webp';
+import logo from '@/images/barrel-page/lochan/logo.webp';
+import passport from '@/images/barrel-page/lochan/passport.webp';
 
 const OrderSection: FC = () => {
   return (
@@ -18,22 +20,31 @@ const OrderSection: FC = () => {
       <SectionTitle>Замовлення</SectionTitle>
       <Container>
         <TitleWrap>
-          <Logo src={logo} alt='Логотип' />
-          <Photo src={photo} alt='Світлина' />
-          <Title>Заголовок</Title>
+          <Title>Breival</Title>
           <Text>
-            Рорі Нок, він вже 18 років настоює KNOCKDHU cask: Amontillado
+            <Accent>Вік:</Accent> 15 років
             <br />
-            Аромат: торфяне вугілля, що тліє. Найтемніший напій з усієї групи.
-            Смак: Безпомилково торф’яний Knockdhu зі смаком багатої, вологої
-            землі. Подрібнений підсмажений мигдаль, розчавлений у торф’яному
-            болоті.
             <br />
-            Післясмак: Маслянистий, горіховий і безкомпромісний. Гладка
-            маслянистість протистоїть торф’яному диму, який тримається довше й
-            повністю обволікає піднебіння. Північ Шотландії у пляшці.
+            <Accent>Бочка:</Accent> Rivesaltes
+            <br />
+            <br />
+            <Accent>Аромат:</Accent> Солодкі, цукрові ноти з карамеллю; колір
+            набуває легкого рожевого відтінку.
+            <br />
+            <br />
+            <Accent>Смак:</Accent> Ягідні ноти троянди та малини з бочки
+            переплітаються з м’яким солодовим характером, посилюючи аромат і
+            даючи бочці Rivesaltes повністю розкритися.
+            <br />
+            <br />
+            <Accent>Післясмак:</Accent> Яскраві винні відтінки та сухофрукти,
+            особливо курага, залишаються на язиці з довгим таніновим фінішем
           </Text>
         </TitleWrap>
+        <PhotoWrap>
+          <Logo src={logo} alt='Логотип' />
+          <Photo src={passport} alt='Паспорт' />
+        </PhotoWrap>
       </Container>
     </Section>
   );

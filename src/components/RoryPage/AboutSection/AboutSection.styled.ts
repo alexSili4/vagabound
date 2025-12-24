@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Section = styled.section`
   position: relative;
   background-color: #1a3e2f;
-  padding-top: ${({ theme }) => theme.spacing(50)}px;
+  padding-top: ${({ theme }) => theme.spacing(25)}px;
   padding-bottom: ${({ theme }) => theme.spacing(50)}px;
 `;
 
@@ -39,6 +39,18 @@ export const Title = styled.p`
   text-transform: uppercase;
 `;
 
+export const TextWrap = styled.div`
+  position: relative;
+`;
+
+export const Bag = styled.img`
+  position: absolute;
+  top: 164px;
+  right: -219px;
+  width: 468px;
+  height: 441px;
+`;
+
 export const Text = styled.p`
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
@@ -51,10 +63,16 @@ export const Text = styled.p`
 
 export const Frame = styled.img`
   position: absolute;
-  z-index: 10;
   top: 50%;
   left: 0;
   width: 718px;
   height: 651px;
   transform: translateY(-50%);
+`;
+
+export const Cut = styled.img`
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
 `;
