@@ -9,6 +9,7 @@
       "@MaisiePageComponents/*": ["./src/components/MaisiePage/*"],
       "@RoryPageComponents/*": ["./src/components/RoryPage/*"],
       "@LochanPageComponents/*": ["./src/components/LochanPage/*"],
+      "@CampbellPageComponents/*": ["./src/components/CampbellPage/*"],
       // animations
       "@AnimatedGeneralComponents/*": ["./src/components/Animated/General/*"],
       "@AnimatedMainPageComponents/*": ["./src/components/Animated/MainPage/*"]

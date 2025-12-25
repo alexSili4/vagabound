@@ -9,6 +9,7 @@ const MainPage = lazy(() => import('@/pages/MainPage'));
 const MaisiePage = lazy(() => import('@/pages/MaisiePage'));
 const RoryPage = lazy(() => import('@/pages/RoryPage'));
 const LochanPage = lazy(() => import('@/pages/LochanPage'));
+const CampbellPage = lazy(() => import('@/pages/CampbellPage'));
 
 const App: FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: FC = () => {
           <Route path={PagePaths.rory} element={<RoryPage />} />
           <Route path={PagePaths.maisie} element={<MaisiePage />} />
           <Route path={PagePaths.lochan} element={<LochanPage />} />
+          <Route path={PagePaths.campbell} element={<CampbellPage />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes>

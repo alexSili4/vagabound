@@ -13,6 +13,7 @@ export default defineConfig({
       '@MaisiePageComponents': '/src/components/MaisiePage',
       '@RoryPageComponents': '/src/components/RoryPage',
       '@LochanPageComponents': '/src/components/LochanPage',
+      '@CampbellPageComponents': '/src/components/CampbellPage',
       // animations
       '@AnimatedMainPageComponents': '/src/components/Animated/MainPage',
       '@AnimatedGeneralComponents': '/src/components/Animated/General',
