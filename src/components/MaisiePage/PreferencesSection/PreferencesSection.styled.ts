@@ -1,11 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Section = styled.section`
-  position: relative;
-  z-index: 10;
   background-color: #983400;
-  padding-top: ${({ theme }) => theme.spacing(25)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(50)}px;
 `;
 
 export const SectionTitle = styled.h2`
@@ -15,57 +11,65 @@ export const SectionTitle = styled.h2`
 
 export const Container = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: ${({ theme }) => theme.spacing(6)}px;
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-right: ${({ theme }) => theme.spacing(10)}px;
 `;
 
-export const TitleWrap = styled.div`
+export const TextWrap = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(6)}px;
-  width: 440px;
-  margin-left: auto;
+  width: 720px;
 `;
 
 export const Title = styled.p`
+  position: relative;
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.cormorantGaramond};
-  font-weight: 300;
-  font-style: Light;
+  font-weight: 500;
   font-size: 48px;
   line-height: 1;
   letter-spacing: 0%;
   text-transform: uppercase;
 `;
 
-export const TextWrap = styled.div`
-  position: relative;
-`;
-
 export const Text = styled.p`
+  position: relative;
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
-  font-style: Regular;
   font-size: 18px;
   line-height: 1.4;
   letter-spacing: 0%;
 `;
 
-export const Frame = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 718px;
-  height: 651px;
-  transform: translateY(-50%);
+export const Accent = styled.span`
+  font-weight: 700;
 `;
 
-export const Cut = styled.img`
+export const Image = styled.img`
   position: absolute;
-  top: -40px;
-  left: 0;
-  width: 100%;
+  right: 768px;
+  top: 0;
+  height: 856px;
+`;
+
+export const Line = styled.img`
+  position: absolute;
+  bottom: 25px;
+  left: -32px;
+  width: 235px;
+`;
+
+export const Lines = styled.img`
+  position: absolute;
+  bottom: -20px;
+  left: 195px;
+  width: 295px;
 `;

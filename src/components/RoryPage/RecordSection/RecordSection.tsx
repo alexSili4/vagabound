@@ -1,17 +1,15 @@
 import { FC } from 'react';
-import barrelWithDolls from '@/images/barrel-page/lochan/barrel-with-dolls.webp';
+import frame2 from '@/images/barrel-page/rory/frame-2.webp';
 import {
   Section,
   Container,
   SectionTitle,
-  Doll,
   Image,
   TextWrap,
   Accent,
   Text,
   Title,
 } from './RecordSection.styled';
-import doll from '@/images/barrel-page/lochan/doll.webp';
 
 const RecordSection: FC = () => {
   return (
@@ -19,30 +17,28 @@ const RecordSection: FC = () => {
       <SectionTitle>Експеримент</SectionTitle>
 
       <Container>
-        <Doll src={doll} alt='Лялька' />
-        <Image src={barrelWithDolls} alt='Бочка та ляльки' />
+        <Image src={frame2} alt='Бочка' />
         <TextWrap>
-          <Title>Запис №42</Title>
+          <Title>Запис №22</Title>
           <Text>
-            <Accent>Суб’єкт:</Accent> Лохан Чепелтон
+            <Accent>Суб’єкт:</Accent> Рорі Нок у взаємодії з об'єктом Мейзі
+            Еддертон
             <br />
             <br />
-            <Accent>Експеримент</Accent>: Зйомки рімейку фільму «Гуллівер»
+            <Accent>Експеримент:</Accent> Романтичної вечеря у вагні-ресторані.
             <br />
             <br />
-            <Accent>Деталі:</Accent> Лохана помістили в центр іграшкового міста
-            та заплутали мотузками. На тлі ліліпутів завбільшки з сірник він
-            нарешті відчув себе Великим Актором.
+            <Accent>Деталі:</Accent> Між Рорі і Мейзі запалена свічка та
+            метроном.
             <br />
             <br />
-            <Accent>Сереження:</Accent> Лохан грав зв’язаного героя — геніально:
-            жодного зайвого руху. Абсолютна статика, яку критики назвали б
-            «глибоким внутрішнім ням».
+            <Accent>Спостереження:</Accent> Конфлікт часових поясів. Рорі
+            намагався пришвидшити вечір, щоб встигнути до десерту за розкладом,
+            тоді як Мейзі "тягнула час", щоб посмакувати момент.
             <br />
             <br />
-            <Accent>Вплив на смак:</Accent> Відбулася гра масштабів: тіло напою
-            велетенське, але на язику розсипається на десятки ліліпутських
-            ноток.
+            <Accent>Вплив на смак:</Accent> Додався фініш старомодної романтики.
+            Смак компромісу.
           </Text>
         </TextWrap>
       </Container>

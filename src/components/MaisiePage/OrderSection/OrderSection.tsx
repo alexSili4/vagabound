@@ -8,9 +8,11 @@ import {
   Text,
   Title,
   TitleWrap,
+  PhotoWrap,
+  Accent,
 } from './OrderSection.styled';
 import logo from '@/images/barrel-page/maisie/logo.webp';
-import photo from '@/images/barrel-page/maisie/photo.webp';
+import passport from '@/images/barrel-page/maisie/passport.webp';
 
 const OrderSection: FC = () => {
   return (
@@ -18,18 +20,32 @@ const OrderSection: FC = () => {
       <SectionTitle>Замовлення</SectionTitle>
       <Container>
         <TitleWrap>
-          <Logo src={logo} alt='Логотип' />
-          <Photo src={photo} alt='Світлина' />
-          <Title>Заголовок</Title>
+          <Title>Balblair </Title>
           <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos.
+            <Accent>Вік:</Accent> 13 років
+            <br />
+            <br />
+            <Accent>Бочка:</Accent> Pedro Ximénez
+            <br />
+            <br />
+            <Accent>Аромат:</Accent> Різкий і дуже насичений аромат винограду,
+            інжиру та родзинок.
+            <br />
+            <br />
+            <Accent>Смак:</Accent> Потужна хвиля густого сиропу з червоного
+            винограду, яка поступово переходить у м’ятну/солону ноту.
+            <br />
+            <br />
+            <Accent>Післясмак:</Accent> Різкість м’яти прорізає PX, який
+            залишається фоновим. Віскі складається з двох частин: великі,
+            соковиті виноградини й освіжаючий солодовий характер Balblair.
+            Чудовий приклад гармонії між солодом і деревом.
           </Text>
         </TitleWrap>
+        <PhotoWrap>
+          <Logo src={logo} alt='Логотип' />
+          <Photo src={passport} alt='Паспорт' />
+        </PhotoWrap>
       </Container>
     </Section>
   );

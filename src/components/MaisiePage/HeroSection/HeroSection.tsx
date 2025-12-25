@@ -1,22 +1,19 @@
 import { FC } from 'react';
-import {
-  Section,
-  Container,
-  Subtitle,
-  Title,
-  TitleWrap,
-} from './HeroSection.styled';
+import { Section, Container, StyledVideo, Video } from './HeroSection.styled';
 import GoHomeLink from '@CommonComponents/GoHomeLink';
+import lochan from '@/video/lochan.mp4';
+import { useVideo } from '@/hooks';
 
 const HeroSection: FC = () => {
+  const { videoRef } = useVideo();
+
   return (
-    <Section>
+    <Section data-header-theme='dark'>
       <Container>
+        <Video>
+          <StyledVideo ref={videoRef} src={lochan} muted playsInline loop />
+        </Video>
         <GoHomeLink />
-        <TitleWrap>
-          <Subtitle>subtitle</Subtitle>
-          <Title>the great title for a barrel</Title>
-        </TitleWrap>
       </Container>
     </Section>
   );

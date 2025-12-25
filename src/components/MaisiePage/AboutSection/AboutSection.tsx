@@ -7,25 +7,34 @@ import {
   Title,
   TitleWrap,
   Frame,
+  Cut,
+  TextWrap,
 } from './AboutSection.styled';
 import frame from '@/images/barrel-page/maisie/frame.webp';
+import cut from '@/images/barrel-page/maisie/cut.webp';
 
 const AboutSection: FC = () => {
   return (
-    <Section>
+    <Section data-header-theme='dark'>
+      <Cut src={cut} alt='Декоративний елемент' />
       <SectionTitle>Про нас</SectionTitle>
       <Container>
         <Frame src={frame} alt='Рамка' />
         <TitleWrap>
-          <Title>Title</Title>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-            turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-            nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-            tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-            feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos.{' '}
-          </Text>
+          <Title>
+            МЕЙЗІ
+            <br />
+            ЕДЕРТОН
+          </Title>
+          <TextWrap>
+            <Text>
+              Мейзі Едертон — поціновувачка вінтажу, власниця вишуканого смаку.
+              <br />
+              <br />
+              Для Мейзі календар це пропаганда, вона живе в тій епосі, яка їй
+              пасує під настрій.
+            </Text>
+          </TextWrap>
         </TitleWrap>
       </Container>
     </Section>

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Section = styled.section`
-  background-color: #ad630b;
+  background-color: #1a3e2f;
   padding-top: ${({ theme }) => theme.spacing(30)}px;
   padding-bottom: ${({ theme }) => theme.spacing(30)}px;
 `;
@@ -16,13 +16,6 @@ export const Container = styled.div`
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-`;
-
-export const Doll = styled.img`
-  position: absolute;
-  left: -111px;
-  top: 155px;
-  width: 146px;
 `;
 
 export const Image = styled.img`

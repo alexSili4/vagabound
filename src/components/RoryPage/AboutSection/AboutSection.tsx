@@ -17,7 +17,7 @@ import bag from '@/images/barrel-page/rory/bag.webp';
 
 const AboutSection: FC = () => {
   return (
-    <Section>
+    <Section data-header-theme='dark'>
       <Cut src={cut} alt='Декоративний елемент' />
       <SectionTitle>Про нас</SectionTitle>
       <Container>

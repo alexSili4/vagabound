@@ -11,8 +11,8 @@ import {
   PhotoWrap,
   Accent,
 } from './OrderSection.styled';
-import logo from '@/images/barrel-page/lochan/logo.webp';
-import passport from '@/images/barrel-page/lochan/passport.webp';
+import logo from '@/images/barrel-page/rory/logo.webp';
+import passport from '@/images/barrel-page/rory/passport.webp';
 
 const OrderSection: FC = () => {
   return (
@@ -20,25 +20,25 @@ const OrderSection: FC = () => {
       <SectionTitle>Замовлення</SectionTitle>
       <Container>
         <TitleWrap>
-          <Title>Breival</Title>
+          <Title>Knockdhu</Title>
           <Text>
-            <Accent>Вік:</Accent> 15 років
+            <Accent>Вік:</Accent> 18 років
             <br />
             <br />
-            <Accent>Бочка:</Accent> Rivesaltes
+            <Accent>Бочка:</Accent> Amontillado
             <br />
             <br />
-            <Accent>Аромат:</Accent> Солодкі, цукрові ноти з карамеллю; колір
-            набуває легкого рожевого відтінку.
+            <Accent>Аромат:</Accent> Торфяне вугілля, що тліє. Найтемніший напій
+            з усієї групи.
             <br />
             <br />
-            <Accent>Смак:</Accent> Ягідні ноти троянди та малини з бочки
-            переплітаються з м’яким солодовим характером, посилюючи аромат і
-            даючи бочці Rivesaltes повністю розкритися.
+            <Accent>Смак:</Accent> Безпомилково торф’яний Knockdhu зі смаком
+            Подрібнений підсмажений мигдаль, розчавлений у торф’яному болоті.
             <br />
             <br />
-            <Accent>Післясмак:</Accent> Яскраві винні відтінки та сухофрукти,
-            особливо курага, залишаються на язиці з довгим таніновим фінішем
+            <Accent>Післясмак:</Accent> ховий і безкомпромісний. Глака
+            маслянистість протистоїть торф’яному диму, який тримається довше й
+            повністю обволікає піднебіння. Північ Шотландії у пляшці.
           </Text>
         </TitleWrap>
         <PhotoWrap>

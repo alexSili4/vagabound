@@ -8,7 +8,7 @@ const HeroSection: FC = () => {
   const { videoRef } = useVideo();
 
   return (
-    <Section>
+    <Section data-header-theme='dark'>
       <Container>
         <Video>
           <StyledVideo ref={videoRef} src={lochan} muted playsInline loop />

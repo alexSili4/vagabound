@@ -1,7 +1,8 @@
 import HeroSection from '@RoryPageComponents/HeroSection';
-import SocialLinksSection from '@RoryPageComponents/SocialLinksSection';
 import AboutSection from '@RoryPageComponents/AboutSection';
+import RecordSection from '@RoryPageComponents/RecordSection';
 import OrderSection from '@RoryPageComponents/OrderSection';
+import PreferencesSection from '@RoryPageComponents/PreferencesSection';
 import Footer from '@RoryPageComponents/Footer';
 import { FC } from 'react';
 import BarrelPageControls from '@CommonComponents/BarrelPageControls';
@@ -13,12 +14,12 @@ const RoryPage: FC = () => {
       <main style={{ overflow: 'hidden' }}>
         <HeroSection />
         <AboutSection />
-        {/* <OrderSection /> */}
-        {/* <PreferencesSection /> */}
-        {/* <RecordSection /> */}
-        {/* <div style={{ backgroundColor: '#1A3E2F' }}>
+        <OrderSection />
+        <PreferencesSection />
+        <RecordSection />
+        <div style={{ backgroundColor: '#1A3E2F' }}>
           <BarrelPageControls href={PagePaths.maisie} />
-        </div> */}
+        </div>
       </main>
       <Footer />
     </>
