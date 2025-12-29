@@ -71,7 +71,13 @@ export const Name = styled.p`
 
 export const CardContent = styled.div``;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  transition: scale ${({ theme }) => theme.transitionDurationAndFunc};
+
+  &:is(:hover, :focus) {
+    scale: 1.05;
+  }
+`;
 
 export const CardInfoWrap = styled.div`
   display: flex;
@@ -137,9 +143,16 @@ export const CardLink = styled.a`
   letter-spacing: -1%;
   text-align: center;
   text-transform: uppercase;
+  transition: color ${({ theme }) => theme.transitionDurationAndFunc},
+    background-color ${({ theme }) => theme.transitionDurationAndFunc};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
     max-width: 200px;
+  }
+
+  &:is(:hover, :focus) {
+    background-color: #252525;
+    color: #e8e8e8;
   }
 `;
 
