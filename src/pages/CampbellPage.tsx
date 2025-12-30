@@ -17,9 +17,9 @@ const CampbellPage: FC = () => {
         <OrderSection />
         <PreferencesSection />
         <RecordSection />
-        {/* <div style={{ backgroundColor: '#252525' }}>
+        <div style={{ backgroundColor: '#252525' }}>
           <BarrelPageControls href={PagePaths.lochan} />
-        </div> */}
+        </div>
       </main>
       <Footer />
     </>
