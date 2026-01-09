@@ -14,7 +14,7 @@ const CampbellPage = lazy(() => import('@/pages/CampbellPage'));
 const App: FC = () => {
   return (
     <>
-      <PreviewVideo />
+      {/* <PreviewVideo /> */}
       <Routes>
         <Route path={PagePaths.root} element={<SharedLayout />}>
           <Route index element={<MainPage />} />

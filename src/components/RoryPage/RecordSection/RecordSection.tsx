@@ -9,6 +9,7 @@ import {
   Accent,
   Text,
   Title,
+  ImageMob,
 } from './RecordSection.styled';
 
 const RecordSection: FC = () => {
@@ -17,6 +18,7 @@ const RecordSection: FC = () => {
       <SectionTitle>Експеримент</SectionTitle>
 
       <Container>
+        <ImageMob src={frame2} alt='Бочка та ляльки' />
         <Image src={frame2} alt='Бочка' />
         <TextWrap>
           <Title>Запис №22</Title>

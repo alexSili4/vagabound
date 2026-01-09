@@ -7,11 +7,13 @@ import {
   Text,
   TextWrap,
   Title,
-  Image,
+  ImageDesk,
+  ImageMob,
   Line,
   Lines,
 } from './PreferencesSection.styled';
 import image from '@/images/barrel-page/lochan/image.webp';
+import imageMob from '@/images/barrel-page/lochan/image-mob.webp';
 import line from '@/images/barrel-page/lochan/line.webp';
 import lines from '@/images/barrel-page/lochan/lines.webp';
 
@@ -20,7 +22,8 @@ const PreferencesSection: FC = () => {
     <Section>
       <SectionTitle>Вподбання</SectionTitle>
       <Container>
-        <Image src={image} alt='Зображення' />
+        <ImageMob src={imageMob} alt='Зображення' />
+        <ImageDesk src={image} alt='Зображення' />
         <TextWrap>
           <Title>Лохан любить:</Title>
           <Text>

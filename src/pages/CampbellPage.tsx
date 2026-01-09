@@ -12,8 +12,10 @@ const CampbellPage: FC = () => {
   return (
     <>
       <main>
-        <HeroSection />
-        <AboutSection />
+        <div style={{ overflow: 'hidden' }}>
+          <HeroSection />
+          <AboutSection />
+        </div>
         <OrderSection />
         <PreferencesSection />
         <RecordSection />

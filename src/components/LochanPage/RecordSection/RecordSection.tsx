@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import barrelWithDolls from '@/images/barrel-page/lochan/barrel-with-dolls.webp';
+import barrelWithDollsMob from '@/images/barrel-page/lochan/barrel-with-dolls-mob.webp';
 import {
   Section,
   Container,
@@ -10,6 +11,7 @@ import {
   Accent,
   Text,
   Title,
+  ImageMob,
 } from './RecordSection.styled';
 import doll from '@/images/barrel-page/lochan/doll.webp';
 
@@ -20,6 +22,7 @@ const RecordSection: FC = () => {
 
       <Container>
         <Doll src={doll} alt='Лялька' />
+        <ImageMob src={barrelWithDollsMob} alt='Бочка та ляльки' />
         <Image src={barrelWithDolls} alt='Бочка та ляльки' />
         <TextWrap>
           <Title>Запис №42</Title>

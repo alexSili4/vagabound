@@ -14,60 +14,104 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: ${({ theme }) => theme.spacing(6)}px;
-  width: 1200px;
+  gap: ${({ theme }) => theme.spacing(4)}px;
+  width: 100%;
+  padding-left: ${({ theme }) => theme.spacing(4)}px;
+  padding-right: ${({ theme }) => theme.spacing(4)}px;
+  max-width: 375px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    gap: ${({ theme }) => theme.spacing(6)}px;
+    width: 1232px;
+    max-width: none;
+  }
 `;
 
 export const TextWrap = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(6)}px;
-  width: 720px;
+  gap: ${({ theme }) => theme.spacing(4)}px;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    gap: ${({ theme }) => theme.spacing(6)}px;
+    width: 720px;
+  }
 `;
 
 export const Title = styled.p`
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.cormorantGaramond};
   font-weight: 500;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 1;
   letter-spacing: 0%;
   text-transform: uppercase;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    font-size: 48px;
+  }
 `;
 
 export const Text = styled.p`
   color: #e8e8e8;
   font-family: ${({ theme }) => theme.fontFamily.rubik};
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
   letter-spacing: 0%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    font-size: 18px;
+  }
 `;
 
 export const Accent = styled.span`
   font-weight: 700;
 `;
 
-export const Image = styled.img`
-  position: absolute;
-  right: 768px;
-  bottom: 0;
-  height: 856px;
+export const ImageMob = styled.img`
+  width: 100%;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    display: none;
+  }
+`;
+
+export const ImageDesk = styled.img`
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    position: absolute;
+    right: 768px;
+    bottom: 0;
+    height: 856px;
+    display: block;
+  }
 `;
 
 export const Line = styled.img`
-  position: absolute;
-  bottom: 92px;
-  left: 197px;
-  width: 236px;
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    position: absolute;
+    bottom: 92px;
+    left: 197px;
+    display: block;
+    width: 236px;
+  }
 `;
 
 export const Lines = styled.img`
-  position: absolute;
-  bottom: -10px;
-  left: 408px;
-  width: 83px;
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    position: absolute;
+    bottom: -10px;
+    left: 408px;
+    display: block;
+    width: 83px;
+  }
 `;

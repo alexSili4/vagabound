@@ -11,13 +11,23 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 1200px;
+  width: 100%;
+  max-width: 375px;
   height: 100dvh;
-  padding-top: ${({ theme }) => theme.spacing(32)}px;
-  padding-bottom: ${({ theme }) => theme.spacing(44)}px;
+  padding-left: ${({ theme }) => theme.spacing(4)}px;
+  padding-right: ${({ theme }) => theme.spacing(4)}px;
+  padding-top: ${({ theme }) => theme.spacing(20)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(20)}px;
   margin-left: auto;
   margin-right: auto;
   transition: height ${({ theme }) => theme.transitionDurationAndFunc};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    width: 1232px;
+    max-width: none;
+    padding-top: ${({ theme }) => theme.spacing(32)}px;
+    padding-bottom: ${({ theme }) => theme.spacing(44)}px;
+  }
 `;
 
 export const TitleWrap = styled.div`

@@ -10,10 +10,17 @@ export const StyledHeader = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  padding: ${({ theme }) => theme.spacing(4)}px;
+  padding-left: ${({ theme }) => theme.spacing(4)}px;
+  padding-right: ${({ theme }) => theme.spacing(4)}px;
+  padding-top: ${({ theme }) => theme.spacing(2.5)}px;
+  padding-bottom: ${({ theme }) => theme.spacing(2.5)}px;
   backdrop-filter: blur(40px);
   box-shadow: 0px 0px 40px 0px #00000033;
   background-color: rgba(232, 232, 232, 0.01);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desk}px) {
+    padding: ${({ theme }) => theme.spacing(4)}px;
+  }
 `;
 
 export const Container = styled.div`
